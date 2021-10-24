@@ -25,7 +25,11 @@
 	@keyframes videoT{
   from { color: rgba(255,255,255,0); }
   to { color: rgba(255,255,255,1); }
-}
+	}
+	@keyframes bottomsUp{
+  from {bottom: -5vh; }
+  to { bottom: 5vh; }
+	}
 
   ul.m {
     list-style-type: none;
@@ -97,11 +101,17 @@
 				background-color: transparent;
 	  	}
   img.m1 {
-    position: inherit;
-    left: 200px;
-    top: 107px;
+    position: absolute;
 		animation-name: intro2;
 		animation-duration: 1s;
+		animation-name: bottomsUp;
+		animation-duration: 0.8s;
+		right:5vw;
+		bottom:5vh;
+		border-radius: 15px 15px 15px 15px;
+		-moz-box-shadow: 10px 10px 5px rgba(20,20,20,0.5);
+  	-webkit-box-shadow: 10px 10px 5px rgba(20,20,20,0.5);
+  	box-shadow: 10px 10px 5px rgba(20,20,20,0.5);
   }
 	img.m2 {
 		max-width: 50px;
@@ -178,10 +188,10 @@
 	    </ul>
 		</div>
 		<div id="blockD" class="imgT">
-			<p id = "text1" class = "rb"> Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye! </p>
-			<p id = "text2" class = "rb2"> Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye! </p>
-			<img id = "catimg" src="" class="m1" >
+			<p id = "text1" class = "rb"> Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around!  </p>
+			<p id = "text2" class = "rb2"> Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around!  </p>
 		</div>
+		<img id = "catimg" src="../../recourses/review.png" class="m1">
 
 		<div id="videos">
 			<br> <h1 align="center" class="videoTitle"> Miscellaneous </h1>
@@ -220,6 +230,7 @@
 				<source id="videoPlayer" src="../../recourses/creationVideos/cloth.mp4">
 			</video> <br>
 		</div>
+
 		<br>
 		<div>
 			<img src="https://cdn.discordapp.com/avatars/668241375409733652/a_df6d636d512ec79433953bb39732d3c7.gif" class="m2">
@@ -241,11 +252,12 @@
 
   	document.getElementById("videos").style.display = "none";
     document.getElementById("home").addEventListener("click", () => {
-	   	t1.innerHTML = "Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye!"
-			t2.innerHTML = "Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye!"
-      cm.src = "";
+	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
+			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
+      cm.src = "../../recourses/review.png";
 	   	reset_animation("text1");
 			reset_animation("text2");
+			reset_animation("catimg");
 			document.getElementById("videos").style.display = "none";
 			document.getElementById("blockD").style.display = "block";
      });
@@ -255,7 +267,6 @@
         cm.src = ""; // https://www.thefragly.com/recourses/cat.png
 				reset_animation("text1");
 				reset_animation("text2");
-				reset_animation("catimg");
 				document.getElementById("videos").style.display = "none";
 				document.getElementById("blockD").style.display = "block";
 
