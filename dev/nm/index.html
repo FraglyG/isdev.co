@@ -14,6 +14,18 @@
 	from {left:-400px;}
 	to {left:200px;}
 	}
+	@keyframes video1 {
+	from {left:-50vw;}
+	to {left:30vw;}
+	}
+	@keyframes video2 {
+	from {left:150vw;}
+	to {left:30vw;}
+	}
+	@keyframes videoT{
+  from { color: rgba(255,255,255,0); }
+  to { color: rgba(255,255,255,1); }
+}
 
   ul.m {
     list-style-type: none;
@@ -21,7 +33,7 @@
     padding: 0;
 		width:100%;
     overflow: hidden;
-    background-color: #515052;
+    background-color: rgba(20,20,20,0.5);
     position: -webkit-sticky; /* Safari */
     position: sticky;
     border-radius: 15px 15px 15px 15px;
@@ -44,35 +56,46 @@
   }
 
   li a:hover {
-    background-color: #FF312E;
+    background-color: #ff66cc;
   }
 
 	a.link {
-  color: #FF312E;
+  color: #ff66cc;
   background-color: transparent;
   text-decoration: none;
 }
 
   body {
     /*background: rgba(200, 200, 200, 1) /* Green background with 30% opacity */
-    background-image: url("https://www.thefragly.com/recourses/red.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    background-image: url("../../recourses/screen1.png");
+    background-size: 120% auto;
     color: white;
-    font-family:'Oswald';font-size: 2.5vw;
+    font-family:'Oswald';font-size: 3vw;
   }
 
   p.rb {
-    background-color: #232323;
-    border-color: #232323;
-    border-radius: 5px;
-    padding: 15px;
-		animation-name: intro;
-		animation-duration: 0.8s;
-		position:inherit;
-		width:1000px;
-  }
+	    background-color: #232323;
+	    border-color: #232323;
+	    border-radius: 5px;
+	    padding: 15px;
+			animation-name: intro;
+			animation-duration: 0.8s;
+			position:inherit;
+			width:1000px;
+			background-color: rgba(255,255,255,0.25);
+			filter: blur(8px);
+  	}
+		p.rb2 {
+		    background-color: #232323;
+		    border-color: #232323;
+		    border-radius: 5px;
+		    padding: 15px;
+				animation-name: intro;
+				animation-duration: 0.8s;
+				position:inherit;
+				width:1000px;
+				background-color: transparent;
+	  	}
   img.m1 {
     position: inherit;
     left: 200px;
@@ -101,22 +124,42 @@
 	}
 
   h1.main {
-		font-family: 'Arvo';font-size: 5vw;
-		color: #FF312E;
+		font-family: 'Arvo';font-size: 6vw;
+		color:rgba(255,102,204,0.8);
 		width:100%;
 		height:5%;
   }
 
   div.imgT {
-	position:absolute;
+		position:absolute;
+		background-color: rgba(255,255,255,0.25);
   }
 	div.main {
-		background-color: #232323;
+		background-color: rgba(255,102,204,0.2);
 		border-radius: 0px 0px 16.5px 16.5px;
 	}
 
-	video {
+	video.m1 {
 		border-radius: 30px 30px 30px 30px;
+		animation-name: video1;
+		animation-duration: 1s;
+		position: relative;
+		left:30vw;
+	}
+	video.m2 {
+		border-radius: 30px 30px 30px 30px;
+		animation-name: video2;
+		animation-duration: 1s;
+		position: relative;
+		left:30vw;
+	}
+	h1.videoTitle {
+		color:rgba(255,255,255,0);
+		animation-name: videoT;
+		animation-delay: 1s;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 	}
 
   </style>
@@ -134,50 +177,49 @@
 	      <li class="m"><a id = "a1"> Roblox-Creations </a></li>
 	    </ul>
 		</div>
-	<div id="blockD" class="imgT">
-		<p id = "text1" class = "rb"> Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye! </p>
-		<img id = "catimg" src="" class="m1" >
-	</div>
+		<div id="blockD" class="imgT">
+			<p id = "text1" class = "rb"> Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye! </p>
+			<p id = "text2" class = "rb2"> Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye! </p>
+			<img id = "catimg" src="" class="m1" >
+		</div>
 
-	<div id="videos" align="center">
-		<br> <h1> Miscellaneous </h1>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/infinite_world.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/door.mp4">
-		</video> <br>
+		<div id="videos">
+			<br> <h1 align="center" class="videoTitle"> Miscellaneous </h1>
+			<video id="videoFrame" width="640" height="264" class = "m1"  controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/infinite_world.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m2" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/door.mp4">
+			</video> <br>
 
-		<br> <h1> Cool Knife Thing </h1>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/knife1.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/knife2.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/knife3.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/knife4.mp4">
-		</video> <br>
-		<br> <h1> Cape Simulation </h1>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/cape1.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/cape2.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/cape3.mp4">
-		</video> <br>
-		<video id="videoFrame" width="640" height="264" controls>
-			<source id="videoPlayer" src="../../recourses/creationVideos/cloth.mp4">
-		</video> <br>
-	</div>
+			<br> <h1 align="center" class="videoTitle"> Cool Knife Thing </h1>
+			<video id="videoFrame" width="640" height="264" class = "m1" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/knife1.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m2" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/knife2.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m1" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/knife3.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m2" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/knife4.mp4">
+			</video> <br>
 
-    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-    <p> some text </p>
+			<br> <h1 align="center" class="videoTitle"> Cape Simulation </h1>
+			<video id="videoFrame" width="640" height="264" class = "m1" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/cape1.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m2" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/cape2.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m1" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/cape3.mp4">
+			</video> <br>
+			<video id="videoFrame" width="640" height="264" class = "m2" controls>
+				<source id="videoPlayer" src="../../recourses/creationVideos/cloth.mp4">
+			</video> <br>
+		</div>
 		<br>
 		<div>
 			<img src="https://cdn.discordapp.com/avatars/668241375409733652/a_df6d636d512ec79433953bb39732d3c7.gif" class="m2">
@@ -187,7 +229,9 @@
 
   <script>
     const t1 = document.getElementById("text1");
+		const t2 = document.getElementById("text2");
     const cm = document.getElementById("catimg");
+		const el = document.body
 		function reset_animation(element) {
 			var el = document.getElementById(element);
 			el.style.animation = 'none';
@@ -198,33 +242,42 @@
   	document.getElementById("videos").style.display = "none";
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye!"
+			t2.innerHTML = "Hey There! <br> I'm Fragly, I'm 16 years old <br> Welcome to my website, have a look around <br> <br> kthxbye!"
       cm.src = "";
 	   	reset_animation("text1");
+			reset_animation("text2");
 			document.getElementById("videos").style.display = "none";
 			document.getElementById("blockD").style.display = "block";
      });
      document.getElementById("cat").addEventListener("click", () => {
         t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
+				t2.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
         cm.src = ""; // https://www.thefragly.com/recourses/cat.png
 				reset_animation("text1");
+				reset_animation("text2");
 				reset_animation("catimg");
 				document.getElementById("videos").style.display = "none";
 				document.getElementById("blockD").style.display = "block";
+
       });
 			document.getElementById("a1").addEventListener("click", () => {
-	        t1.innerHTML = ""
-					cm.src = "";
-					reset_animation("text1");
-
-          document.getElementById("videos").style.display = "block";
-					document.getElementById("blockD").style.display = "none";
-	      });
-	  	document.getElementById("a2").addEventListener("click", () => {
-        t1.innerHTML = "Hello!";
-        cm.src = "";
-				reset_animation("text1");
-				document.getElementById("videos").style.display = "none";
-				document.getElementById("blockD").style.display = "block";
+        t1.innerHTML = ""
+				t2.innerHTML = ""
+				cm.src = "";
+				document.getElementsByClassName("videoTitle").color = "rgba(255,255,255,0)"
+				setTimeout(function() {
+				    document.getElementsByClassName("videoTitle").color = "rgba(255,255,255,1)"
+				}, 2000);
+        document.getElementById("videos").style.display = "block";
+				document.getElementById("blockD").style.display = "none";
       });
+		el.addEventListener("mousemove", (e) => {
+			var pageX = e.pageX - (window.innerWidth / 2);
+      var pageY = e.pageY - (window.innerHeight / 2);
+      var x = (pageX * -1 - 25)/70;
+      var y = (pageY * -1 - 50)/70;
+		  el.style.backgroundPositionX = (x- (window.innerWidth / 10)) + "px";
+		  el.style.backgroundPositionY = (y- (window.innerHeight/ 10)) + "px" ;
+		});
   </script>
 </html>
