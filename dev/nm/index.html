@@ -1,0 +1,144 @@
+<html>
+<link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rampart One' rel='stylesheet'>
+
+<style>
+	@keyframes intro {
+	from {left:-1000px;}
+	to {left:0px;}
+	}
+	@keyframes intro2 {
+	from {left:-400px;}
+	to {left:200px;}
+	}
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+		width:100%;
+    overflow: hidden;
+    background-color: #232323;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    border-radius: 15px 15px 15px 15px;
+    top: 5;
+		z-index: 3;
+  }
+
+  li {
+    float: left;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 35px 40px;
+    text-decoration: none;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+  li a:hover {
+    background-color: #0f0f0f;
+  }
+
+  body {
+    /*background: rgba(200, 200, 200, 1) /* Green background with 30% opacity */
+    background-image: url("http://www.hendriksewebsite.xyz/recourses/triangles.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 200% 200%;
+    color: white;
+    font-family: 'Akaya Telivigala';font-size: 200%;
+  }
+
+  p.rb {
+    background-color: #464646;
+    border-color: #464646;
+    border-radius: 5px;
+    padding: 10px;
+		animation-name: intro;
+		animation-duration: 0.8s;
+		position:inherit;
+		width:1000px;
+  }
+  img.m1 {
+    position: inherit;
+    left: 200px;
+    top: 107px;
+		animation-name: intro2;
+		animation-duration: 1s;
+  }
+  h1.main {
+		font-family: 'Rampart One';font-size: 400%;
+  }
+
+  div.imgT {
+	position:absolute;
+  }
+
+  </style>
+  <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Hendrik Web</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.1">
+		<meta name="google-site-verification" content="qc3HUQVTmc7f6-4LOTt5956fj85cWqYhnlF9V6P3qaQ" />
+  </head>
+  <body>
+    <div>
+      <h1 align=center class = "main" > Hendrik Strydom Se Stuff! </h1>
+      <p> "Cool mense het websites" ~ Hendrik Strydom <br> <br> Ek weet nie wat om te se nie lol </p>
+    </div>
+    <ul>
+      <li><a id = "home"  > Tuis </a></li>
+      <li><a id = "cat"> Kat Foto </a></li>
+      <li><a id = "a1"> Ander Goed </a></li>
+      <li><a id = "a2"> Nog n Knoppie </a></li>
+    </ul>
+	<div class="imgT">
+		<p id = "text1" class = "rb"> Hey There! <br> Ek dink nog oor wat om hier te sit :P <br> Ek dink nou nog lol <br> <br> baai! </p>
+		<img id = "catimg" src="" class="m1" >
+	</div>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <p> Ek het regtig nie n clue wat om op die website te sit nie, ek weet nie eers hoekom ek dit gemaak het nie LOL </p>
+		<br>
+  </body>
+
+  <script>
+
+    const t1 = document.getElementById("text1");
+    const cm = document.getElementById("catimg");
+		function reset_animation(element) {
+			var el = document.getElementById(element);
+			el.style.animation = 'none';
+			el.offsetHeight; /* trigger reflow */
+			el.style.animation = null;
+		};
+
+    document.getElementById("home").addEventListener("click", () => {
+	   	t1.innerHTML = "Hey There! \<br\> Ek dink nog oor wat om hier te sit :P \<br\> Ek dink nou nog lol \<br\> \<br\> baai!"
+      cm.src = "";
+	   	reset_animation("text1");
+     });
+     document.getElementById("cat").addEventListener("click", () => {
+        t1.innerHTML = " hier gaan nog goed kom .......................................................  maar dit is nog nie hier nie.. jammer! \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> \<br\>  \<br\> \<br\> \<br\> \<br\> \<br\> \<br\> vat hierdie kat foto vir nou"
+        cm.src = "http://www.hendriksewebsite.xyz/recourses/cat.png";
+				reset_animation("text1");
+				reset_animation("catimg");
+      });
+			document.getElementById("a1").addEventListener("click", () => {
+	        t1.innerHTML = "Hier is my ander goed: <br> <br> \<a href=\"http://www.hendriksewebsite.xyz/projects/rtt-taak\"> RTT Taak 2021 \</a>";
+	        cm.src = "";
+					reset_animation("text1");
+	      });
+	  	document.getElementById("a2").addEventListener("click", () => {
+        t1.innerHTML = "Wat soek jy? Hiers niks hier nie LMFAO";
+        cm.src = "";
+				reset_animation("text1");
+      });
+  </script>
+</html>
