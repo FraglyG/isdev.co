@@ -186,6 +186,7 @@
 	      <li class="m"><a id = "home"> About Me </a></li>
 	      <li class="m"><a id = "cat"> Contact Information </a></li>
 	      <li class="m"><a id = "a1"> Roblox-Creations </a></li>
+				 <li class="m" style="float:right;"><a id = "a1" href="https://www.theFragly.com/dev/privacy"> Privacy Policy </a></li>
 	    </ul>
 		</div>
 		<div id="blockD" class="imgT">
@@ -291,22 +292,5 @@
 		  el.style.backgroundPositionX = (x- (window.innerWidth / 10)) + "px";
 		  el.style.backgroundPositionY = (y- (window.innerHeight/ 10)) + "px" ;
 		});
-		jQuery(document).ready(function () {
-	    function openFancybox() {
-	        setTimeout(function () {
-	            jQuery('#popuplink').trigger('click');
-	        }, 500);
-	    };
-	    var visited = jQuery.cookie('visited');
-	    if (visited == 'yes') {
-	         // second page load, cookie active
-	    } else {
-	        openFancybox(); // first page load, launch fancybox
-	    }
-	    jQuery.cookie('visited', 'yes', {
-	        expires: 365 // the number of days cookie  will be effective
-	    });
-	    jQuery("#popuplink").fancybox({modal:true, maxWidth: 400, overlay : {closeClick : true}});
-	});
   </script>
 </html>
