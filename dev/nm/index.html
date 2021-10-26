@@ -10,6 +10,10 @@
 	from {left:-1000px;}
 	to {left:0px;}
 	}
+	@keyframes intro3 {
+	from {left:100vw;}
+	to {left:-10vw;}
+	}
 	@keyframes intro2 {
 	from {left:-400px;}
 	to {left:200px;}
@@ -29,6 +33,10 @@
 	@keyframes bottomsUp{
   from {bottom: -5vh; }
   to { bottom: 5vh; }
+	}
+	@keyframes skillbar{
+  from {width: 0vw; }
+  to { width: 10vw; }
 	}
 
   ul.m {
@@ -74,32 +82,85 @@
     background-image: url("../../recourses/screen1.png");
     background-size: 120% auto;
     color: white;
+		text-shadow:
+    -1px -1px 0 rgba(20,20,20,0.2),
+    1px -1px 0 rgba(20,20,20,0.2),
+    -1px 1px 0 rgba(20,20,20,0.2),
+    1px 1px 0 rgba(20,20,20,0.2);
     font-family:'Oswald';font-size: 3vw;
   }
 
   p.rb {
-	    background-color: #232323;
-	    border-color: #232323;
-	    border-radius: 5px;
-	    padding: 15px;
-			animation-name: intro;
-			animation-duration: 0.8s;
-			position:inherit;
-			width:1000px;
-			background-color: rgba(255,255,255,0.25);
-			filter: blur(8px);
-  	}
-		p.rb2 {
-		    background-color: #232323;
-		    border-color: #232323;
-		    border-radius: 5px;
-		    padding: 15px;
-				animation-name: intro;
-				animation-duration: 0.8s;
-				position:inherit;
-				width:1000px;
-				background-color: transparent;
-	  	}
+    background-color: #232323;
+    border-color: #232323;
+    border-radius: 5px;
+    padding: 15px;
+		animation-name: intro;
+		animation-duration: 0.8s;
+		position:inherit;
+		width:40vw;
+		background-color: rgba(255,255,255,0.25);
+		filter: blur(8px);
+	}
+	p.rb2 {
+		background-color: #232323;
+		border-color: #232323;
+		border-radius: 5px;
+		padding: 15px;
+		animation-name: intro;
+		animation-duration: 0.8s;
+		position:inherit;
+		width:40vw;
+		background-color: transparent;
+	}
+	p.rb3 {
+    background-color: #232323;
+    border-color: #232323;
+    border-radius: 5px;
+    padding: 15px;
+		animation-name: intro;
+		animation-duration: 0.8s;
+		position:inherit;
+		width:20vw;
+		background-color: rgba(255,255,255,0.25);
+		filter: blur(8px);
+	}
+	p.rb4 {
+		background-color: #232323;
+		border-color: #232323;
+		border-radius: 5px;
+		padding: 15px;
+		animation-name: intro;
+		animation-duration: 0.8s;
+		position:inherit;
+		width:20vw;
+		background-color: transparent;
+	}
+	p.rb5 {
+		background-color: #232323;
+		border-color: #232323;
+		border-radius: 5px;
+		padding: 15px;
+		animation-name: intro3;
+		animation-duration: 0.8s;
+		position:inherit;
+		left:-10vw;
+		width:30vw;
+		background-color: rgba(255,255,255,0.25);
+		filter: blur(8px);
+	}
+	p.rb6 {
+		background-color: #232323;
+		border-color: #232323;
+		border-radius: 5px;
+		padding: 15px;
+		animation-name: intro3;
+		animation-duration: 0.8s;
+		position:inherit;
+		left:-10vw;
+		width:30vw;
+		background-color: transparent;
+	}
   img.m1 {
     position: absolute;
 		animation-name: intro2;
@@ -108,6 +169,8 @@
 		animation-duration: 0.8s;
 		right:5vw;
 		bottom:5vh;
+		width:30vw;
+		height:auto;
 		border-radius: 15px 15px 15px 15px;
 		-moz-box-shadow: 10px 10px 5px rgba(20,20,20,0.5);
   	-webkit-box-shadow: 10px 10px 5px rgba(20,20,20,0.5);
@@ -121,7 +184,7 @@
 		border-radius: 50%;
 		position: fixed;
 		bottom: 5px;
-		float:"left";
+		float:left;
   }
 	p.m2 {
 		max-width: 50px;
@@ -141,8 +204,15 @@
   }
 
   div.imgT {
+		top:15vh;
 		position:absolute;
-		background-color: rgba(255,255,255,0.25);
+		width:50vw;
+  }
+	div.imgT2 {
+		width:10vw;
+		top:40vh;
+		position:absolute;
+		right:20vw;
   }
 	div.main {
 		background-color: rgba(255,102,204,0.2);
@@ -170,6 +240,50 @@
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
+		text-shadow:
+    -1px -1px 0 rgba(20,20,20,0),
+    1px -1px 0 rgba(20,20,20,0),
+    -1px 1px 0 rgba(20,20,20,0),
+    1px 1px 0 rgba(20,20,20,0);
+	}
+	div.skillT {
+		position: relative;
+	}
+
+	#background {
+		width:0;
+		height:1vh;
+		position: absolute;
+		background-color: rgba(20,20,20,0.75);
+		border-radius: 30px 30px 30px 30px;
+		animation-name: skillbar;
+		animation-delay: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: forwards;
+	}
+
+	#LuaSkill {
+		width: 90%;
+		height: 1vh;
+		position: inherit;
+		border-radius: 30px 30px 30px 30px;
+		background-image: linear-gradient(120deg, #ff66cc 0%, #8fd3f4 100%);
+	}
+
+	#JSSkill {
+		width: 75%;
+		height: 1vh;
+		position: inherit;
+		border-radius: 30px 30px 30px 30px;
+		background-image: linear-gradient(120deg, #ff66cc 0%, #8fd3f4 100%);
+	}
+
+	#CPPSkill {
+		width: 70%;
+		height: 1vh;
+		position: inherit;
+		border-radius: 30px 30px 30px 30px;
+		background-image: linear-gradient(120deg, #ff66cc 0%, #8fd3f4 100%);
 	}
 
   </style>
@@ -189,17 +303,37 @@
   </head>
   <body>
     <div class="main">
-      <h1 align=center class = "main" >Fragly's Awesome Website</h1>
+      <h1 align=center class = "main" >theFragly.com</h1>
 	    <ul class="m">
 	      <li class="m"><a id = "home"> About Me </a></li>
 	      <li class="m"><a id = "cat"> Contact Information </a></li>
 	      <li class="m"><a id = "a1"> Roblox-Creations </a></li>
-				 <li class="m" style="float:right;"><a id = "a1" href="https://www.theFragly.com/dev/privacy"> Privacy Policy </a></li>
+				<!-- <li class="m" style="float:right;"><a id = "a1" href="https://www.theFragly.com/dev/privacy"> Privacy Policy </a></li> -->
 	    </ul>
 		</div>
 		<div id="blockD" class="imgT">
 			<p id = "text1" class = "rb"> Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around!  </p>
 			<p id = "text2" class = "rb2"> Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around!  </p>
+		</div>
+
+		<div id="blockD2" class="imgT2">
+			<p id = "text3" class = "rb5"> Over the years I've gained many skills and learned many languages, this is my knowledge of my most used languages </p>
+			<p id = "text4" class = "rb6"> Over the years I've gained many skills and learned many languages, this is my knowledge of my most used languages </p>
+			<br> <br> <br>
+			<p id = "text3" class = "rb3"> Lua </p>
+			<p id = "text4" class = "rb4"> Lua </p>
+			<br> <br> <br>
+			<div id="background"><div id="LuaSkill"></div></div>
+
+			<p id = "text3" class = "rb3"> Javascript </p>
+			<p id = "text4" class = "rb4"> Javascript </p>
+			<br> <br> <br>
+			<div id="background"><div id="JSSkill"></div></div>
+
+			<p id = "text3" class = "rb3"> C++ (Arduino) </p>
+			<p id = "text4" class = "rb4"> C++ (Arduino) </p>
+			<br> <br> <br>
+			<div id="background"><div id="CPPSkill"></div></div>
 		</div>
 		<img id = "catimg" src="../../recourses/review.png" class="m1">
 
@@ -253,6 +387,7 @@
 		const t2 = document.getElementById("text2");
     const cm = document.getElementById("catimg");
 		const el = document.body
+
 		function reset_animation(element) {
 			var el = document.getElementById(element);
 			el.style.animation = 'none';
@@ -270,27 +405,27 @@
 			reset_animation("catimg");
 			document.getElementById("videos").style.display = "none";
 			document.getElementById("blockD").style.display = "block";
+			document.getElementById("blockD2").style.display = "block";
+
+
      });
      document.getElementById("cat").addEventListener("click", () => {
         t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
 				t2.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
-        cm.src = ""; // https://www.thefragly.com/recourses/cat.png
+        cm.src = "";
 				reset_animation("text1");
 				reset_animation("text2");
 				document.getElementById("videos").style.display = "none";
 				document.getElementById("blockD").style.display = "block";
-
+				document.getElementById("blockD2").style.display = "none";
       });
 			document.getElementById("a1").addEventListener("click", () => {
         t1.innerHTML = ""
 				t2.innerHTML = ""
 				cm.src = "";
-				document.getElementsByClassName("videoTitle").color = "rgba(255,255,255,0)"
-				setTimeout(function() {
-				    document.getElementsByClassName("videoTitle").color = "rgba(255,255,255,1)"
-				}, 2000);
         document.getElementById("videos").style.display = "block";
 				document.getElementById("blockD").style.display = "none";
+				document.getElementById("blockD2").style.display = "none";
       });
 		el.addEventListener("mousemove", (e) => {
 			var pageX = e.pageX - (window.innerWidth / 2);
