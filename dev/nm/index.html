@@ -399,20 +399,18 @@
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
 			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
-      cm.src = "../../recourses/review.png";
+      cm.style.visibility = "visible"
 	   	reset_animation("text1");
 			reset_animation("text2");
 			reset_animation("catimg");
 			document.getElementById("videos").style.display = "none";
 			document.getElementById("blockD").style.display = "block";
 			document.getElementById("blockD2").style.display = "block";
-
-
      });
      document.getElementById("cat").addEventListener("click", () => {
         t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
 				t2.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
-        cm.src = "";
+        cm.style.visibility = "hidden"
 				reset_animation("text1");
 				reset_animation("text2");
 				document.getElementById("videos").style.display = "none";
@@ -422,7 +420,7 @@
 			document.getElementById("a1").addEventListener("click", () => {
         t1.innerHTML = ""
 				t2.innerHTML = ""
-				cm.src = "";
+				cm.style.visibility = "hidden"
         document.getElementById("videos").style.display = "block";
 				document.getElementById("blockD").style.display = "none";
 				document.getElementById("blockD2").style.display = "none";
