@@ -38,6 +38,10 @@
   from {width: 0vw; }
   to { width: 10vw; }
 	}
+	@keyframes messages{
+  from {right: -30vw; }
+  to { right: 30vw; }
+	}
 
   ul.m {
     list-style-type: none;
@@ -237,6 +241,8 @@
 		top:12vh;
 		position:absolute;
 		right:30vw;
+		animation-name: messages;
+		animation-duration: 1s;
   }
 	div.main {
 		background-color: rgba(255,102,204,0.2);
