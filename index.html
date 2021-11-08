@@ -42,6 +42,18 @@
   from {right: -30vw; }
   to { right: 30vw; }
 	}
+	@keyframes img1 {
+  from {height: 0vh; }
+  to { height: 40vh; }
+	}
+	@keyframes img2 {
+  from {height: 0vh; }
+  to { height: 50vh; }
+	}
+	@keyframes img3 {
+  from {height: 0vh; }
+  to { height: 30vh; }
+	}
 
   ul.m {
     list-style-type: none;
@@ -315,6 +327,21 @@
 		width:100vw;
 	}
 
+	img.img1 {
+		animation-name: img1;
+		animation-duration: 0.4s;
+	}
+
+	img.img2 {
+		animation-name: img2;
+		animation-duration: 1.25s;
+	}
+
+	img.img3 {
+		animation-name: img3;
+		animation-duration: 0.8s;
+	}
+
 	#background {
 		width:0;
 		height:1vh;
@@ -461,9 +488,9 @@
 		</div>
 
 		<div id="currentShit">
-			<img src="https://media.discordapp.net/attachments/891062527889395726/892136147738845207/unknown.png">
-			<img height="500vh" src="https://media.discordapp.net/attachments/796385861017141268/907002460076388402/unknown.png">
-			<img height="300vh" src="https://media.discordapp.net/attachments/796385861017141268/907002932975767602/unknown.png">
+			<img class="img1" height="400vh" src="https://media.discordapp.net/attachments/891062527889395726/892136147738845207/unknown.png">
+			<img class="img2" height="500vh" src="https://media.discordapp.net/attachments/796385861017141268/907002460076388402/unknown.png">
+			<img class="img3" height="300vh" src="https://media.discordapp.net/attachments/796385861017141268/907002932975767602/unknown.png">
 		</div>
 
 		<br>
