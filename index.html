@@ -110,6 +110,7 @@
 		width:10vw;
 		background-color: rgba(255,255,255,0.25);
 		filter: blur(8px);
+		z-index: 3;
 	}
   p.rb {
     background-color: #232323;
@@ -122,6 +123,7 @@
 		width:40vw;
 		background-color: rgba(255,255,255,0.25);
 		filter: blur(8px);
+		z-index: 3;
 	}
 	p.rb2 {
 		background-color: #232323;
@@ -133,6 +135,7 @@
 		position:inherit;
 		width:40vw;
 		background-color: transparent;
+		z-index: 3;
 	}
 	p.rb3 {
     background-color: #232323;
@@ -145,6 +148,7 @@
 		width:20vw;
 		background-color: rgba(255,255,255,0.25);
 		filter: blur(8px);
+		z-index: 3;
 	}
 	p.rb4 {
 		background-color: #232323;
@@ -156,6 +160,7 @@
 		position:inherit;
 		width:20vw;
 		background-color: transparent;
+		z-index: 3;
 	}
 	p.rb5 {
 		background-color: #232323;
@@ -170,6 +175,7 @@
 		top:-15vh;
 		background-color: rgba(255,255,255,0.25);
 		filter: blur(8px);
+		z-index: 3;
 	}
 	p.rb6 {
 		background-color: #232323;
@@ -183,6 +189,7 @@
 		width:30vw;
 		top:-15vh;
 		background-color: transparent;
+		z-index: 3;
 	}
   img.m1 {
     position: absolute;
@@ -344,6 +351,11 @@
 		background-image: linear-gradient(120deg, #ff66cc 0%, #8fd3f4 100%);
 	}
 
+	#currentShit {
+		float:left;
+		filter: blur(2px);
+	}
+
   </style>
   <head>
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5910259868525436" crossorigin="anonymous"></script>
@@ -446,7 +458,12 @@
 			<video id="videoFrame" width="640" height="264" class = "m2" controls>
 				<source id="videoPlayer" src="../../recourses/creationVideos/cloth.mp4">
 			</video> <br>
+		</div>
 
+		<div id="currentShit">
+			<img src="https://media.discordapp.net/attachments/891062527889395726/892136147738845207/unknown.png">
+			<img height="500vh" src="https://media.discordapp.net/attachments/796385861017141268/907002460076388402/unknown.png">
+			<img height="300vh" src="https://media.discordapp.net/attachments/796385861017141268/907002932975767602/unknown.png">
 		</div>
 
 		<br>
@@ -473,6 +490,7 @@
 
 		document.getElementById("blockD3").style.display = "none";
 		document.getElementById("videos").style.display = "none";
+		document.getElementById("currentShit").style.display = "none";
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
 			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
@@ -484,6 +502,7 @@
 			document.getElementById("blockD").style.display = "block";
 			document.getElementById("blockD2").style.display = "block";
 			document.getElementById("blockD3").style.display = "none";
+			document.getElementById("currentShit").style.display = "none";
      });
      document.getElementById("cat").addEventListener("click", () => {
         t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
@@ -495,6 +514,7 @@
 				document.getElementById("blockD").style.display = "block";
 				document.getElementById("blockD2").style.display = "none";
 				document.getElementById("blockD3").style.display = "block";
+				document.getElementById("currentShit").style.display = "none";
       });
 			document.getElementById("a1").addEventListener("click", () => {
         t1.innerHTML = ""
@@ -504,10 +524,11 @@
 				document.getElementById("blockD").style.display = "none";
 				document.getElementById("blockD2").style.display = "none";
 				document.getElementById("blockD3").style.display = "none";
+				document.getElementById("currentShit").style.display = "none";
       });
 			document.getElementById("current").addEventListener("click", () => {
-				t1.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Play the game here!</a>"
-				t2.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Play the game here!</a>"
+				t1.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
+				t2.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
         cm.style.visibility = "hidden"
 				reset_animation("text1");
 				reset_animation("text2");
@@ -515,6 +536,7 @@
 				document.getElementById("blockD").style.display = "block";
 				document.getElementById("blockD2").style.display = "none";
 				document.getElementById("blockD3").style.display = "none";
+				document.getElementById("currentShit").style.display = "block";
       });
 		el.addEventListener("mousemove", (e) => {
 			var pageX = e.pageX - (window.innerWidth / 2);
