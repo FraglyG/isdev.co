@@ -88,7 +88,6 @@
 }
 
   body {
-    /*background: rgba(200, 200, 200, 1) /* Green background with 30% opacity */
     background-image: url("../../recourses/screen1.png");
     background-size: 120% auto;
     color: white;
@@ -348,7 +347,6 @@
   </style>
   <head>
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5910259868525436" crossorigin="anonymous"></script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3CGW8F490"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
@@ -367,7 +365,7 @@
 	      <li class="m"><a id = "home"> About Me </a></li>
 	      <li class="m"><a id = "cat"> Contact Information </a></li>
 	      <li class="m"><a id = "a1"> Roblox-Creations </a></li>
-				<!-- <li class="m" style="float:right;"><a id = "a1" href="https://www.theFragly.com/dev/privacy"> Privacy Policy </a></li> -->
+				<li class="m"><a id = "current"> Current Project </a></li>
 	    </ul>
 		</div>
 		<div id="blockD" class="imgT">
@@ -469,7 +467,7 @@
 		function reset_animation(element) {
 			var el = document.getElementById(element);
 			el.style.animation = 'none';
-			el.offsetHeight; /* trigger reflow */
+			el.offsetHeight;
 			el.style.animation = null;
 		};
 
@@ -507,6 +505,17 @@
 				document.getElementById("blockD2").style.display = "none";
 				document.getElementById("blockD3").style.display = "none";
       });
+			document.getElementById("current").addEventListener("click", () => {
+				t1.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Play the game here!</a>"
+				t2.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Play the game here!</a>"
+        cm.style.visibility = "hidden"
+				reset_animation("text1");
+				reset_animation("text2");
+				document.getElementById("videos").style.display = "none";
+				document.getElementById("blockD").style.display = "block";
+				document.getElementById("blockD2").style.display = "none";
+				document.getElementById("blockD3").style.display = "none";
+      });
 		el.addEventListener("mousemove", (e) => {
 			var pageX = e.pageX - (window.innerWidth / 2);
       var pageY = e.pageY - (window.innerHeight / 2);
@@ -523,24 +532,5 @@
 			var url = "https://discord.com/api/webhooks/902928892644454431/cosRrvHNoB4HBjIfnNVj_ekIkwvd4CHD0pUAvPdKmY-VrOIZVAUYVCCnWMFQ4lXgJOfY";
 			$.post(url, { "content": $("#content1").val() }, function () { document.getElementById("content1").value = "Message Sent"; });
 		});
-
-		document.getElementById("content2").addEventListener("click", () => {
-			if (document.getElementById("content2").value == "Message Sent") { document.getElementById("content2").value = ""; };
-		});
-		document.getElementById("send2").addEventListener("click", () => {
-			var url = "https://discord.com/api/webhooks/902949758275035178/g_Q1wpJHKK4HF_p0szcaQ04rlfNmGhPAVeVPzIOINDxJqmVUAvMI7HdQmPT9BWg-GFTE";
-			if (document.getElementById("content2").value.split(" ")[0] == "kekwlel") { document.getElementById("content2").value = "<@464968486947389441> " + document.getElementById("content2").value.split(' ').slice(1).join(' ') };
-			$.post(url, { "content": $("#content2").val() }, function () { document.getElementById("content2").value = "Message Sent"; });
-		});
-
-		document.getElementById("content3").addEventListener("click", () => {
-			if (document.getElementById("content3").value == "Message Sent") { document.getElementById("content3").value = ""; };
-		});
-		document.getElementById("send3").addEventListener("click", () => {
-			var url = "https://discord.com/api/webhooks/902949147601170463/ZSsI4UBoNQCZB6vOhgYQf6iPV7LEJ8n5wS7-18ilV674ex21zzIe-4J25GxovsBsVYfz";
-			if (document.getElementById("content3").value.split(" ")[0] == "kekwlel") { document.getElementById("content3").value = "<@464968486947389441> " + document.getElementById("content3").value.split(' ').slice(1).join(' ') };
-			$.post(url, { "content": $("#content3").val() }, function () { document.getElementById("content3").value = "Message Sent"; });
-		});
     </script>
-
 </html>
