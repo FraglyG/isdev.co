@@ -541,7 +541,8 @@
 			document.getElementById("textBox1"),
 			document.getElementById("skillsBlock"),
 			document.getElementById("sendMessage"),
-			document.getElementById("currentShit")
+			document.getElementById("currentShit"),
+			document.getElementById("catimg");
 		];
 
 		function closeAll(apartFromThese) {
@@ -574,16 +575,14 @@
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
 			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
-      cm.style.visibility = "visible"
 	   	reset_animation("text1");
 			reset_animation("text2");
 			reset_animation("catimg");
-			closeAll(["textBox1", "skillsBlock"]);
+			closeAll(["textBox1", "skillsBlock", "catimg"]);
      });
      document.getElementById("cat").addEventListener("click", () => {
         t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
 				t2.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
-        cm.style.visibility = "hidden"
 				reset_animation("text1");
 				reset_animation("text2");
 				closeAll(["textBox1", "sendMessage"]);
@@ -591,13 +590,11 @@
 			document.getElementById("a1").addEventListener("click", () => {
         t1.innerHTML = ""
 				t2.innerHTML = ""
-				cm.style.visibility = "hidden"
         closeAll(["videos"]);
       });
 			document.getElementById("current").addEventListener("click", () => {
 				t1.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
 				t2.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
-        cm.style.visibility = "hidden"
 				reset_animation("text1");
 				reset_animation("text2");
 				closeAll(["textBox1", "currentShit"]);
