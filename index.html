@@ -547,19 +547,17 @@
 		function closeAll(apartFromThese) {
 			function isVisible(element) {
 				var isVisible = false;
-				for (let elementinT in apartFromThese) {
-					if (element.id == elementinT) {
+				apartFromThese.forEach(function(value,i) {
+					if (element.id == value) {
 						isVisible = true;
 					};
-				};
+				});
 				return isVisible;
 			};
 			for (let element in elements) {
 				if (isVisible(elements[element])==true){
-					console.log("Visible: "+elements[element].id)
 					elements[element].style.display = "block";
 				} else {
-					console.log("not Visible: "+elements[element].id)
 					elements[element].style.display = "none";
 				};
 			};
