@@ -100,7 +100,7 @@
 }
 
   body {
-    background-image: url("../../recourses/screen1.png");
+    background-image: url("../../recourses/screenmicropp.png");
     background-size: 120% auto;
     color: white;
 		text-shadow:
@@ -110,6 +110,33 @@
     1px 1px 0 rgba(20,20,20,0.2);
     font-family:'Oswald';font-size: 2vh;
   }
+
+	@media screen and (min-width: 487px) and (max-width: 1079px) {
+		body {
+			background-image: url("../../recourses/screenmob.png");
+			background-size: 120% auto;
+			color: white;
+			text-shadow:
+			-1px -1px 0 rgba(20,20,20,0.2),
+			1px -1px 0 rgba(20,20,20,0.2),
+			-1px 1px 0 rgba(20,20,20,0.2),
+			1px 1px 0 rgba(20,20,20,0.2);
+			font-family:'Oswald';font-size: 2vh;
+		}
+	}
+	@media screen and (max-width: 487px) {
+		body {
+			background-image: url("../../recourses/screenmicropp.png");
+			background-size: 120% auto;
+			color: white;
+			text-shadow:
+			-1px -1px 0 rgba(20,20,20,0.2),
+			1px -1px 0 rgba(20,20,20,0.2),
+			-1px 1px 0 rgba(20,20,20,0.2),
+			1px 1px 0 rgba(20,20,20,0.2);
+			font-family:'Oswald';font-size: 2vh;
+		}
+	}
 
 	p.rb0 {
     background-color: #232323;
@@ -407,11 +434,11 @@
 				<li class="m"><a id = "current"> Current Project </a></li>
 	    </ul>
 		</div>
-		<div id="blockD" class="imgT">
+		<div id="textBox1" class="imgT">
 			<p id = "text1" class = "rb"> Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around!  </p>
 			<p id = "text2" class = "rb2"> Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around!  </p>
 		</div>
-		<div id="blockD2" class="imgT2">
+		<div id="skillsBlock" class="imgT2">
 			<p id = "text3" class = "rb5"> Over the years I've gained many skills and learned many languages, this is my knowledge of my most used languages </p>
 			<p id = "text4" class = "rb6"> Over the years I've gained many skills and learned many languages, this is my knowledge of my most used languages </p>
 			<br> <br> <br>
@@ -431,7 +458,7 @@
 			<div id="background"><div id="CPPSkill"></div></div>
 		</div>
 
-		<div id="blockD3" class="imgT3">
+		<div id="sendMessage" class="imgT3">
 			<p id = "text3" class = "rb5"> Send me a message and I'll read it as soon as I can! </p>
 			<p id = "text4" class = "rb6"> Send me a message and I'll read it as soon as I can! </p>
 
@@ -509,6 +536,23 @@
     const cm = document.getElementById("catimg");
 		const el = document.body
 
+		var elements = [
+			document.getElementById("videos"),
+			document.getElementById("textBox1"),
+			document.getElementById("skillsBlock"),
+			document.getElementById("sendMessage"),
+			document.getElementById("currentShit")
+		];
+
+		function closeAll(apartFromThese) {
+			for (let element in elements) {
+			  elements[element].style.display = "none";
+			};
+			for (let element in apartFromThese) {
+				elements[element].style.display = "block";
+			};
+		};
+
 		function reset_animation(element) {
 			var el = document.getElementById(element);
 			el.style.animation = 'none';
@@ -516,9 +560,7 @@
 			el.style.animation = null;
 		};
 
-		document.getElementById("blockD3").style.display = "none";
-		document.getElementById("videos").style.display = "none";
-		document.getElementById("currentShit").style.display = "none";
+		closeAll(["blockD", "blockD2"]);
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
 			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
@@ -526,11 +568,7 @@
 	   	reset_animation("text1");
 			reset_animation("text2");
 			reset_animation("catimg");
-			document.getElementById("videos").style.display = "none";
-			document.getElementById("blockD").style.display = "block";
-			document.getElementById("blockD2").style.display = "block";
-			document.getElementById("blockD3").style.display = "none";
-			document.getElementById("currentShit").style.display = "none";
+			closeAll(["blockD", "blockD2"]);
      });
      document.getElementById("cat").addEventListener("click", () => {
         t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
@@ -538,21 +576,13 @@
         cm.style.visibility = "hidden"
 				reset_animation("text1");
 				reset_animation("text2");
-				document.getElementById("videos").style.display = "none";
-				document.getElementById("blockD").style.display = "block";
-				document.getElementById("blockD2").style.display = "none";
-				document.getElementById("blockD3").style.display = "block";
-				document.getElementById("currentShit").style.display = "none";
+				closeAll(["blockD", "blockD3"]);
       });
 			document.getElementById("a1").addEventListener("click", () => {
         t1.innerHTML = ""
 				t2.innerHTML = ""
 				cm.style.visibility = "hidden"
-        document.getElementById("videos").style.display = "block";
-				document.getElementById("blockD").style.display = "none";
-				document.getElementById("blockD2").style.display = "none";
-				document.getElementById("blockD3").style.display = "none";
-				document.getElementById("currentShit").style.display = "none";
+        closeAll(["videos"]);
       });
 			document.getElementById("current").addEventListener("click", () => {
 				t1.innerHTML = "You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
@@ -560,11 +590,7 @@
         cm.style.visibility = "hidden"
 				reset_animation("text1");
 				reset_animation("text2");
-				document.getElementById("videos").style.display = "none";
-				document.getElementById("blockD").style.display = "block";
-				document.getElementById("blockD2").style.display = "none";
-				document.getElementById("blockD3").style.display = "none";
-				document.getElementById("currentShit").style.display = "block";
+				closeAll(["blockD", "currentShit"]);
       });
 		el.addEventListener("mousemove", (e) => {
 			var pageX = e.pageX - (window.innerWidth / 2);
