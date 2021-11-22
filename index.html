@@ -536,13 +536,13 @@
     const cm = document.getElementById("catimg");
 		const el = document.body
 
-		var elements = [
-			document.getElementById("videos"),
-			document.getElementById("textBox1"),
-			document.getElementById("skillsBlock"),
-			document.getElementById("sendMessage"),
-			document.getElementById("currentShit")
-		];
+		var elements = [];
+		elements["videos"] = document.getElementById("videos");
+		elements["textBox1"] = document.getElementById("textBox1");
+		elements["skillsBlock"] = document.getElementById("skillsBlock");
+		elements["sendMessage"] = document.getElementById("sendMessage");
+		elements["currentShit"] = document.getElementById("currentShit");
+
 
 		function closeAll(apartFromThese) {
 			for (let element in elements) {
