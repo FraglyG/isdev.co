@@ -367,6 +367,7 @@
 	img.img3 {
 		animation-name: img3;
 		animation-duration: 0.8s;
+		display:none;
 	}
 
 	#background {
@@ -476,7 +477,7 @@
 		</div>
 		<img id = "catimg" src="../../recourses/review.png" class="m1">
 
-		<div id="videos">
+		<div id="videos" style="display:none;">
 			<br> <h1 align="center" class="videoTitle"> Miscellaneous </h1>
 			<video id="videoFrame" width="640" height="264" class = "m1"  controls>
 				<source id="videoPlayer" src="../../recourses/creationVideos/infinite_world.mp4">
@@ -514,7 +515,7 @@
 			</video> <br>
 		</div>
 
-		<div id="currentShit">
+		<div id="currentShit" style="display:none;">
 			<img class="img1" height="400vh" src="https://media.discordapp.net/attachments/891062527889395726/892136147738845207/unknown.png">
 			<img class="img2" height="500vh" src="https://media.discordapp.net/attachments/796385861017141268/907002460076388402/unknown.png">
 			<img class="img3" height="300vh" src="https://media.discordapp.net/attachments/796385861017141268/907002932975767602/unknown.png">
@@ -530,7 +531,6 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"> </script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
   <script>
-
     const t1 = document.getElementById("text1");
 		const t2 = document.getElementById("text2");
     const cm = document.getElementById("catimg");
@@ -571,7 +571,7 @@
 			el.style.animation = null;
 		};
 
-		closeAll(["textBox1", "skillsBlock"]);
+		closeAll(["textBox1", "skillsBlock", "catimg"]);
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
 			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
