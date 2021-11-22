@@ -546,9 +546,11 @@
 
 		function closeAll(apartFromThese) {
 			for (let element in elements) {
+				console.log("not Visible: "+elements[element].id)
 			  elements[element].style.display = "none";
 			};
 			for (let element in apartFromThese) {
+				console.log("Visible: "+elements[element].id)
 				elements[element].style.display = "block";
 			};
 		};
