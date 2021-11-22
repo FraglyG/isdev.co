@@ -536,22 +536,28 @@
     const cm = document.getElementById("catimg");
 		const el = document.body
 
-		var elements = [];
-		elements["videos"] = document.getElementById("videos");
-		elements["textBox1"] = document.getElementById("textBox1");
-		elements["skillsBlock"] = document.getElementById("skillsBlock");
-		elements["sendMessage"] = document.getElementById("sendMessage");
-		elements["currentShit"] = document.getElementById("currentShit");
-
+		var elements = [
+			document.getElementById("videos"),
+			document.getElementById("textBox1"),
+			document.getElementById("skillsBlock"),
+			document.getElementById("sendMessage"),
+			document.getElementById("currentShit")
+		];
 
 		function closeAll(apartFromThese) {
-			for (let element in elements) {
-				console.log("not Visible: "+elements[element].id)
-			  elements[element].style.display = "none";
+			function isVisible(element) {
+				var isVisible = false;
+				for (let elementinT in apartFromThese) { if element.id == elementinT {isVisible = true;};};
+				return isVisible;
 			};
-			for (let element in apartFromThese) {
-				console.log("Visible: "+elements[element].id)
-				elements[element].style.display = "block";
+			for (let element in elements) {
+				if (isVisible(elements[element])==true){
+					console.log("Visible: "+elements[element].id)
+					elements[element].style.display = "block";
+				} else {
+					console.log("not Visible: "+elements[element].id)
+					elements[element].style.display = "none";
+				};
 			};
 		};
 
