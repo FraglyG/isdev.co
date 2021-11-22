@@ -3,12 +3,8 @@
 <link href='https://fonts.googleapis.com/css?family=Rampart One' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
-<link href="http://fonts.cdnfonts.com/css/magario" rel="stylesheet">
-
 
 <style>
-	@import url('http://fonts.cdnfonts.com/css/magario');
-
 	@keyframes intro {
 	from {left:-1000px;}
 	to {left:0px;}
@@ -394,10 +390,14 @@
 		animation-duration: 0.8s;
 	}
 
+	@font-face {
+		font-family: 'Magario';
+		src: url("Magario.ttf");
+	}
+
 	h3.bewilderedTitle {
 		font-size: 4vh;
-		font-weight: bolder;
-		font-family: 'Magario', sans-serif;
+		font-family: 'Magario';
 		background: -webkit-linear-gradient(#279832, #A5ED63);
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
