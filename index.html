@@ -108,7 +108,7 @@
 }
 
   body {
-    background-image: url("../../recourses/screenpc.png");
+    background-image: url("recourses/screenpc.png");
     background-size: 120% auto;
     color: white;
 		text-shadow:
@@ -121,7 +121,7 @@
 
 	@media screen and (min-width: 487px) and (max-width: 1079px) {
 		body {
-			background-image: url("../../recourses/screenmob.png");
+			background-image: url("recourses/screenmob.png");
 			background-size: 120% auto;
 			color: white;
 			text-shadow:
@@ -134,7 +134,7 @@
 	}
 	@media screen and (max-width: 487px) {
 		body {
-			background-image: url("../../recourses/screenmicropp.png");
+			background-image: url("recourses/screenmicropp.png");
 			background-size: 120% auto;
 			color: white;
 			text-shadow:
@@ -444,7 +444,103 @@
 		filter: blur(2px);
 	}
 
+	@keyframes scAnim {
+	  from {top:145vh;}
+	  to {top:45vh;}
+	}
+
+	@keyframes showcaseAnim {
+	  from {top:130vh;}
+	  to {left:15vh;}
+	}
+
+	#showcase {
+		display:none;
+		position:absolute;
+		height: 25vh;
+		width: 80vw;
+		left: 10vw;
+		top: 15vh;
+
+		box-shadow: 0px 0px 0px 0px rgba(255, 102, 204, 0.9);
+		-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		border-radius: 16.5px 16.5px 16.5px 16.5px;
+
+		animation-name: showcaseAnim;
+  	animation-duration: 1s;
+	}
+
+	#showcase::after {
+		-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	#showcaseBG {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		box-shadow: 0px 0px 20px 5px rgba(255, 102, 204,0.75);
+
+		-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		border-radius: 16.5px 16.5px 16.5px 16.5px;
+	}
+
+	#showcaseBG::after {
+		-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	#showcaseimg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url("recourses/thumbnail1.png");
+		border-radius: 16.5px 16.5px 16.5px 16.5px;
+		background-size: 100% 100%;
+		box-shadow: 0 0 40px 2px rgba(255, 102, 204) inset;
+	}
+
+	#showcaseContent {
+		position: absolute;
+		top:145vh;
+		left:9vw;
+		animation-name: scAnim;
+  	animation-duration: 1s;
+		animation-delay: 0.25s;
+		animation-fill-mode: forwards;
+	}
+
+	#logo {
+		position: absolute;
+		top:145vh;
+		right:2vw;
+		width:30vw;
+		height:auto;
+
+		animation-name: scAnim;
+  	animation-duration: 1s;
+		animation-delay: 0.5s;
+		animation-fill-mode: forwards;
+	}
+
   </style>
+	<!---
+
+	box-shadow: inset 30px 0px 21px -3px rgba(255, 102, 204);
+	box-shadow: -30px 0px 21px -3px rgba(255, 102, 204, 0.9);
+
+	box-shadow: inset -30px 0px 21px -3px rgba(255, 102, 204);
+	box-shadow: 30px 0px 21px -3px rgba(255, 102, 204, 0.9);
+
+box-shadow: 40vw 10px 5px rgba(20,20,20,0.2);
+-webkit-box-shadow: inset 30px 0px 21px -3px rgba(255, 102, 204, 0.75);
+-moz-box-shadow:    inset 30px 0px 21px -3px rgba(255, 102, 204, 0.75);
+box-shadow:         inset 30px 0px 21px -3px rgba(255, 102, 204, 0.75);
+
+	moz-box-shadow: 10px 10px 5px rgba(20,20,20,0.2);
+	-webkit-box-shadow: 10px 10px 5px rgba(20,20,20,0.2);-->
   <head>
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5910259868525436" crossorigin="anonymous"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3CGW8F490"></script>
@@ -508,52 +604,67 @@
 			<br>
 			<ul class="m"><li class="m1"><a class = "rb0" id="send3">send</a></li></ul>
 		</div>
-		<img id = "catimg" src="../../recourses/review.png" class="m1">
+		<img id = "catimg" src="recourses/review.png" class="m1">
 
 		<div id="videos" style="display:none;">
 			<br> <h1 align="center" class="videoTitle"> Miscellaneous </h1>
 			<video id="videoFrame" width="640" height="264" class = "m1"  controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/infinite_world.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/infinite_world.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m2" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/door.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/door.mp4">
 			</video> <br>
 
 			<br> <h1 align="center" class="videoTitle"> Cool Knife Thing </h1>
 			<video id="videoFrame" width="640" height="264" class = "m1" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/knife1.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/knife1.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m2" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/knife2.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/knife2.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m1" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/knife3.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/knife3.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m2" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/knife4.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/knife4.mp4">
 			</video> <br>
 
 			<br> <h1 align="center" class="videoTitle"> Cape Simulation </h1>
 			<video id="videoFrame" width="640" height="264" class = "m1" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/cape1.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/cape1.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m2" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/cape2.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/cape2.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m1" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/cape3.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/cape3.mp4">
 			</video> <br>
 			<video id="videoFrame" width="640" height="264" class = "m2" controls>
-				<source id="videoPlayer" src="../../recourses/creationVideos/cloth.mp4">
+				<source id="videoPlayer" src="recourses/creationVideos/cloth.mp4">
 			</video> <br>
 		</div>
 
+		<div id="currentShit2" style="display:none;">
+			<div id="showcase" href="https://www.youtube.com">
+				<div id="showcaseBG"></div>
+				<div id="showcaseimg"></div>
+			</div>
+			<div id="showcaseContent">
+				<h3 class='bewilderedTitle'>BEWILDERED</h3>You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br>
+				 Explore, Survive and find a way back home <br>
+				 <a href="https://discord.gg/GSEp2sCejv" class="link">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br>
+				 Game Link: <br> <a href="https://www.roblox.com/games/5917992173/" class="link">Main Game</a><br>
+				<a href="https://www.roblox.com/games/7890174651/" class="link">Holloween Spinoff</a>
+			</div>
+			<img id="logo" src="recourses/logoBewildered.png">
+		</div>
+		<!--
 		<div id="currentShit" style="display:none;">
 			<img class="img0" height="800vh" src ="recourses/logoBewildered.png">
 			<img class="img1" height="400vh" src="https://media.discordapp.net/attachments/891062527889395726/892136147738845207/unknown.png">
 			<img class="img2" height="500vh" src="https://media.discordapp.net/attachments/796385861017141268/907002460076388402/unknown.png">
 			<img class="img3" height="300vh" src="https://media.discordapp.net/attachments/796385861017141268/907002932975767602/unknown.png">
-		</div>
+		</div>-->
 
 		<br>
 		<div>
@@ -568,15 +679,30 @@
     const t1 = document.getElementById("text1");
 		const t2 = document.getElementById("text2");
     const cm = document.getElementById("catimg");
+		const sc = document.getElementById("showcase");
+		const scbg = document.getElementById("showcaseBG");
 		const el = document.body
+
+		var showcaseSide = 0;
+		var showcaseEnabled = true;
+		if (window.innerWidth < window.innerHeight) { showcaseEnabled = false; document.getElementById("showcaseContent").style.top = window.innerHeight*0.15; };
 
 		var elements = [
 			document.getElementById("videos"),
 			document.getElementById("textBox1"),
 			document.getElementById("skillsBlock"),
 			document.getElementById("sendMessage"),
-			document.getElementById("currentShit"),
+			//document.getElementById("currentShit"),
 			document.getElementById("catimg"),
+			document.getElementById("showcase"),
+			document.getElementById("currentShit2"),
+		];
+
+		var showcaseCurrent = 0;
+		var showcaseimgs = [
+			'url("recourses/thumbnail1.png")',
+			'url("recourses/thumbnail2.png")',
+			'url("recourses/thumbnail3.png")',
 		];
 
 		function closeAll(apartFromThese) {
@@ -585,6 +711,7 @@
 				apartFromThese.forEach(function(value,i) {
 					if (element.id == value) {
 						isVisible = true;
+						if (element.id == "showcase" && showcaseEnabled == false) { isVisible = false; };
 					};
 				});
 				return isVisible;
@@ -598,6 +725,19 @@
 			};
 		};
 
+		var busy = false;
+		var reqsec = 0;
+		function hidescrl(seconds) {
+			if (busy == false) {
+				busy = true;
+				reqsec = 0;
+				el.style.overflow = "hidden"
+				setTimeout( function() { el.style.overflow = "auto"; if (reqsec>0) { busy=false; hidescrl(reqsec)}else{reqsec=0;busy=false;};}, seconds);
+			}else{
+				reqsec = seconds;
+			};
+		};
+
 		function reset_animation(element) {
 			var el = document.getElementById(element);
 			el.style.animation = 'none';
@@ -606,6 +746,37 @@
 		};
 
 		closeAll(["textBox1", "skillsBlock", "catimg"]);
+		if (document.URL.substr(document.URL.length-4, document.URL.length)=="home") {
+			t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
+			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
+	   	reset_animation("text1");
+			reset_animation("text2");
+			reset_animation("catimg");
+			closeAll(["textBox1", "skillsBlock", "catimg"]);
+		};
+		console.log(document.URL.substr(document.URL.length-7, document.URL.length));
+		if (document.URL.substr(document.URL.length-7, document.URL.length)=="contact") {
+			t1.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
+			t2.innerHTML = "Discord: Fragly#8394   |   id: 668241375409733652 <br> Roblox: <a href=\"https://www.roblox.com/users/549311695\" class=\"link\">FraglyGame</a>"
+			reset_animation("text1");
+			reset_animation("text2");
+			closeAll(["textBox1", "sendMessage"]);
+		};
+		if (document.URL.substr(document.URL.length-9, document.URL.length)=="creations") {
+			t1.innerHTML = ""
+			t2.innerHTML = ""
+			hidescrl(1250);
+      closeAll(["videos"]);
+		};
+		if (document.URL.substr(document.URL.length-7, document.URL.length)=="current") {
+			t1.innerHTML = "<h3 class='bewilderedTitle'>BEWILDERED</h3>You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
+			t2.innerHTML = "<h3 class='bewilderedTitle'>BEWILDERED</h3>You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
+			reset_animation("text1");
+			reset_animation("text2");
+			hidescrl(1750);
+			closeAll(["showcase","currentShit2"]);
+		};
+
     document.getElementById("home").addEventListener("click", () => {
 	   	t1.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
 			t2.innerHTML = "Hey there! <br>I'm Fragly, I'm a 17-year-old game developer, I started programming in 2018 and it became my passion.<br>I was born and raised in South Africa and is also where i currently live. <br><br>Welcome to my website, have a look around! "
@@ -624,6 +795,7 @@
 			document.getElementById("a1").addEventListener("click", () => {
         t1.innerHTML = ""
 				t2.innerHTML = ""
+				hidescrl(1250);
         closeAll(["videos"]);
       });
 			document.getElementById("current").addEventListener("click", () => {
@@ -631,23 +803,83 @@
 				t2.innerHTML = "<h3 class='bewilderedTitle'>BEWILDERED</h3>You follow the story of a lost space explorer who crashed on a seemingly deserted planet <br> Explore, Survive and find a way back home <br> <a href=\"https://discord.gg/GSEp2sCejv\" class=\"link\">[ Join The Discord! ]</a> <br> Made by solo developer Fragly <br><br> Game Link: <br> <a href=\"https://www.roblox.com/games/5917992173/\" class=\"link\">Main Game</a><br> <a href=\"https://www.roblox.com/games/7890174651/\" class=\"link\">Holloween Spinoff</a>"
 				reset_animation("text1");
 				reset_animation("text2");
-				closeAll(["textBox1", "currentShit"]);
+				hidescrl(1750);
+				closeAll(["showcase","currentShit2"]);
       });
-		el.addEventListener("mousemove", (e) => {
-			var pageX = e.pageX - (window.innerWidth / 2);
-      var pageY = e.pageY - (window.innerHeight / 2);
-      var x = (pageX * -1 - 25)/70;
-      var y = (pageY * -1 - 50)/70;
-		  el.style.backgroundPositionX = (x- (window.innerWidth / 10)) + "px";
-		  el.style.backgroundPositionY = (y- (window.innerHeight/ 10)) + "px" ;
-		});
+			sc.addEventListener("click", () => {
+				if (showcaseSide == 1) {
+					showcaseCurrent = showcaseCurrent + 1;
+					if (showcaseCurrent >= showcaseimgs.length) { showcaseCurrent = 0; };
+					document.getElementById("showcaseimg").style.backgroundImage = showcaseimgs[showcaseCurrent];
+				} else if (showcaseSide == -1) {
+					showcaseCurrent = showcaseCurrent - 1;
+					if (showcaseCurrent < 0) { showcaseCurrent = showcaseimgs.length-1; };
+					document.getElementById("showcaseimg").style.backgroundImage = showcaseimgs[showcaseCurrent];
+				};
+			});
 
-		document.getElementById("content1").addEventListener("click", () => {
-			if (document.getElementById("content1").value == "Message Sent") { document.getElementById("content1").value = ""; };
-		});
-		document.getElementById("send1").addEventListener("click", () => {
-			var url = "https://discord.com/api/webhooks/902928892644454431/cosRrvHNoB4HBjIfnNVj_ekIkwvd4CHD0pUAvPdKmY-VrOIZVAUYVCCnWMFQ4lXgJOfY";
-			$.post(url, { "content": $("#content1").val() }, function () { document.getElementById("content1").value = "Message Sent"; });
-		});
+			window.addEventListener('resize', reportWindowSize => {
+				if (window.innerWidth < window.innerHeight) {
+					showcaseEnabled = false;
+					document.getElementById("showcaseContent").style.top = window.innerHeight*0.15;
+				} else {
+					showcaseEnabled = true;
+					document.getElementById("showcaseContent").style.top = window.innerHeight*0.45;
+				};
+			});
+
+			el.addEventListener("mousemove", (e) => {
+				var pageX = e.pageX - (window.innerWidth / 2);
+	      var pageY = e.pageY - (window.innerHeight / 2);
+	      var x = (pageX * -1 - 25)/70;
+	      var y = (pageY * -1 - 50)/70;
+			  el.style.backgroundPositionX = (x- (window.innerWidth / 10)) + "px";
+			  el.style.backgroundPositionY = (y- (window.innerHeight/ 10)) + "px" ;
+
+				if (e.pageY > window.innerHeight*0.15 && e.pageY < window.innerHeight*0.4) {
+					if (e.pageX > window.innerWidth*0.1 && e.pageX < window.innerWidth*0.9) {
+						// ON IMAGE
+						scbg.style.boxShadow = "0px 0px 20px 7px rgba(190, 75, 150,0.75)"; // background
+						sc.style.width = window.innerWidth*0.81;
+						sc.style.height = window.innerHeight*0.26;
+						sc.style.left = window.innerWidth*0.095;
+						sc.style.top = window.innerHeight*0.145;
+						showcaseSide = 0;
+
+					if (e.pageX < window.innerWidth*0.3) { // LEFT SIDE
+						sc.style.boxShadow = "-30px 0px 50px 5px rgba(255, 102, 204, 0.9)";
+						scbg.style.boxShadow = "0px 0px 20px 1px rgba(190, 75, 150,0.75)"; // background
+						sc.style.left = window.innerWidth*0.085;
+						showcaseSide = -1;
+					} else {
+						if (e.pageX > window.innerWidth*0.6) { // RIGHT SIDE
+							sc.style.boxShadow = "30px 0px 50px 5px rgba(255, 102, 204, 0.9)";
+							scbg.style.boxShadow = "0px 0px 20px 1px rgba(190, 75, 150,0.75)"; // background
+							sc.style.left = window.innerWidth*0.11;
+							showcaseSide = 1;
+						} else { // NO SIDE CHOSEN
+							sc.style.boxShadow = "0px 0px 0px 0px rgba(255, 102, 204, 0.9)";
+							showcaseSide = 0;
+						};
+					};
+				};
+				} else { // NO SIDE CHOSEN not even on button
+					sc.style.boxShadow = "0px 0px 0px 0px rgba(255, 102, 204, 0.9)";
+					scbg.style.boxShadow = "0px 0px 20px 5px rgba(255, 102, 204,0.75)"; // background
+					sc.style.width = window.innerWidth*0.8;
+					sc.style.height = window.innerHeight*0.25;
+					sc.style.left = window.innerWidth*0.1;
+					sc.style.top = window.innerHeight*0.15;
+					showcaseSide = 0;
+				};
+			});
+
+			document.getElementById("content1").addEventListener("click", () => {
+				if (document.getElementById("content1").value == "Message Sent") { document.getElementById("content1").value = ""; };
+			});
+			document.getElementById("send1").addEventListener("click", () => {
+				var url = "https://discord.com/api/webhooks/902928892644454431/cosRrvHNoB4HBjIfnNVj_ekIkwvd4CHD0pUAvPdKmY-VrOIZVAUYVCCnWMFQ4lXgJOfY";
+				$.post(url, { "content": $("#content1").val() }, function () { document.getElementById("content1").value = "Message Sent"; });
+			});
     </script>
 </html>
