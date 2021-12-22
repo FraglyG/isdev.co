@@ -1,350 +1,140 @@
 <html>
   <style>
-    .ag-format-container {
-  width: 1142px;
-  margin: 0 auto;
-}
-
-
-html,
-body {
-  height: 100%;
-}
-
-.ag-smoke-block {
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-
-  overflow: hidden;
-
-  position: relative;
-}
-
-.ag-smoke_img {
-  width: 100%;
-  height: auto;
-
-  z-index: 10;
-  position: absolute;
-  bottom: 0;
-}
-.ag-smoke_img__left {
-  left: 0;
-
-  -webkit-animation: an-smoke-left 10s linear infinite;
-  -moz-animation: an-smoke-left 10s linear infinite;
-  -o-animation: an-smoke-left 10s linear infinite;
-  animation: an-smoke-left 10s linear infinite;
-}
-.ag-smoke_img__right {
-  right: 0;
-
-  -webkit-animation: an-smoke-right 10s linear infinite;
-  -moz-animation: an-smoke-right 10s linear infinite;
-  -o-animation: an-smoke-right 10s linear infinite;
-  animation: an-smoke-right 10s linear infinite;
-}
-
-@-webkit-keyframes an-smoke-left {
-  0%, 100% {
-    -webkit-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -webkit-transform: translate(-10%,0%);
-    transform: translate(-10%, 0%);
-  }
-  50% {
-    -webkit-transform: translate(-20%, 0%);
-    transform: translate(-20%, 0%);
-  }
-  75% {
-    -webkit-transform: translate(-10%, 0%);
-    transform: translate(-10%, 0%);
-  }
-}
-@-moz-keyframes an-smoke-left {
-  0%, 100% {
-    -moz-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -moz-transform: translate(-10%,0%);
-    transform: translate(-10%, 0%);
-  }
-  50% {
-    -moz-transform: translate(-20%, 0%);
-    transform: translate(-20%, 0%);
-  }
-  75% {
-    -moz-transform: translate(-10%, 0%);
-    transform: translate(-10%, 0%);
-  }
-}
-@-o-keyframes an-smoke-left {
-  0%, 100% {
-    -o-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -o-transform: translate(-10%,0%);
-    transform: translate(-10%, 0%);
-  }
-  50% {
-    -o-transform: translate(-20%, 0%);
-    transform: translate(-20%, 0%);
-  }
-  75% {
-    -o-transform: translate(-10%, 0%);
-    transform: translate(-10%, 0%);
-  }
-}
-@keyframes an-smoke-left {
-  0%, 100% {
-    -webkit-transform: translate(0%, 0%);
-    -moz-transform: translate(0%, 0%);
-    -o-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -webkit-transform: translate(-10%, 0%);
-    -moz-transform: translate(-10%, 0%);
-    -o-transform: translate(-10%, 0%);
-    transform: translate(-10%, 0%);
-  }
-  50% {
-    -webkit-transform: translate(-20%, 0%);
-    -moz-transform: translate(-20%, 0%);
-    -o-transform: translate(-20%, 0%);
-    transform: translate(-20%, 0%);
-  }
-  75% {
-    -webkit-transform: translate(-10%, 0%);
-    -moz-transform: translate(-10%, 0%);
-    -o-transform: translate(-10%, 0%);
-    transform: translate(-10%, 0%);
-  }
-}
-
-@-webkit-keyframes an-smoke-right {
-  0%, 100% {
-    -webkit-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -webkit-transform: translate(10%,0%);
-    transform: translate(10%, 0%);
-  }
-  50% {
-    -webkit-transform: translate(20%, 0%);
-    transform: translate(20%, 0%);
-  }
-  75% {
-    -webkit-transform: translate(10%, 0%);
-    transform: translate(10%, 0%);
-  }
-}
-@-moz-keyframes an-smoke-right {
-  0%, 100% {
-    -moz-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -moz-transform: translate(10%,0%);
-    transform: translate(10%, 0%);
-  }
-  50% {
-    -moz-transform: translate(20%, 0%);
-    transform: translate(20%, 0%);
-  }
-  75% {
-    -moz-transform: translate(10%, 0%);
-    transform: translate(10%, 0%);
-  }
-}
-@-o-keyframes an-smoke-right {
-  0%, 100% {
-    -o-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -o-transform: translate(10%,0%);
-    transform: translate(10%, 0%);
-  }
-  50% {
-    -o-transform: translate(20%, 0%);
-    transform: translate(20%, 0%);
-  }
-  75% {
-    -o-transform: translate(10%, 0%);
-    transform: translate(10%, 0%);
-  }
-}
-@keyframes an-smoke-right {
-  0%, 100% {
-    -webkit-transform: translate(0%, 0%);
-    -moz-transform: translate(0%, 0%);
-    -o-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-  }
-  25% {
-    -webkit-transform: translate(10%, 0%);
-    -moz-transform: translate(10%, 0%);
-    -o-transform: translate(10%, 0%);
-    transform: translate(10%, 0%);
-  }
-  50% {
-    -webkit-transform: translate(20%, 0%);
-    -moz-transform: translate(20%, 0%);
-    -o-transform: translate(20%, 0%);
-    transform: translate(20%, 0%);
-  }
-  75% {
-    -webkit-transform: translate(10%, 0%);
-    -moz-transform: translate(10%, 0%);
-    -o-transform: translate(10%, 0%);
-    transform: translate(10%, 0%);
-  }
-}
-
-
-@media only screen and (max-width: 767px) {
-  .ag-format-container {
-    width: 96%;
-  }
-
-}
-
-@media only screen and (max-width: 639px) {
-
-}
-
-@media only screen and (max-width: 479px) {
-
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .ag-format-container {
-    width: 750px;
-  }
-
-}
-
-@media (min-width: 980px) and (max-width: 1161px) {
-  .ag-format-container {
-    width: 960px;
-  }
-
-}
-
-
     body {
-      background-color:rgba(40,40,40);
+        background-image: linear-gradient(120deg,rgba(30,30,30),rgba(10,10,10) 100%);
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
     }
-
-
-
+    canvas {
+      filter: blur(50px);
+      box-shadow: 120px 80px 40px 20px #0ff;
+    }
+    #logo {
+      Position: Absolute;
+      right: 10vw;
+      top: 10vh;
+    }
   </style>
   <head>
     <meta charset="UTF-8">
 	  <meta name="description" content="Solo Rising 1">
-    <meta property="og:image" content="https://media.discordapp.net/attachments/917125638241005579/917254770006315008/Screen_Shot_2021-12-05_at_7.13.27_PM.png?size=400">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/917125638241005579/917254868035600394/Screen_Shot_2021-12-05_at_7.13.34_PM.png?size=400">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theFragly.com/Solo-Rising/">
+    <meta property="og:title" content="Solo-Rising [ IN-DEV ]">
+    <meta property="og:description" content="Solo Rising is a Solo Leveling Inspired game aimed to release before Christmas \n it features auto generated dungeons, a big map and an awesome community">
+    <meta property="og:image" content="https://cdn.discordapp.com/icons/858147033398771732/8b419633800688d045debd906cd2c6f6.webp">
+
 	  <meta name="keywords" content="Fragly, Fraglys website, Fragly website">
 	  <meta name="author" content="Fragly">
 		<!--<link rel="icon" href="../../recourses/sakura.png">-->
     <title>Solo Rising</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
-  <div class="ag-smoke-block">
-  <picture>
-    <source srcset="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-images/images/smoke-pink.webp" type="image/webp">
-    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-images/images/smoke-pink.png" alt="smoke-pink" class="ag-smoke_img ag-smoke_img__left" width="1920" height="1080">
-  </picture>
-  <picture>
-    <source srcset="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-images/images/smoke-blue.webp" type="image/webp">
-    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-images/images/smoke-blue.png" alt="smoke-blue" class="ag-smoke_img ag-smoke_img__right" width="1920" height="1080">
-  </picture>
-</div>
-
+  <body>
+    <img id="logo" src="SoloRising3.png">
+<canvas id="canvas"></canvas>
+</body>
   <script>
-    let smokeDensity = 100;
-    const imageUrl = "http://www.blog.jonnycornwell.com/wp-content/uploads/2012/07/Smoke10.png";
-    const playground = document.getElementById("playground");
-    let smokeGeneratorTimer;
-    let smokeObject;
-    let smokes = [];
-    const smokeLife = 10000;
+    (function () {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
 
-    function loadImage() {
-      return new Promise((resolve, reject) => {
-        let Img = new Image();
-        Img.src = imageUrl;
-        Img.onload = resolve;
-        Img.onerror = reject;
-      });
+var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+var parts = [],
+    minSpawnTime = 20,
+    lastTime = new Date().getTime(),
+    maxLifeTime = 6500+Math.sin(lastTime)
+    emitterX = 0,
+    emitterY = canvas.height*1.25,
+    smokeImage = new Image();
+
+function spawn() {
+    if (new Date().getTime() > lastTime + minSpawnTime) {
+        lastTime = new Date().getTime();
+        parts.push(new smoke(Math.random()*canvas.width*1.5-canvas.width/2, emitterY));
     }
+}
 
-    function createSmokeObject() {
-      smokeObject = document.createElement("div");
-      smokeObject.className = "smoke";
-    }
+function render() {
+    var len = parts.length;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    function removeSmoke(smokeElement, delay) {
-      setTimeout(function() {
-        smokeElement.remove();
-      }, delay + smokeLife);
-    }
+    while (len--) {
+        if (parts[len].lifeTime > maxLifeTime) {
+            parts.splice(len, 1);
 
-    /**
-     * Start Stop Smoke Generator
-     */
-    function smokeSwitch(status) {
-      smokeGeneratorTimer = setInterval(() => {
-        smokeGenerator(getRandomInt(1, smokeDensity));
-      }, smokeLife);
-    }
+        } else {
+            parts[len].update();
 
-    function smokeGenerator(smokeDensity) {
-      let smokeClone, delay;
-      for (let i = 0; i < smokeDensity; i++) {
-        smokeClone = smokeObject.cloneNode();
-        smokeClone.style.left = getRandomInt(0, 100) + '%';
-        delay = getRandomInt(0, smokeLife);
-        smokeClone.style.animationDelay = delay + 'ms';
-        smokeClone.style.animationDuration = smokeLife + 'ms';
-        playground.appendChild(smokeClone);
-        smokes.push(smokeClone)
-        // removeSmoke(smokeClone, delay);
-      }
-    }
+            ctx.save();
+            var offsetX = -parts[len].size/2,
+                offsetY = -parts[len].size/2;
 
-    function smokeEater() {
-      console.log('Smokes: ', smokes.length );
-      for (var index = 0; index < smokes.length; index++) {
-        if(smokes[index].offsetTop < 0) {
-          smokes[index].remove();
-          smokes.splice(index, 0);
+            ctx.translate(parts[len].x-offsetX, parts[len].y-offsetY);
+            ctx.rotate(parts[len].angle / 180 * Math.PI);
+            ctx.globalAlpha  = parts[len].alpha;
+            ctx.drawImage(smokeImage, offsetX,offsetY, parts[len].size, parts[len].size);
+            ctx.restore();
         }
-      }
-      window.requestAnimationFrame(smokeEater);
     }
+    spawn();
+    requestAnimationFrame(render);
+}
 
-    window.onload = () => {
-      console.info('Page Loaded');
-      loadImage().then(() => {
-        console.info('Image Loaded');
-        createSmokeObject();
-        smokeSwitch();
-        smokeEater();
-      });
-    };
+function smoke(x, y, index) {
+    this.x = x;
+    this.y = y;
 
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    this.size = 1;
+    this.startSize = 200;
+    this.endSize = 400;
+
+    this.angle = Math.random() * 359;
+
+    this.startLife = new Date().getTime();
+    this.lifeTime = 0;
+
+    this.velY = -2 - (Math.random()*0.5);
+    this.velX = 2+Math.floor(Math.random() * (-6) + 3) / 10 ;
+}
+
+smoke.prototype.update = function () {
+    this.lifeTime = new Date().getTime() - this.startLife;
+    this.angle += 0.2;
+
+    var lifePerc = ((this.lifeTime / maxLifeTime) * 100);
+
+    this.size = this.startSize + ((this.endSize - this.startSize) * lifePerc * .1);
+
+    this.alpha = 1 - (lifePerc * .01);
+    this.alpha = Math.max(this.alpha,0);
+
+    this.x += this.velX;
+    this.y += this.velY;
+}
+
+smokeImage.src = "smoke.png";
+smokeImage.onload = function () {
+    render();
+}
+
+
+window.onresize = resizeMe;
+window.onload = resizeMe;
+function resizeMe() {
+   canvas.height = window.innerHeight;
+}
 
     </script>
 
