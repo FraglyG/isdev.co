@@ -821,14 +821,16 @@ box-shadow:         inset 30px 0px 21px -3px rgba(255, 102, 204, 0.75);
 							viddes.style.display = "none";
 						};
 					}else{
-						viddes.style.display = "block";
-						var pos = this.getBoundingClientRect();
-						var yOffset = pos.top-document.body.getBoundingClientRect().top;
-						var xOffset = pos.right;
-						viddes.style.top = ( yOffset + 10  ) +"px";
-						viddes.style.left = ( xOffset + 15 ) +"px";
+						if (vidPlaying > 0) {
+							viddes.style.display = "block";
+							var pos = this.getBoundingClientRect();
+							var yOffset = pos.top-document.body.getBoundingClientRect().top;
+							var xOffset = pos.right;
+							viddes.style.top = ( yOffset + 10  ) +"px";
+							viddes.style.left = ( xOffset + 15 ) +"px";
 
-						descTxt.innerHTML = this.textContent;
+							descTxt.innerHTML = this.textContent;
+						};
 					}
 				});
 				video.addEventListener('transitionstart', function() {
