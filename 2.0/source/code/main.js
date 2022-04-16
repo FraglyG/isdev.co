@@ -8,6 +8,7 @@ function onScroll() {
   var mheader = document.getElementById("mainHeader");
 
   if (yOff != 0) {
+    // removes first image and brings up second image \\
     img.classList.add("offScreen");
 
     img2.classList.remove("secondImgOff");
@@ -17,6 +18,7 @@ function onScroll() {
 
     secondImgActive = true;
   } else {
+    // removes second image and brings up first image \\
     img.classList.remove("offScreen");
 
     img2.classList.remove("secondImgOn");
@@ -27,7 +29,8 @@ function onScroll() {
     secondImgActive = false;
   }
   // second image \\
-  if ((yOff/window.innerHeight) >= 0.6 && secondImgActive == true) {
+  if ((yOff/window.innerHeight) >= 0.6) { //  && secondImgActive == false)
+    // removes second image and brings up the other page \\
     img.classList.remove("offScreen");
 
     img2.classList.remove("secondImgOn");
