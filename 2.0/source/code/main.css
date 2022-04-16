@@ -75,7 +75,7 @@ div.mainHeader.active {
   top: 100vh;
   left: 0vh;
 
-  height: 10vh;
+  height: 5vh;
   width: 100vw;
 
   z-index: -1;
@@ -89,18 +89,15 @@ div.mainHeader.active {
 .norm {
   top: 120vh;
   position: absolute;
-}
-
-.reveal {
-  position: relative;
-  transform: translateX(-5px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.reveal.active {
-  transform: translateX(0);
   opacity: 1;
+
+  transform: none;
+  transition: 0.5s all ease;
+}
+.norm.hidden {
+  top: 120vh;
+  position: absolute;
+  opacity: 0;
 }
 
 .revealMainImg {
