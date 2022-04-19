@@ -19,6 +19,8 @@ function onScroll() {
   var mheader = document.getElementById("mainHeader");
   var otherInf = document.getElementById("otherInfo");
 
+  console.log(yOff, scrollPercentage)
+
   if (yOff != 0) {
     // removes first image and brings up second image \\
     img.classList.add("offScreen");
@@ -55,7 +57,7 @@ function onScroll() {
     secondImgActive = false;
   }
   // second image \\
-  if (scrollPercentage >= 0.6) {
+  if (scrollPercentage >= 0.5) {
     // removes second image and brings up the other page \\
     img.classList.remove("offScreen");
 
@@ -126,5 +128,3 @@ document.body.addEventListener("mousemove", (e) => {
     mountains2.style.backgroundPositionY = (y- (window.innerHeight/ 100)) + "px" ;
   }
 })
-
-setInterval(function(){document.body.scrollLeft = 0;},1000)

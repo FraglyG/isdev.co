@@ -43,13 +43,8 @@ h2 {
   font-family: 'Artifika';font-size: 3vh;
 }
 
-body.stop-scrolling {
-  overflow: hidden;
-}
-
 div.mainDiv {
   overflow: hidden;
-
   left: 0px;
   top: 0px;
   position: absolute;
@@ -126,6 +121,8 @@ div.mainHeader.active {
   min-width: 100vw;
   max-width: none;
 
+  top: 0vh;
+
   z-index: -2;
 
   height: 120vh;
@@ -135,11 +132,13 @@ div.mainHeader.active {
   background-image:url('../../source/images/stars.jpg');
   background-size:cover;
 
-  transform: translateY(0vh);
+  transform: none;
   transition: 1s all ease;
 }
 .revealMainImg.offScreen {
   position: absolute;
+
+  top: -120vh;
 
   width: auto;
   min-width: 100vw;
@@ -149,9 +148,9 @@ div.mainHeader.active {
   max-height: 120vh;
   min-height: 120vh;
 
-  transform: translateY(-120vh);
+  transform: none;
 }
-.secondImgOff {
+.revealMainImg.secondImgOff {
   position: fixed;
 
   top:120vh;
@@ -163,7 +162,7 @@ div.mainHeader.active {
   transition: 1s all ease;
   opacity: 0;
 }
-.secondImgOn {
+.revealMainImg.secondImgOn {
   position: fixed;
 
   top:0vh;
