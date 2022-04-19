@@ -19,13 +19,15 @@
   <body>
     <div class="mainDiv">
       <div id="firstImg" class="revealMainImg">
+        <div id="mountains"></div><div id="mountains2"></div>
         <h1 id="title1">theFragly.com</h1><h1 id="title2">theFragly.com</h1>
+        <div id="line" style="position:absolute;top:38vh;left:7vw;width:50vw;height:1vh;background-color:white;filter: blur(2px)"></div>
       </div>
+
       <div id="secondImg" class="revealMainImg secondImgOff">
-        <div style="position:fixed;top:-5vh;z-index:-3;width:100vw;height:30vh;background-color:#283747;"></div>
         <div style="position:relative;width:100vw;height:100vh;background-color:#283747;color:#F3F3F3;">
           <div id="selfPortrait" style="position:absolute;left:50vw;width:50vw;height:100vh;background-image:url('source/images/code.png');background-size:cover;"></div>
-          <div style="position:relative;left:10vw;top:10vh;">
+          <div style="position:absolute;left:10vw;top:10vh;">
             <h2 style="position:relative;top:0vh;left:0vw">Hello I'm</h2><h1 id="FraglyTitle2" style="position:relative;top:-5vh;left:5vw">Fragly</h1>
             <p id="aboutMe" style="position:relative;left:2vw;top:-6vh;width:55vw;word-wrap:normal;">
               What's a Fragly, you ask? a Fragly is a 0AGE0 year-old dude who was born in South Africa,<br>
@@ -45,8 +47,7 @@
               var age = d.getFullYear()-2004
               if (d.getMonth() + 1 < 11 || d.getDate()-birthday < 18) { age-- }
               var el = document.getElementById("aboutMe")
-              var text = el.innerHTML
-              el.innerHTML = text.replace("0AGE0", age)
+              el.innerHTML = el.innerHTML.replace("0AGE0", age)
 
               function adjustSize() { if (window.innerWidth < 1026) { el.style.width = "80vw" } else { el.style.width = "55vw" } }
               adjustSize(); window.addEventListener("resize", adjustSize);
@@ -61,16 +62,46 @@
     </div>
 
     <div id="otherInfo" class="norm">
-      <p>bruh</p>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <p>bruh2</p>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <p>bruh3</p>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <p>bruh4</p>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <!-- PROGRAMMING INFORMATION -->
+      <h1 class="infoTitle" style="position:relative;top:0vh;left:5vw"> -- Hello world</h1>
+      <div style="position:relative;left:2vw;">
+        <p id="aboutProgramming">
+          I've been coding for just around 0YEARS0 years now,<br>
+          it's been a wild ride and I've learned a lot on the way, especially when it comes to game development.<br>
+          <br>
+          I'm most proficient in LUA, but I've had experience with:
+        </p>
+        <li>Javascript</li><li>Batch</li><li>Python</li><li>C++ ( Arduino )</li>
+        <p>and of course HTML and CSS if you consider those programming languages.</p>
+        <script>
+          const d22222222222 = new Date();
+          var difference = d22222222222.getFullYear()-2018
+          var el = document.getElementById("aboutProgramming")
+          el.innerHTML = el.innerHTML.replace("0YEARS0", difference)
+        </script>
+      </div>
+
+      <br>
+
+      <!-- ACHIEVEMENTS -->
+      <h1 class="infoTitle" style="position:relative;top:0vh;left:20vw"> Achievements -- </h1>
+      <div style="position:relative;left:15vw;">
+        <p id="aboutProgramming">
+          I've been coding for just around 0YEARS0 years now,<br>
+          it's been a wild ride and I've learned a lot on the way, especially when it comes to game development.<br>
+          <br>
+          I'm most proficient in LUA, but I've had experience with:
+        </p>
+        <li>Javascript</li><li>Batch</li><li>Python</li><li>C++ ( Arduino )</li>
+        <p>and of course HTML and CSS if you consider those programming languages.</p>
+        <script>
+          const d2 = new Date();
+          var difference = d2.getFullYear()-2018
+          var el = document.getElementById("aboutProgramming")
+          el.innerHTML = el.innerHTML.replace("0YEARS0", difference)
+        </script>
+      </div>
+
     </div>
 
 

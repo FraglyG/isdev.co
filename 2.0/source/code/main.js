@@ -75,7 +75,7 @@ function onScroll() {
 window.addEventListener("scroll", onScroll);
 
 function transition(setup, defaultString, elements) {
-  let characters = ['!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','[','[','\\',']',']','^','_','`','░','▒','▓','│','┤','╡','╢','╖','╕','╣','║','╗','╝','╜','╛','┐','└','┴','┬','├','─','┼','╞','╟','╚','╔','╩','╦','╠','═','╬','╧','╨','╤','╥','╙','╘','╒','╓','╫','╪','┘','┌','█','▄','▌','▐','▀','α','ß','Γ','π','Σ','σ','µ','τ','Φ','Θ','Ω','δ','∞','φ','ε','∩','≡','±','≥','≤','⌠','⌡','≈','°','·','·','√','ⁿ','■'];
+  let characters = ['!','"','#','$','%','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','=','?','@','[','[','\\',']',']','^','_','`','│','┤','╡','╢','╖','╕','╣','║','╗','╝','╜','╛','┐','└','┴','┬','├','─','┼','╞','╟','╚','╔','╩','╦','╠','═','╬','╧','╨','╤','╥','╙','╘','╒','╓','╫','╪','┘','┌','█','▄','▌','▐','▀','α','ß','Γ','π','Σ','σ','µ','Φ','Θ','Ω','δ','∞','φ','ε','∩','≡','±','≥','≤','⌠','⌡','≈','°','·','·','√','ⁿ','■'];
 
   function changeElements(newText) {
     for (var i = 0; i < elements.length; i++) {
@@ -110,3 +110,21 @@ function transition(setup, defaultString, elements) {
 
 transition(true, "theFragly.com", [document.getElementById("title1"),document.getElementById("title2")]);
 setTimeout(function(){transition(false, "theFragly.com", [document.getElementById("title1"),document.getElementById("title2")])},300)
+
+var mountains = document.getElementById("mountains");
+var mountains2 = document.getElementById("mountains2");
+document.body.addEventListener("mousemove", (e) => {
+  if (window.pageYOffset==0&&window.innerWidth>window.innerHeight) {
+    var pageX = e.pageX - (window.innerWidth / 2);
+    var pageY = e.pageY - (window.innerHeight / 2);
+    var x = (-pageX/50);
+    var y = (-pageY/50);
+    mountains.style.backgroundPositionX = (x- (window.innerWidth / 100)) + "px";
+    mountains.style.backgroundPositionY = (y- (window.innerHeight/ 100)) + "px" ;
+
+    mountains2.style.backgroundPositionX = (x- (window.innerWidth / 100)) + "px";
+    mountains2.style.backgroundPositionY = (y- (window.innerHeight/ 100)) + "px" ;
+  }
+})
+
+setInterval(function(){document.body.scrollLeft = 0;},1000)

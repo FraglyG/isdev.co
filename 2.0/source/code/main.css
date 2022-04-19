@@ -2,6 +2,9 @@
     #selfPortrait {
         display: none;
     }
+    #line {
+      display: none;
+    }
 }
 
 #title1 {
@@ -23,6 +26,9 @@
 body {
   overflow-x: hidden;
   background-color: #F3F3F3;
+}
+li {
+  font-family: 'Artifika';font-size: 1.8vh;
 }
 
 p {
@@ -64,7 +70,9 @@ div.mainHeader {
 
   opacity: 0;
 
-  background-color: #3C1874;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 1) 0px 18px 36px -18px inset;
+
+  background-color: #283747;
 
   transform: none;
   transition: 1s all ease;
@@ -75,29 +83,40 @@ div.mainHeader.active {
   top: 100vh;
   left: 0vh;
 
-  height: 5vh;
+  height: 7vh;
   width: 100vw;
 
   z-index: -1;
 
   opacity: 1;
 
-  background-color: #3C1874;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 1) 0px 18px 36px -18px inset;
+
+  background-color: #283747;
+
   transform: none;
 }
 
 .norm {
   top: 120vh;
+  width:100vw;
   position: absolute;
   opacity: 1;
+
+  z-index: 50;
 
   transform: none;
   transition: 0.5s all ease;
 }
 .norm.hidden {
   top: 120vh;
+  width:100vw;
   position: absolute;
   opacity: 0;
+
+  z-index: 50;
+
+  transform: none;
 }
 
 .revealMainImg {
@@ -113,10 +132,10 @@ div.mainHeader.active {
   max-height: 120vh;
   min-height: 120vh;
 
-  background-image:url('../../source/images/firstImgMain.jpg');
+  background-image:url('../../source/images/stars.jpg');
   background-size:cover;
 
-  transform: translateY(0);
+  transform: translateY(0vh);
   transition: 1s all ease;
 }
 .revealMainImg.offScreen {
@@ -132,7 +151,7 @@ div.mainHeader.active {
 
   transform: translateY(-120vh);
 }
-.revealMainImg.secondImgOff {
+.secondImgOff {
   position: fixed;
 
   top:120vh;
@@ -140,20 +159,60 @@ div.mainHeader.active {
   width: 100vw;
   height: 100vh;
 
-  transform: translateY(0);
+  transform: none;
   transition: 1s all ease;
   opacity: 0;
 }
-.revealMainImg.secondImgOn {
+.secondImgOn {
   position: fixed;
 
-  top:120vh;
+  top:0vh;
 
   width: 100vw;
   height: 100vh;
 
   z-index: 0;
 
-  transform: translateY(-120vh);
+  transform: none;
   opacity: 1;
+}
+
+#mountains {
+  position: absolute;
+
+  width: auto;
+  min-width: 100vw;
+  max-width: none;
+
+  z-index: -1;
+
+  height: 120vh;
+  max-height: 120vh;
+  min-height: 120vh;
+
+  background-image:url('../../source/images/mountains.png');
+  background-size: cover;
+  background-repeat: repeat-x;
+  transform: scale(1, 1.1);
+
+}
+
+#mountains2 {
+  position: absolute;
+
+  width: auto;
+  min-width: 100vw;
+  max-width: none;
+
+  z-index: -2;
+  filter: blur(5px);
+
+  height: 120vh;
+  max-height: 120vh;
+  min-height: 120vh;
+
+  background-image:url('../../source/images/mountains.png');
+  background-size: cover;
+  background-repeat: repeat-x;
+  transform: scale(1, 1.1);
 }
