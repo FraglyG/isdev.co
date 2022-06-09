@@ -1,0 +1,178 @@
+body {
+	background-color: #E9EEEC;
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+  }
+
+html::-webkit-scrollbar-track {
+    background: #E9EEEC;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #221F07;
+    border-radius: 10px;
+  }
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #1a0807;
+    border-radius: 10px;
+  }
+
+html::-webkit-scrollbar-thumb:active {
+    background: #483f28;
+    border-radius: 10px;
+  }
+
+h1 {
+	color: #221D07;
+}
+
+h2 {
+	color: #1C0A00;
+}
+
+h3 {
+	font-size: 50px;
+	color: #221D07;
+}
+
+h4 {
+	font-size: 30px;
+	color: #221D07;
+}
+
+p {
+	font-size: 20px;
+	color: #221D07;
+}
+
+ul.m {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+		width:100%;
+    overflow: hidden;
+    background-color: #58391C;
+    border-radius: 5px 5px 5px 5px;
+    top: 5;
+	z-index: 3;
+  }
+
+li.m {
+	float: left;
+	border-radius: 5px 5px 5px 5px;
+}
+
+li a {
+	display: block;
+	max-width: 20vw;
+	width: 5vw;
+
+	text-align: center;
+	font-size: 2vh;
+	text-decoration: none;
+	color: white;
+
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 12px;
+
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+li a:hover {
+	background-color: #85603F;
+}
+
+a.link {
+  color: #724e2c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+div.TextBody {
+	position: relative;
+	top: 5vh;
+	left: 2vw;
+}
+
+div.appear1 {
+	opacity: 0;
+
+	transform: none;
+  transition: 1s all ease;
+}
+
+div.appear1.appeared {
+	opacity: 1;
+
+	transform: none;
+  transition: 1s all ease;
+}
+
+xmp.embed {
+	display: block;
+	padding: 3px 3px 2px;
+	font-size: 14px;
+	line-height: 20px;
+	width: 100%;
+	background-color: #333;
+	font-family: arial;
+	font-weight: bold;
+
+	background-color: #E0D8B0;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#titlePage {
+	position: relative;
+
+	top: 0vh;
+	left: 0vw;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-image: url("../../source/images/title.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	margin:0;
+	padding:0;
+}
+
+#header {
+	position: sticky;
+
+	width: 90vw;
+	height: 5vh;
+
+	top: 2vh;
+	left: 5vw;
+
+	/* background-color: #58391C; */
+
+	z-index: 100;
+}
+
+#overlay {
+	position: absolute;
+
+	width:100vw;
+	height:5vh;
+
+	top: 100vh;
+	left: 0vw;
+
+	background-color: #221D07;
+
+	z-index: 10;
+}
