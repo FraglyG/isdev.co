@@ -52,7 +52,7 @@
             <script>
               const d = new Date();
               var age = d.getFullYear()-2004
-              if (d.getMonth() + 1 < 11 || d.getDate()-birthday < 18) { age-- }
+              if (d.getMonth() + 1 < 11 || d.getDate() < 18) { age-- }
               var el = document.getElementById("aboutMe")
               el.innerHTML = el.innerHTML.replace("0AGE0", age)
 
