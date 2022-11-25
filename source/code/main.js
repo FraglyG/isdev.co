@@ -74,8 +74,8 @@ window.addEventListener("scroll", () => {
     currentPage = 2
     
     transition(true, "programmer", [programmer]);
-    setTimeout(function(){transition(true, "programmer", [programmer])},500)
-    setTimeout(function(){transition(false, "programmer", [programmer])},1000)
+    setTimeout(function(){transition(true, "programmer", [programmer])},700)
+    setTimeout(function(){transition(false, "programmer", [programmer])},1400)
   }
 })
 
