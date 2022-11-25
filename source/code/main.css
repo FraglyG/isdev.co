@@ -1,0 +1,304 @@
+@media only screen and (max-width: 1111px) {
+  h1.title {
+    left: 5vw;
+    top: 20vh;
+
+    font-size: 12vw;
+  }
+
+  p.bio.active {
+    font-size: 1.3vh;
+    top: 12vh;
+  }
+
+  hr.title_underline {
+    display: none;
+  }
+
+  ul.active {
+    font-size: 1.5vh;
+  }
+
+  ul.coding.active {
+    font-size: 1.5vh;
+    top: 25vh;
+  }
+
+  #helloIm {
+    font-size: 3vh;
+  }
+
+  #fragly {
+    font-size: 5vh;
+  }
+
+  #imA {
+    font-size: 3vh;
+  }
+
+  #programmer {
+    font-size: 5vh;
+  }
+
+
+  #selfPortrait {
+    display: none;
+  }
+
+  #blob0 {
+    display: none;
+  }
+
+  #blob1 {
+    display: none;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0px;
+}
+
+section {
+  margin: 0px;
+  position: relative;
+  display: flex;
+
+  top: 0vh;
+  right: 0vw;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+div.content {
+  word-wrap: normal;
+  z-index: 20;
+  margin: 0px;
+  color: #9E81FA;
+  font-family: "Prompt", sans-serif;
+  font-size: 5vw;
+  width: 100vw;
+  height: 100vh;
+}
+
+div.experiences {
+  word-wrap: normal;
+  z-index: 20;
+  margin: 0px;
+  color: #9E81FA;
+  font-family: "Prompt", sans-serif;
+  font-size: 5vw;
+  width: 100vw;
+  height: 50vh;
+}
+
+div.image {
+  margin: 0px;
+  position: absolute;
+
+  top: -1vh;
+  right: 0vw;
+
+  width: 100vw;
+  height: 110vh;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+div.image.page0 {
+  z-index: 10;
+  background-image: url("../images/page_0.svg");
+}
+
+div.image.page1 {
+  z-index: 9;
+  background-image: url("../images/page_1_1.svg");
+}
+
+div.image.page2 {
+  z-index: 8;
+  background-image: url("../images/page_2.svg");
+}
+
+ul { 
+  z-index: 20;
+  font-family: "Prompt", sans-serif;
+  font-size: 1vw;
+}
+
+ul.active {
+  position: absolute;
+  bottom: 20vh;
+  left: 1vw;
+  color: #644fff;
+}
+
+ul.coding {
+  position: absolute;
+  top: 40vh;
+  left: 10vw;
+}
+
+ul.coding.active {
+  color: #9E81FA;
+}
+
+p {
+  z-index: 20;
+  font-family: "Prompt", sans-serif;
+  font-size: 1vw;
+}
+
+p.bio {
+  position: absolute;
+  top: 25vh;
+  left: 10vw;
+}
+
+p.bio.active {
+  position: absolute;
+}
+
+h1 {
+  position: absolute;
+  margin: 0px;
+  font-family: "Prompt", sans-serif;
+  font-size: 7vw;
+  color: #644fff;
+}
+
+h2 {
+  position: absolute;
+  margin: 0px;
+  font-family: "Prompt", sans-serif;
+  font-size: 3vw;
+  color: #644fff;
+}
+
+hr {
+  z-index: 20;
+  position: absolute;
+  
+  height: 10px;
+  background-color: #644fff;
+  border: none
+}
+
+hr.title_underline {
+  top: 30vh;
+  width: 35vw;
+}
+
+h1.title {
+  left: 3vw;
+  top: 10vh;
+}
+
+h1.blur {
+  filter: blur(8px)
+}
+
+#selfPortrait {
+  position: absolute;
+  right: 0vw;
+  bottom: -9vh;
+
+  width: 40vw;
+  height: 75vh;
+
+  z-index: 11;
+  background-image: url("../images/selfie_thing.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+#page1_transition {
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+
+  width: 100vw;
+  height: 110vh;
+
+  z-index: 12;
+  background-image: url("../images/page_1_2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+#blob0 {
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 12;
+  background-image: url("../images/blob_0.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+#blob1 {
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 12;
+  background-image: url("../images/blob_1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+#blob1 {
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 12;
+  background-image: url("../images/blob_1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
+
+#blob2 {
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+
+  width: 100vw;
+  height: 109vh;
+
+  z-index: 12;
+  background-image: url("../images/blob_2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+}
