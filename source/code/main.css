@@ -207,6 +207,34 @@ h1.blur {
   filter: blur(8px)
 }
 
+li.horizontal {
+  display: block;
+  float: left;
+  padding-right: 12px;
+}
+
+li.discord {
+  display: block;
+  flex-shrink: 0;
+  width: 33px;
+  height: 33px;
+  margin-right: 10px;
+
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  list-style: none;
+  position: relative;
+  
+  top: -13px;
+
+  background: url('../images/icon_discord.png') no-repeat left center;
+  background-size: contain;
+
+  content: '';
+}
+
 #selfPortrait {
   position: absolute;
   right: 0vw;
