@@ -6,6 +6,11 @@
     font-size: 12vw;
   }
 
+  li.discord.active {
+    width: 26px;
+    height: 26px;
+  }
+
   p.bio.active {
     font-size: 1.3vh;
     top: 12vh;
@@ -216,8 +221,8 @@ li.horizontal {
 li.discord {
   display: block;
   flex-shrink: 0;
-  width: 33px;
-  height: 33px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 
   display: flex;
@@ -227,12 +232,16 @@ li.discord {
   list-style: none;
   position: relative;
   
-  top: -13px;
-
   background: url('../images/icon_discord.png') no-repeat left center;
   background-size: contain;
 
   content: '';
+
+  top: -11px;
+}
+
+li.discord.active {
+  display: block;
 }
 
 #selfPortrait {
