@@ -65,9 +65,9 @@
         If you have any questions or comments, feel free to contact me. I'll be happy to help in any way I can.
       </p>
       <script>
-        const d = new Date();
-        var age = d.getFullYear() - 2004
-        if (d.getMonth() + 1 < 11 || d.getDate() < 18) { age-- }
+        var d11 = new Date("2004-11-18")
+        var d12 = new Date()
+        var age = Math.floor((d12 - d11)/3600000/24/365)
         var el = document.getElementById("aboutMe")
         el.innerHTML = el.innerHTML.replace("0AGE0", age)
 
