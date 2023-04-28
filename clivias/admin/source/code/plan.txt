@@ -1,0 +1,15 @@
+Name* ( short text )
+Description* ( long text )
+
+MainImage* ( image url )
+ExtraImage1 ( image url )
+ExtraImage2 ( image url )
+
+Class* ( short text )
+
+FatherName* ( short text )
+MotherName* ( short text )
+
+ShowsWon ( long text )
+
+Purchaseable* ( true or false )

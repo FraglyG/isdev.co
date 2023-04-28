@@ -1,0 +1,12 @@
+Name,Description,Image0,Image1,Image2,Class,FatherName,MotherName,ShowsWon,Featured,Purchaseable
+ToetsNaam1,ToetsBeskrywing1,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Bronze,ToetsPa1,ToetsMa1,ToetsSkou1,yes,no
+ToetsNaam2,ToetsBeskrywing2,https://capitalnewspapers.co.za/wp-content/uploads/sites/140/2022/02/Growing-and-caring-for-clivias.jpg,,,Silver,ToetsPa2,ToetsMa2,ToetsSkou2,yes,no
+ToetsNaam3,ToetsBeskrywing3,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Bronze,ToetsPa3,ToetsMa3,ToetsSkou3,yes,yes
+ToetsNaam4,ToetsBeskrywing4,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Silver,ToetsPa4,ToetsMa4,ToetsSkou4,yes,yes
+ToetsNaam5,ToetsBeskrywing5,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Bronze,ToetsPa5,ToetsMa5,ToetsSkou5,yes,no
+ToetsNaam6,ToetsBeskrywing6,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Bronze,ToetsPa6,ToetsMa6,ToetsSkou6,yes,yes
+ToetsNaam7,ToetsBeskrywing7,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Bronze,ToetsPa7,ToetsMa7,ToetsSkou7,no,yes
+ToetsNaam8,ToetsBeskrywing8,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Silver,ToetsPa8,ToetsMa8,ToetsSkou8,no,yes
+ToetsNaam9,ToetsBeskrywing9,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Bronze,ToetsPa9,ToetsMa9,ToetsSkou9,no,no
+ToetsNaam10,ToetsBeskrywing10,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,,,Gold,ToetsPa10,ToetsMa10,ToetsSkou10,no,no
+ToetsNaam11,ToetsBeskrywing11,https://cdn.discordapp.com/attachments/877920656795250741/1097140514123427900/image.png,https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg,https://capitalnewspapers.co.za/wp-content/uploads/sites/140/2022/02/Growing-and-caring-for-clivias.jpg,Gold,ToetsPa11,ToetsMa11,ToetsSkou3; ToetsSkou4,yes,yes

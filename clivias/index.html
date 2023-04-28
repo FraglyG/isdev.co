@@ -1,0 +1,158 @@
+<html>
+<link rel="stylesheet" href="source/code/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>CLIVIA</title>
+</head>
+
+<body>
+
+    <div id="overlay_background_99"></div>
+
+    <div id="cliva_info_popup">
+        <h1 id="popup_title" style="margin: 10px">TITLE</h1>
+        <img id="popup_image">
+        <div id="popup_effects"></div>
+    </div>
+
+    <div id="header_container">
+        <div id="headerParent">
+            <div id="header">
+                <div id="title_container">
+                    <!--<h1 id="title">Oosie's Clivia Patch</h1>
+                    <p id="slogan">Experience the Colors of Life</p>-->
+                    <img id="logo_image" src="source/images/cropped_logo.png">
+                </div>
+            </div>
+
+            <ul id="navbar">
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="#footer-contact">Contact</a></li>
+                <li><a href="#footer-about">About</a></li>
+            </ul>
+
+        </div>
+
+        <div id="random_clivia">
+            <div id="random_img_container">
+                <img draggable="false" id="random_image"
+                    src="https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg">
+            </div>
+            <div id="random_info_container">
+                <ul style="list-style-type: none;">
+                    <li class="random_info_li" id="random_name">
+                        NAME
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="images" draggable="false">
+        <div id="featured_images" class="image_container" draggable="false">9
+            <h2>FEATURED</h2>
+            <div class="image_track" data-mouse-down-at="0" data-prev-percentage="-80" draggable="false"></div>
+        </div>
+    </div>
+
+    <div class="parallax" style="background-image: url('source/images/paralax1.jpg');">
+        <div id="class_gallery_container_container">
+            <div id="class_gallery_container" draggable="false">
+                <h2>GALLERY</h2>
+                <div id="class_gallery">
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+                    <a class="class_button" href="/gallery/?class=Bronze">
+                        <div class="image_holder"></div>
+                        <div class="class_effects">
+                            <h4 class="class_name">BRONZE</h4>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 style="position: relative; left: 50%; transform: translate(-50%, 0%); width:fit-content; height: fit-content">
+        Exclusive Clivias</h1>
+
+    <div class="parallax" style="background-image: url('source/images/parallax2.jpg');"></div>
+
+    <div id="footer" style="display: flex">
+        <div id="footer-about">
+            <h1 style="position: inherit; left: 10%">Who are we?</h1>
+            <p style="position: inherit; left: 15%">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent euismod velit a dui pretium, ac vestibulum elit scelerisque. Sed malesuada nibh sit amet dui
+                venenatis efficitur.
+            </p>
+        </div>
+        <div id="footer-contact">
+            <h1 style="position: inherit; left: 10%">Want to chat?</h1>
+            <div style="position: inherit; left: 15%">
+                <p>Call me - 022 495 0716</p>
+                <p>Email me - info@email.com</p>
+                <p>Visit me - 101 Some St. Subrub Pretoria</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="parallax" style="background-image: url('source/images/paralax1.jpg');"></div> -->
+
+</body>
+
+<script src="source/code/main.js"></script>
+
+</html>

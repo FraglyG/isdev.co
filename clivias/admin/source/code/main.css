@@ -1,0 +1,153 @@
+#overlay {
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+
+    background-color: antiquewhite;
+
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#myForm {
+    font-family: Arial, sans-serif;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #ccc;
+}
+
+#myForm label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+#myForm input[type="text"],
+#myForm textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#myForm input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #45a049;
+}
+
+#myForm select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#myForm .required {
+    color: red;
+}
+
+#myForm input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+#deleteForm {
+    font-family: Arial, sans-serif;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #ccc;
+}
+
+#deleteForm label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+#deleteForm input[type="text"],
+#deleteForm textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#deleteForm input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #45a049;
+}
+
+#deleteForm select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#deleteForm .required {
+    color: red;
+}
+
+#deleteForm input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+/* Styles for table */
+table {
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    border: 1px solid #007bff;
+    padding: 8px;
+}
+
+td {
+    border: 1px solid #007bff;
+    padding: 8px;
+}
+
+/* Styles for file input */
+input[type="file"] {
+    margin: 10px 0;
+}

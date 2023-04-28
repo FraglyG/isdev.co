@@ -1,0 +1,163 @@
+<html>
+<link rel="stylesheet" href="source/code/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>CLIVIA</title>
+</head>
+
+<body>
+
+    <div id="overlay_background_99"></div>
+
+    <div id="cliva_info_popup">
+        <h1 id="popup_title" style="margin: 10px">TITLE</h1>
+        <img id="popup_image">
+        <div id="popup_effects"></div>
+    </div>
+
+    <div id="header_container">
+        <div id="headerParent">
+            <div id="header">
+                <div id="title_container">
+                    <!--<h1 id="title">Oosie's Clivia Patch</h1>
+                    <p id="slogan">Experience the Colors of Life</p>-->
+                    <img id="logo_image" src="source/images/cropped_logo.png">
+                </div>
+            </div>
+
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/gallery">Gallery</a></li>
+                <li><a href="#footer-contact">Contact</a></li>
+                <li><a href="#footer-about">About</a></li>
+            </ul>
+
+        </div>
+
+        <div id="random_clivia">
+            <div id="random_img_container">
+                <img draggable="false" id="random_image"
+                    src="https://atlanticfertilisers.co.za/wp-content/uploads/2021/12/Life_is_garden_clivia-2-1024x890.jpg">
+            </div>
+            <div id="random_info_container">
+                <ul style="list-style-type: none;">
+                    <li class="random_info_li" id="random_name">
+                        NAME
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax" style="background-image: url('source/images/parallax2.jpg'); height:fit-content; width: 100%">
+        <div
+            style="background: linear-gradient(to right, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%); width: inherit; height: fit-content">
+            <h1 id="GalleryTitle">Gallery</h1>
+            <div id="pre-clivia-gallery" draggable="false">
+                <form id="searchForm">
+                    <label for="search" style="color:white" style="margin-right: 10px">Search:</label>
+                    <input type="text" id="search" name="search" style="max-width:150px;margin-right: 50px;">
+
+                    <label for="class" style="color:white" style="margin-right: 10px">Class:</label>
+                    <select id="class" name="class" style="max-width:100px;margin-right: 50px">
+                        <option value="">All</option>
+                    </select>
+
+                    <label for="purchaseable" style="color:white" style="margin-right: 10px">Purchaseable:</label>
+                    <input type="checkbox" name="purchaseable" id="purchaseable" value="1"
+                        style="width:25px;margin-right: 50px">
+
+                    <button type="submit" style="height:20px;max-width:100px;margin:0px">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:flex;">
+        <p style="font-size: smaller;margin-left: 2%;">Showing results for: </p>
+        <p style="font-size: smaller;margin-left: 5px;" id="results-message"></p>
+    </div>
+
+
+    <div id="clivia-gallery" draggable="false"></div>
+
+    <p id="clivia-gallery-message">There are no results for that search</p>
+
+    <div style="width:100%;margin:0px;height:min-content;background-color:rgba(64, 192, 4, 0.2);">
+        <div id="post-clivia-gallery" draggable="false">
+            <p id="LEFT_ARROW">⪡</p>
+            <p id="PAGE_NUMB">1</p>
+            <p>/</p>
+            <p id="PAGE_TOTAL">1</p>
+            <p id="RIGHT_ARROW">⪢</p>
+        </div>
+    </div>
+
+    <!-- <a href="mailto:example@example.com?subject=Subject&body=Body">Send an email</a> -->
+    <div id="popup-background"></div>
+    <div id="popup" class="inactive">
+        <div id="popup-close">
+            <p style="margin-top: 2.5%;">CLOSE</p>
+        </div>
+        <div id="popup-body">
+            <div id="popup-img">
+                <div class="blackout"></div>
+                <div id="popup-info">
+                    <h1></h1>
+                    <p></p>
+                </div>
+
+                <div id="popup-img-buttons">
+                    <p id="IMG_LEFT_ARROW">⪡</p>
+                    <p id="IMG_PAGE_NUMB">1</p>
+                    <p>/</p>
+                    <p id="IMG_PAGE_TOTAL">1</p>
+                    <p id="IMG_RIGHT_ARROW">⪢</p>
+                    <p style="margin-right: 10px;margin-left: 10px;">|</p>
+                    <p id="IMG_HIDE_BUTTON">HIDE</p>
+                    <p style="margin-right: 10px;margin-left: 10px;">|</p>
+                    <p id="IMG_OPEN_BUTTON">OPEN</p>
+                </div>
+
+                <p class="img_holder" style="display: none;"></p>
+                <p class="img_holder" style="display: none;"></p>
+                <p class="img_holder" style="display: none;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" style="display: flex">
+        <div id="footer-about">
+            <h1 style="position: inherit; left: 10%">Who are we?</h1>
+            <p style="position: inherit; left: 15%">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent euismod velit a dui pretium, ac vestibulum elit scelerisque. Sed malesuada nibh sit amet dui
+                venenatis efficitur.
+            </p>
+        </div>
+        <div id="footer-contact">
+            <h1 style="position: inherit; left: 10%">Want to chat?</h1>
+            <div style="position: inherit; left: 15%">
+                <p>Call me - 022 495 0716</p>
+                <p>Email me - info@email.com</p>
+                <p>Visit me - 101 Some St. Subrub Pretoria</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="parallax" style="background-image: url('source/images/paralax1.jpg');"></div> -->
+
+</body>
+
+<script src="source/code/main.js"></script>
+
+</html>
