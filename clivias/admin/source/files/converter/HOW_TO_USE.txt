@@ -1,1 +1,0 @@
-Sit die Excel file in hierdie folder en noem dit "clivias", hardloop "convert.bat" en wag dan, sodra dit klaar is sal die "clivias.csv" file daar wees
