@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+p,
+a {
+    font-size: 20px;
+    font-family: "Prompt", sans-serif;
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 800;
+    font-family: "Prompt", sans-serif;
+    color: #ff4e1d;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+.faded-out {
+    opacity: 0;
+}
+
+.faded-in {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.paragraph1 {
+    word-wrap: normal;
+    position: relative;
+    width: 50%;
+}
+
+#header_title {
+    position: absolute;
+    font-size: 60px;
+    margin: 0;
+    text-justify: center;
+    top: 10%;
+    height: 80%;
+    width: fit-content;
+    left: 5%;
+}
+
+#header_div {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+}
+
+#header_ribbon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100px;
+
+    background-size: cover;
+    background-image: url("/source/images/Coal1.png");
+}
+
+#header_ribbon_effects {
+    height: 100%;
+
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000e7, #000000 50%);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000e7, #000000 50%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#background_img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    align-content: left;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+#discord-info {
+    display: flex;
+    width: 300px;
+    height: 36px;
+    position: absolute;
+    margin-top: 10px;
+    left: 30px;
+    bottom: 20px;
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+    .paragraph1 {
+        left: 5%;
+        width: 90%;
+    }
+
+    #header_div {
+        top: 40px;
+        left: 10px;
+    }
+
+    #header_title {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #header_ribbon {
+        background-image: url("");
+    }
+
+    #header_ribbon_effects {
+        background: -webkit-linear-gradient(to right, #00000000, #00000000 50%);
+        background: linear-gradient(to right, #00000000, #00000000 50%);
+    }
+
+    #discord-info {
+        bottom: -36px;
+    }
+}
