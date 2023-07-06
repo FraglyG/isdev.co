@@ -49,7 +49,7 @@ function transition(setup, defaultString, elements) {
 const imAArray = [
     "game developer",
     "web developer",
-    "game desginer",
+    "game designer",
     "programmer",
     "          ",
 ]
@@ -111,7 +111,7 @@ function typingText() {
     let textArray = []
     let done = false
 
-    container.querySelectorAll('h1, h2, h3, h4, p').forEach(element => {
+    container.querySelectorAll('p').forEach(element => {
         const text = element.innerHTML
         textArray.push({ element: element, text: text })
         if (element.id == "mainDescriptiveParagraph") { done = true }

@@ -1,6 +1,12 @@
 body {
     margin: 0;
     background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+    background: rgb(0, 0, 0);
+    background: linear-gradient(225deg, rgba(0, 0, 0, 1) 50%, rgb(54, 10, 0) 100%);
 }
 
 p,
@@ -52,42 +58,163 @@ h4 {
 
 #header_title {
     position: absolute;
+    display: flex;
+    flex-direction: row;
+
     font-size: 60px;
     margin: 0;
     text-justify: center;
     top: 10%;
     height: 80%;
-    width: fit-content;
+    width: 300px;
     left: 5%;
+    letter-spacing: 10px;
+
+    /* animation: move 2s forwards; */
+}
+
+#TITLE_INNER_TEXT_WRAP {
+    position: relative;
+    width: 0px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    animation: grow 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes grow {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 200px;
+    }
+}
+
+#TITLE_INNER_TEXT {
+    position: absolute;
+    width: 100%;
+    letter-spacing: 10px;
+    overflow: hidden;
+}
+
+.dark {
+    width: fit-content;
+    color: #F16629;
+    position: relative;
+}
+
+#leftSemicolon {
+    margin-left: 100px;
+    animation: marginLeftShrink 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes marginLeftShrink {
+    from {
+        margin-left: 100px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
+}
+
+.light {
+    width: fit-content;
+    color: #B64600;
+    position: relative;
+}
+
+#header_title>.dark:first-child {
+    left: -20px;
+}
+
+#header_title>.dark:last-child {
+    right: -20px;
+}
+
+#header_title>.light:first-child {
+    left: -20px;
+}
+
+#header_title>.light:last-child {
+    right: -20px;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    50% {
+        left: 100%;
+        top: 0;
+    }
+
+    100% {
+        left: 50%;
+        top: 50%;
+    }
 }
 
 #header_div {
-    position: absolute;
+    position: relative;
     left: 100px;
-    top: 200px;
+    margin-top: 50px;
+    width: fit-content;
+    max-width: calc(100vw - 100px);
 }
 
 #header_ribbon {
-    position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
 
     width: 100%;
     height: 100px;
-
-    background-size: cover;
-    background-image: url("/source/images/Coal1.png");
+    max-width: 100%;
+    overflow: hidden;
+    /* background-size: cover;
+    background-image: url("/source/images/Coal1.png"); */
 }
 
 #header_ribbon_effects {
     height: 100%;
 
-    background: #232526;
+    /* background: #232526; */
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #000000e7, #000000 50%);
+    /* background: -webkit-linear-gradient(to right, #000000e7, #000000 50%); */
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #000000e7, #000000 50%);
+    /* background: linear-gradient(to right, #000000e7, #000000 50%); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#lineWrapper {
+    position: relative;
+    width: 100vw;
+    height: 1vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+#line1 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    bottom: -50vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-image: url("/source/images/Line1.svg#svgView(preserveAspectRatio(none))");
 }
 
 #background_img {
@@ -95,6 +222,7 @@ h4 {
     top: 0;
     right: 0;
     width: auto;
+    max-width: 100%;
     height: 100%;
     object-fit: contain;
     align-content: left;
@@ -103,7 +231,7 @@ h4 {
 section {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     margin: 0;
 }
 
@@ -111,7 +239,7 @@ section {
     display: flex;
     width: 300px;
     height: 36px;
-    position: absolute;
+    position: relative;
     margin-top: 10px;
     left: 30px;
     bottom: 20px;
@@ -124,25 +252,17 @@ section {
     }
 
     #header_div {
-        top: 40px;
+        margin-top: 30px;
         left: 10px;
+        max-width: calc(100vw - 10px);
     }
 
     #header_title {
-        font-size: 40px;
+        margin-left: 20px;
     }
 
     p {
         font-size: 16px;
-    }
-
-    #header_ribbon {
-        background-image: url("");
-    }
-
-    #header_ribbon_effects {
-        background: -webkit-linear-gradient(to right, #00000000, #00000000 50%);
-        background: linear-gradient(to right, #00000000, #00000000 50%);
     }
 
     #discord-info {
