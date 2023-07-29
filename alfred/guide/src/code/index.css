@@ -1,0 +1,134 @@
+/* Add your custom styles here to give the site a modern look */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #343233;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1,
+h2 {
+    color: #343233;
+}
+
+pre {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #343233;
+    color: #fff;
+}
+
+/* Style the sections for the guide */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Style the code blocks */
+pre code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Add some animations on hover for interactive elements */
+button,
+a {
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+a:hover {
+    background-color: #343233;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Add your custom styles here to give the site a modern look */
+/* Remaining styles remain the same */
+
+/* Style the FAQ buttons */
+button.faq-question {
+    background-color: #343233;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+button.faq-question:hover {
+    background-color: #535253;
+}
+
+/* Hide the FAQ answers by default */
+.faq-answer {
+    display: none;
+    padding: 0;
+    background-color: rgb(255, 248, 223);
+    height: 0px;
+    overflow: hidden;
+    max-height: 0;
+    margin: auto;
+    margin-bottom: 20px;
+    transition: max-height height 0.5s ease;
+
+}
+
+/* Show the FAQ answer when the button is clicked */
+button.faq-question.active+.faq-answer {
+    display: block;
+}
+
+.faq-answer.active {
+    display: block;
+    max-height: fit-content;
+    height: fit-content;
+    padding: 10px;
+}
+
+/* Ribbon styles */
+.ribbon {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    background-color: #343233;
+    top: -20px;
+    z-index: 1;
+}
+
+.ribbon.top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+    left: -25px;
+}
+
+.ribbon.bottom {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+    left: -25px;
+    bottom: -20px;
+}

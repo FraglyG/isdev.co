@@ -4,47 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Guide - Dark Mode</title>
-    <!-- Link to external CSS file for dark mode styles -->
+    <title>Alfred Guide</title>
     <link rel="stylesheet" href="./src/code/index.css">
 </head>
 
 <body>
     <header>
-        <h1>Service Guide</h1>
-        <nav>
-            <ul>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <!-- Add more sections as needed -->
-            </ul>
-        </nav>
+        <h1>Alfred User Guide</h1>
     </header>
 
     <main>
-        <section id="section1">
-            <h2>Section 1</h2>
-            <p>Content of Section 1 goes here...</p>
+        <section id="alfred-setup">
+            <h2>Alfred Set Up</h2>
+            <h3>Introduce yourself using the Alfred FYI command.</h3>
+            <pre><code>alfred fyi</code></pre>
+            <p><i>Alfred uses your introduction to remember who you are, including your gender and more, allowing for
+                    tailored interactions that suit your preferences.</i></p>
+            <p>Example: alfred fyi I'm Jimmy, a 19 year old male swedish student. I study agriculture at harvard. </p>
+            <br>
+
+            <h3>Set your timezone with the Alfred timezone command.</h3>
+            <pre><code>alfred timezone</code></pre>
+            <p><i>This will ensure alfred takes your local time into account when talking to you, allowing for more
+                    accurate and specific responses to queries.</i></p>
         </section>
 
-        <section id="section2">
-            <h2>Section 2</h2>
-            <p>Content of Section 2 goes here...</p>
+        <section id="how-to-talk-to-alfred">
+            <h2>How to Talk to Alfred</h2>
+            <h3>Start a conversation</h3>
+            <p>You can start a conversation by saying "Hey Alfred", this is just one of many ways to initiate a
+                conversation. You can also immediately append your query after "Hey Alfred".<br>Example: "Hey alfred,
+                how are you?"</p>
+
+            <h3>End a conversation</h3>
+            <p>You can end a conversation by saying "That's all" / "That is all". This is, again, just one of many ways
+                to end a conversation.
+            </p>
         </section>
 
-        <section id="section3">
-            <h2>Section 3</h2>
-            <p>Content of Section 3 goes here...</p>
+        <section id="faq">
+            <h2>FAQ</h2>
+            <!-- Update the FAQ to use buttons -->
+            <button class="faq-question" data-faq="1">You bought a subscription but can't use Alfred?</button>
+            <div class="faq-answer" data-faq="1">
+                <p>It takes a few minutes for the Patreon bot to update your role. If you haven't received your role
+                    within 15 minutes, you can ping Fragly for help after joining the server.</p>
+            </div>
+
+            <button class="faq-question" data-faq="2">How can I track my usage?</button>
+            <div class="faq-answer" data-faq="2">
+                <p>You can use the 'alfred token usage' command to track your current token usage.</p>
+            </div>
+
+            <button class="faq-question" data-faq="3">Does Alfred remember past conversation?</button>
+            <div class="faq-answer" data-faq="3">
+                <p>Alfred doesn't store past conversations, although I have considered adding persistent memory in the
+                    future, allowing Alfred to remember specific things that has happened in past conversations.</p>
+            </div>
         </section>
-        <!-- Add more sections as needed -->
     </main>
 
     <footer>
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
+        <p>&copy; 2023 Alfred. All rights reserved.</p>
     </footer>
 
-    <!-- Link to external JavaScript file for additional functionality (if needed) -->
     <script src="./src/code/index.js"></script>
 </body>
 
