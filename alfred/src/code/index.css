@@ -1,0 +1,274 @@
+body {
+    overflow-x: hidden;
+    background-color: aliceblue;
+    margin: 0px;
+}
+
+#ribbon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: right;
+}
+
+#ribbon>a {
+    margin: 10px;
+    margin-right: 40px;
+    font-size: 35px;
+}
+
+h1 {
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 140px;
+    margin: 0px;
+    left: 600px;
+    width: fit-content;
+    color: #fdffcd;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Comfortaa', cursive;
+}
+
+a {
+    color: #343233;
+    font-family: 'Hind Madurai', sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    font-weight: 900;
+}
+
+li,
+p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+#features_main {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 510px;
+}
+
+#features_title {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 210px;
+
+    background-color: #343233;
+}
+
+#features_info {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    left: 450px;
+
+    background-color: aliceblue;
+}
+
+#features_img {
+    display: block;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+}
+
+#reviews {
+    display: flex;
+    position: relative;
+    margin: 0px;
+    margin-top: 20px;
+    background-color: #343233;
+    width: 100%;
+    height: 200px;
+
+    justify-content: center;
+}
+
+#reviews_wrapper {
+    position: relative;
+    width: 1200px;
+    display: inherit;
+    flex-direction: inherit;
+}
+
+#review {
+    display: block;
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background-color: aliceblue;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#review_content {
+    position: relative;
+    width: 95%;
+    left: 2.5%;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+#slogan {
+    position: relative;
+    width: fit-content;
+    left: 600px;
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+#alfred_info {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+#alfred_info_paragraph {
+    max-width: 1000px;
+    width: fit-content;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#alfred_patron_div {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-color: #343233;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    color: aliceblue;
+}
+
+.button {
+    background-color: aliceblue;
+    border: none;
+    color: #343233;
+    padding: 7px 16px;
+    text-align: center;
+    font-weight: 900;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+
+    transition: all 100ms ease;
+}
+
+.button:hover {
+    background-color: #fdffcd;
+    cursor: pointer;
+}
+
+#TheButler {
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+#TheButlerAlfred {
+    margin: 0px;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 0px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    margin-top: 5px;
+}
+
+@media (max-width: 999px) {
+    #features_img {
+        display: none;
+    }
+
+    #features_info {
+        word-wrap: normal;
+        width: 90%;
+        left: 5%;
+    }
+
+    #slogan {
+        width: 95%;
+        left: 5%;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 120px;
+        left: 50px;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+    #features_img {
+        display: none;
+    }
+
+    #features_info {
+        word-wrap: normal;
+        width: 90%;
+        left: 5%;
+    }
+
+    #slogan {
+        width: 95%;
+        left: 5%;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 110px;
+        left: 0px;
+        margin-left: 20px;
+    }
+
+    #reviews {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+
+    #ribbon>a {
+        margin: 10px;
+        margin-right: 20px;
+        font-size: 20px;
+    }
+
+    #reviews_wrapper {
+        width: 100%;
+        gap: 15px;
+    }
+
+    #TheButler {
+        font-size: 30px;
+    }
+
+    #TheButlerAlfred {
+        font-size: 40px;
+    }
+
+    #alfred_info_paragraph {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}

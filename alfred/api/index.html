@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="English">
+
+<head>
+    <title>Code Display & Copy</title>
+    <style>
+        body {
+            background-color: #f7f1e3;
+            color: #2d3436;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #8d6e63;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+        }
+
+        button {
+            font-size: 1.5rem;
+            background-color: #8d6e63;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #bcaaa4;
+        }
+
+        #code-display {
+            display: none;
+        }
+    </style>
+    <script>
+        function getCode() {
+            let urlParams = new URLSearchParams(window.location.search);
+            let code = urlParams.get('code');
+            document.getElementById("code-display").innerText = code;
+        }
+
+        function copyCode() {
+            let code = document.getElementById("code-display").innerText;
+            navigator.clipboard.writeText(code)
+                .catch(err => {
+                    alert(`Error copying code: ${err}`);
+                });
+        }
+    </script>
+</head>
+
+<body onload="getCode()">
+    <div class="container">
+        <h1>Code Display & Copy Example</h1>
+        <p id="code-display"></p>
+        <button onclick="copyCode()">Copy Code</button>
+    </div>
+</body>
+
+</html>
