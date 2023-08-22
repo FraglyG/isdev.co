@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./src/code/index.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="login-container">
+            <h2>Login</h2>
+            <br>
+            <form id="login-form">
+                <!-- <label for="username">Username:</label> -->
+                <!-- <input type="text" id="username" name="username" required> -->
+                <!-- <label for="password">Password:</label> -->
+                <!-- <input type="password" id="password" name="password" required> -->
+                <label for="password">Insert your security key</label>
+                <input type="password" id="token" name="token" placeholder="Security Key..." required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+        </div>
+        <br>
+        <div id="instructions">
+            <p>
+                <b>How to get your security key:</b>
+            <ul>
+                <li>Go to your dashboard on mylms.vossie.net</li>
+                <li>Click on your name in the top right corner</li>
+                <li>Click on "Preferences"</li>
+                <li>Click on "Security Keys"</li>
+                <li>Use the "Moodle mobile web service" security key</li>
+                <br>
+                <li style="list-style: none;">
+                    OR
+                </li>
+                <br>
+                <li>Just click on <a style="color: #ff5a5f; text-decoration: none;" target='_blank'
+                        href="https://mylms.vossie.net/user/managetoken.php">this link</a></li>
+                <li>and use the "Moodle mobile web service" security key</li>
+            </ul>
+            </p>
+            <br>
+            <p><b>What is a security key?</b></p>
+            <p>a Security key, also known as an API key is a unique code that serves as an
+                authentication mechanism for accessing certain features or services on a website. When you insert your
+                security key in this website, you let this website get your information from mylms.vossie.net so that we
+                can display it here. </p>
+            <p>Security note: I don't store these security keys anywhere but on your browser, and it's
+                stored on the browser in the form of a cookie, so that you don't have to log in again every time you
+                exit the site. Meaning I don't have access to your security key.</p>
+        </div>
+    </div>
+
+    <script src="./src/code/index.js"></script>
+</body>
+
+</html>
