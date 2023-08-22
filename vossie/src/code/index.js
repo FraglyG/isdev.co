@@ -167,12 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < prefillDayCount; i++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day-filler");
-            dayElement.textContent = daysInPreviousMonth - i;
+            dayElement.textContent = daysInPreviousMonth - (prefillDayCount - i) + 1;
             calendarDays.appendChild(dayElement);
         }
 
         // fill out the current month days
-        for (let day = 1; day < daysInMonth; day++) {
+        for (let day = 1; day < daysInMonth + 1; day++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day");
             dayElement.innerHTML = `${day}${generateEventList(dayArray, day)}`;
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // fill out the next month days
-        for (let i = 0; i < postfillDayCount; i++) {
+        for (let i = 0; i < postfillDayCount + 1; i++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day-filler");
             dayElement.textContent = i + 1;
