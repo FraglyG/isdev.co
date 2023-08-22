@@ -105,26 +105,75 @@ document.addEventListener("DOMContentLoaded", function () {
         // fill the calendar day with day-filler class elements until the day of the week is correct
         // then fill the calendar day with day class elements until the day of the month is correct
         // then fill the calendar day with day-filler class elements until the end of the week is reached
-        let day = 1;
-        let dayOfWeek = new Date().getDay() + 1;
-        let month = new Date().getMonth();
-        let year = new Date().getFullYear();
-        let daysInMonth = new Date(year, month + 1, 0).getDate();
-        let daysInPreviousMonth = new Date(year, month, 0).getDate();
-        let daysInNextMonth = new Date(year, month + 2, 0).getDate();
-        let lastDayOfMonth = new Date(year, month + 1, 0).getDay();
-        let calendarDayNumber = 1;
-        let calendarDayFillerNumber = 1;
-        // fill the previous month
-        for (let i = 0; i < dayOfWeek; i++) {
+        // let day = 1;
+        // let dayOfWeek = new Date().getDay() + 1;
+        // let month = new Date().getMonth();
+        // let year = new Date().getFullYear();
+        // let daysInMonth = new Date(year, month + 1, 0).getDate();
+        // let daysInPreviousMonth = new Date(year, month, 0).getDate();
+        // let daysInNextMonth = new Date(year, month + 2, 0).getDate();
+        // let lastDayOfMonth = new Date(year, month + 1, 0).getDay();
+        // let calendarDayNumber = 1;
+        // let calendarDayFillerNumber = 1;
+        // // fill the previous month
+        // for (let i = 0; i < dayOfWeek; i++) {
+        //     const dayElement = document.createElement("div");
+        //     dayElement.classList.add("day-filler");
+        //     dayElement.textContent = daysInPreviousMonth - (dayOfWeek - i - 1);
+        //     calendarDays.appendChild(dayElement);
+        //     calendarDayFillerNumber++;
+        // }
+        // // fill the current month
+        // while (day <= daysInMonth) {
+        //     const dayElement = document.createElement("div");
+        //     dayElement.classList.add("day");
+        //     dayElement.innerHTML = `${day}${generateEventList(dayArray, calendarDayNumber)}`;
+        //     dayElement.addEventListener("click", () => openEventPopup(day));
+        //     calendarDays.appendChild(dayElement);
+
+        //     // if is today then add day-today class
+        //     if (day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+        //         dayElement.classList.add("day-today");
+        //         populateSchedule(dayArray, calendarDayNumber)
+        //     }
+
+        //     day++;
+        //     calendarDayNumber++;
+        // }
+        // // fill the next month
+        // let endOfMonthFillerNumber = 1
+        // while (lastDayOfMonth < 6) {
+        //     const dayElement = document.createElement("div");
+        //     dayElement.classList.add("day-filler");
+        //     dayElement.textContent = endOfMonthFillerNumber;
+        //     calendarDays.appendChild(dayElement);
+        //     lastDayOfMonth++;
+        //     endOfMonthFillerNumber++;
+        // }
+
+        const year = new Date().getFullYear();
+        const month = new Date().getMonth();
+
+        const daysInMonth = new Date(year, month + 1, 0).getDate()
+        const daysInPreviousMonth = new Date(year, month, 0).getDate();
+
+        const weekDayOfFirstDay = new Date(year, month, 1).getDay();
+        const weekDayOfLastDay = new Date(year, month, daysInMonth).getDay()
+
+        const prefillDayCount = weekDayOfFirstDay
+        const postfillDayCount = 6 - weekDayOfLastDay
+
+        // fill out the previous month days
+        for (let i = 0; i < prefillDayCount; i++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day-filler");
-            dayElement.textContent = daysInPreviousMonth - (dayOfWeek - i - 1);
+            dayElement.textContent = daysInPreviousMonth - i;
             calendarDays.appendChild(dayElement);
             calendarDayFillerNumber++;
         }
-        // fill the current month
-        while (day <= daysInMonth) {
+
+        // fill out the current month days
+        for (let day = 1; day < daysInMonth; day++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day");
             dayElement.innerHTML = `${day}${generateEventList(dayArray, calendarDayNumber)}`;
@@ -137,18 +186,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 populateSchedule(dayArray, calendarDayNumber)
             }
 
-            day++;
-            calendarDayNumber++;
         }
-        // fill the next month
-        let endOfMonthFillerNumber = 1
-        while (lastDayOfMonth < 6) {
+
+        // fill out the next month days
+        for (let i = 0; i < postfillDayCount; i++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day-filler");
-            dayElement.textContent = endOfMonthFillerNumber;
+            dayElement.textContent = i + 1;
             calendarDays.appendChild(dayElement);
-            lastDayOfMonth++;
-            endOfMonthFillerNumber++;
+            calendarDayFillerNumber++;
         }
 
         // Update current month label
