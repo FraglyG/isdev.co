@@ -169,21 +169,20 @@ document.addEventListener("DOMContentLoaded", function () {
             dayElement.classList.add("day-filler");
             dayElement.textContent = daysInPreviousMonth - i;
             calendarDays.appendChild(dayElement);
-            calendarDayFillerNumber++;
         }
 
         // fill out the current month days
         for (let day = 1; day < daysInMonth; day++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day");
-            dayElement.innerHTML = `${day}${generateEventList(dayArray, calendarDayNumber)}`;
+            dayElement.innerHTML = `${day}${generateEventList(dayArray, day)}`;
             dayElement.addEventListener("click", () => openEventPopup(day));
             calendarDays.appendChild(dayElement);
 
             // if is today then add day-today class
             if (day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
                 dayElement.classList.add("day-today");
-                populateSchedule(dayArray, calendarDayNumber)
+                populateSchedule(dayArray, day)
             }
 
         }
