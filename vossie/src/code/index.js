@@ -160,6 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const weekDayOfFirstDay = new Date(year, month, 1).getDay();
         const weekDayOfLastDay = new Date(year, month, daysInMonth).getDay()
 
+        console.log(daysInMonth)
+        console.log(weekDayOfLastDay)
+
         const prefillDayCount = weekDayOfFirstDay
         const postfillDayCount = 6 - weekDayOfLastDay
 
