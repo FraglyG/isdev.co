@@ -28,12 +28,14 @@ document.getElementById('login-form').addEventListener('submit', async function 
     if (token) {
         // make sure token is real
         const response = await fetch("https://vossie.isdev.co/realtoken?token=" + token)
+        const responseJson = await response.json()
+
         if (response.status != 200) {
             document.getElementById('error-message').textContent = 'Server error, please try again.';
             return
         }
 
-        if (response.data == "false") {
+        if (responseJson == false) {
             document.getElementById('error-message').textContent = 'Invalid token, please try again.';
             return
         }
