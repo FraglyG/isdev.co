@@ -10,14 +10,10 @@ body {
     background-color: #ff5a5f;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px auto;
     width: fit-content;
     height: fit-content;
     padding: 10px;
     text-align: center;
-
-    margin-right: 100px;
-    margin-left: 50px;
 }
 
 #currentMonth {
@@ -145,8 +141,9 @@ body {
 #front-panel {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: top;
+
 }
 
 #agenda {
@@ -158,18 +155,17 @@ body {
     margin-left: 20px;
     padding: 0;
     list-style: circle;
-    height: 100%;
-    width: 80%;
+    height: 600px;
+    width: auto;
     font-size: 12px;
 }
 
-#welcome {
+#agenda-title {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 10px;
     width: 100%;
-    text-align: center;
 }
 
 #today-schedule {
@@ -178,7 +174,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -215,6 +211,23 @@ body {
     color: #666;
 }
 
+#calendar-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 0;
+    list-style: circle;
+    height: fit-content;
+    width: 100%;
+    font-size: 12px;
+
+    margin-top: 50px;
+    background-color: #222222;
+    padding: 50px;
+}
+
 #chat {
     display: flex;
     flex-direction: column;
@@ -225,12 +238,11 @@ body {
     padding: 0;
     list-style: circle;
     height: 100%;
-    width: 80%;
+    width: 600px;
     font-size: 12px;
 
     background-color: #222222;
-    width: 100%;
-    height: 400px;
+    height: 600px;
     border-radius: 8px;
 }
 
@@ -365,4 +377,33 @@ body {
     color: #fff;
 
     margin: 0px;
+}
+
+#front-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 0;
+    list-style: circle;
+    height: 100%;
+    width: auto;
+    min-width: 50%;
+    font-size: 12px;
+
+    background-color: #222222;
+    height: 600px;
+    border-radius: 8px;
+}
+
+#front-page-welcome-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: 0px;
+    padding: 30px;
 }

@@ -28,7 +28,8 @@ if (!userToken) {
 function generateEventList(dayArray, day) {
     let eventList = "<ul class='eventlist'>";
 
-    const events = dayArray[day - 1].events
+    const dayData = dayArray[day - 1]
+    const events = dayData ? dayData.events : []
 
     for (let i = 0; i < events.length; i++) {
         eventList += `<li>${events[i].name}</li>`;
@@ -39,7 +40,9 @@ function generateEventList(dayArray, day) {
 
 function populateSchedule(dayArray, day) {
     const schedule = document.getElementById("schedule")
-    const events = dayArray[day - 1].events
+    schedule.innerHTML = ""
+    const dayData = dayArray[day - 1]
+    const events = dayData ? dayData.events : []
 
     for (let i = 0; i < events.length; i++) {
         const event = events[i];
@@ -65,8 +68,84 @@ function populateSchedule(dayArray, day) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function openEventPopup(day) {
+    const popup = document.getElementById("eventPopup");
+    // ... Logic to populate event details in the popup ...
+
+    popup.style.display = "block";
+}
+
+function closeEventPopup() {
+    const popup = document.getElementById("eventPopup");
+    popup.style.display = "none";
+}
+
+async function populateCalendar(dummyLoad) {
+    // Clear existing calendar days
     const currentMonthElement = document.getElementById("currentMonth");
+    const calendarDays = document.querySelector(".calendar-days");
+
+    const dayArrayRaw = !dummyLoad ? (await fetch("https://vossie.isdev.co/calendar?token=" + userToken)) : null
+    const dayArray = dayArrayRaw ? (await dayArrayRaw.json()) : []
+
+    calendarDays.innerHTML = `<div class="day-label">Sun</div>
+    <div class="day-label">Mon</div>
+    <div class="day-label">Tue</div>
+    <div class="day-label">Wed</div>
+    <div class="day-label">Thu</div>
+    <div class="day-label">Fri</div>
+    <div class="day-label">Sat</div>`;
+
+    const year = new Date().getFullYear();
+    const month = new Date().getMonth();
+
+    const daysInMonth = new Date(year, month, 0).getDate()
+    const daysInPreviousMonth = new Date(year, month - 1, 0).getDate();
+
+    const weekDayOfFirstDay = new Date(year, month, 1).getDay();
+    const weekDayOfLastDay = new Date(year, month, daysInMonth).getDay()
+
+    const prefillDayCount = weekDayOfFirstDay
+    const postfillDayCount = 6 - weekDayOfLastDay
+
+    // fill out the previous month days
+    for (let i = 0; i < prefillDayCount; i++) {
+        const dayElement = document.createElement("div");
+        dayElement.classList.add("day-filler");
+        dayElement.textContent = daysInPreviousMonth - (prefillDayCount - i) + 1;
+        calendarDays.appendChild(dayElement);
+    }
+
+    // fill out the current month days
+    for (let day = 1; day < daysInMonth + 1; day++) {
+        const dayElement = document.createElement("div");
+        dayElement.classList.add("day");
+        dayElement.innerHTML = `${day}${generateEventList(dayArray, day)}`;
+        dayElement.addEventListener("click", () => openEventPopup(day));
+        calendarDays.appendChild(dayElement);
+
+        // if is today then add day-today class
+        if (day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+            dayElement.classList.add("day-today");
+            populateSchedule(dayArray, day)
+        }
+
+    }
+
+    // fill out the next month days
+    for (let i = 0; i < postfillDayCount; i++) {
+        const dayElement = document.createElement("div");
+        dayElement.classList.add("day-filler");
+        dayElement.textContent = i + 1;
+        calendarDays.appendChild(dayElement);
+    }
+
+    // Update current month label
+    const currentMonth = new Date().toLocaleString("default", { month: "long" });
+    currentMonthElement.textContent = currentMonth + " " + year;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.getElementById("prevBtn");
     const nextButton = document.getElementById("nextBtn");
 
@@ -82,134 +161,8 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCalendar();
 
     async function renderCalendar() {
-        // Clear existing calendar days
-        const calendarDays = document.querySelector(".calendar-days");
-        // calendarDays.innerHTML = "";
-
-        const dayArrayRaw = await fetch("https://vossie.isdev.co/calendar?token=" + userToken)
-        const dayArray = await dayArrayRaw.json()
-        console.log(dayArray)
-
-        // ... Logic to populate calendar days here ...
-
-        // Example: Dynamically create calendar day elements
-        // for (let i = 1; i <= 31; i++) {
-        //     const dayElement = document.createElement("div");
-        //     dayElement.classList.add("day");
-        //     dayElement.textContent = i;
-        //     dayElement.addEventListener("click", () => openEventPopup(i));
-        //     calendarDays.appendChild(dayElement);
-        // }
-
-        // Dynamically create calendar day elements
-        // fill the calendar day with day-filler class elements until the day of the week is correct
-        // then fill the calendar day with day class elements until the day of the month is correct
-        // then fill the calendar day with day-filler class elements until the end of the week is reached
-        // let day = 1;
-        // let dayOfWeek = new Date().getDay() + 1;
-        // let month = new Date().getMonth();
-        // let year = new Date().getFullYear();
-        // let daysInMonth = new Date(year, month + 1, 0).getDate();
-        // let daysInPreviousMonth = new Date(year, month, 0).getDate();
-        // let daysInNextMonth = new Date(year, month + 2, 0).getDate();
-        // let lastDayOfMonth = new Date(year, month + 1, 0).getDay();
-        // let calendarDayNumber = 1;
-        // let calendarDayFillerNumber = 1;
-        // // fill the previous month
-        // for (let i = 0; i < dayOfWeek; i++) {
-        //     const dayElement = document.createElement("div");
-        //     dayElement.classList.add("day-filler");
-        //     dayElement.textContent = daysInPreviousMonth - (dayOfWeek - i - 1);
-        //     calendarDays.appendChild(dayElement);
-        //     calendarDayFillerNumber++;
-        // }
-        // // fill the current month
-        // while (day <= daysInMonth) {
-        //     const dayElement = document.createElement("div");
-        //     dayElement.classList.add("day");
-        //     dayElement.innerHTML = `${day}${generateEventList(dayArray, calendarDayNumber)}`;
-        //     dayElement.addEventListener("click", () => openEventPopup(day));
-        //     calendarDays.appendChild(dayElement);
-
-        //     // if is today then add day-today class
-        //     if (day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
-        //         dayElement.classList.add("day-today");
-        //         populateSchedule(dayArray, calendarDayNumber)
-        //     }
-
-        //     day++;
-        //     calendarDayNumber++;
-        // }
-        // // fill the next month
-        // let endOfMonthFillerNumber = 1
-        // while (lastDayOfMonth < 6) {
-        //     const dayElement = document.createElement("div");
-        //     dayElement.classList.add("day-filler");
-        //     dayElement.textContent = endOfMonthFillerNumber;
-        //     calendarDays.appendChild(dayElement);
-        //     lastDayOfMonth++;
-        //     endOfMonthFillerNumber++;
-        // }
-
-        const year = new Date().getFullYear();
-        const month = new Date().getMonth();
-
-        const daysInMonth = new Date(year, month, 0).getDate()
-        const daysInPreviousMonth = new Date(year, month - 1, 0).getDate();
-
-        const weekDayOfFirstDay = new Date(year, month, 1).getDay();
-        const weekDayOfLastDay = new Date(year, month, daysInMonth).getDay()
-
-        const prefillDayCount = weekDayOfFirstDay
-        const postfillDayCount = 6 - weekDayOfLastDay
-
-        // fill out the previous month days
-        for (let i = 0; i < prefillDayCount; i++) {
-            const dayElement = document.createElement("div");
-            dayElement.classList.add("day-filler");
-            dayElement.textContent = daysInPreviousMonth - (prefillDayCount - i) + 1;
-            calendarDays.appendChild(dayElement);
-        }
-
-        // fill out the current month days
-        for (let day = 1; day < daysInMonth + 1; day++) {
-            const dayElement = document.createElement("div");
-            dayElement.classList.add("day");
-            dayElement.innerHTML = `${day}${generateEventList(dayArray, day)}`;
-            dayElement.addEventListener("click", () => openEventPopup(day));
-            calendarDays.appendChild(dayElement);
-
-            // if is today then add day-today class
-            if (day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
-                dayElement.classList.add("day-today");
-                populateSchedule(dayArray, day)
-            }
-
-        }
-
-        // fill out the next month days
-        for (let i = 0; i < postfillDayCount; i++) {
-            const dayElement = document.createElement("div");
-            dayElement.classList.add("day-filler");
-            dayElement.textContent = i + 1;
-            calendarDays.appendChild(dayElement);
-        }
-
-        // Update current month label
-        const currentMonth = new Date().toLocaleString("default", { month: "long" });
-        currentMonthElement.textContent = currentMonth + " " + year;
-    }
-
-    function openEventPopup(day) {
-        const popup = document.getElementById("eventPopup");
-        // ... Logic to populate event details in the popup ...
-
-        popup.style.display = "block";
-    }
-
-    function closeEventPopup() {
-        const popup = document.getElementById("eventPopup");
-        popup.style.display = "none";
+        await populateCalendar(true)
+        populateCalendar(false)
     }
 
     function showPreviousMonth() {

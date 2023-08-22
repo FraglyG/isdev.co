@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VossieEvo</title>
+    <link rel="icon" href="./logo_bg.png">
     <link rel="stylesheet" href="./src/code/index.css">
 </head>
 
 <body>
     <div id="head-ribbon">
         <img src="./logo.png" style="margin-left: 15px; height: 100%; width: fit-content;">
-        <h1 style="margin-left: 20px; color: white;">VossieEvo</h1>
+        <div style="display: flex; flex-direction: column; margin: auto; margin-left: 20px;">
+            <h1 style="margin: 0px; color: white;">VossieEvo</h1>
+            <h2 style="margin: 0px; color: white; font-size: 10px; margin-left: 5px;">Your education. Your evolution.
+            </h2>
+        </div>
     </div>
 
     <div id="front-panel">
+        <div id="front-page">
+            <h2 id="front-page-welcome-title">Welcome back!</h2>
+            <p style="color:white;font-size: 16px; margin-left: 30px;">still working on this site</p>
+        </div>
         <div id="chat">
             <div id="chat-header">
                 <h2>EduChat</h2>
@@ -48,15 +57,18 @@
                 </div>
             </div>
             <div id="chat-textbox">
-                <form id="chat-form">
+                <form id="chat-form" autocomplete="off">
                     <input type="text" id="chat-input" name="chat-input" placeholder="Type a message...">
                     <button type="submit" id="chat-submit">></button>
                 </form>
             </div>
         </div>
+    </div>
+
+    <div id="calendar-panel">
         <div id="agenda">
-            <div id="welcome">
-                <h2>Welcome back, bro</h2>
+            <div id="agenda-title">
+                <h2>Don't miss a <a style="color: #ff5a5f">beat</a>,<br>here's what's happening!</h2>
             </div>
             <div id="today-schedule">
                 <div id="today-schedule-content">
@@ -84,6 +96,7 @@
                 <div class="day-label">Sat</div>
 
                 <!-- Calendar days will be populated here dynamically -->
+
             </div>
         </div>
     </div>
