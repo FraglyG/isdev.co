@@ -191,12 +191,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // fill out the next month days
-        for (let i = 0; i < postfillDayCount + 1; i++) {
+        for (let i = 0; i < postfillDayCount; i++) {
             const dayElement = document.createElement("div");
             dayElement.classList.add("day-filler");
             dayElement.textContent = i + 1;
             calendarDays.appendChild(dayElement);
-            calendarDayFillerNumber++;
         }
 
         // Update current month label
