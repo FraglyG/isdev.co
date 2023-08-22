@@ -154,8 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const year = new Date().getFullYear();
         const month = new Date().getMonth();
 
-        const daysInMonth = new Date(year, month + 1, 0).getDate()
-        const daysInPreviousMonth = new Date(year, month, 0).getDate();
+        const daysInMonth = new Date(year, month, 0).getDate()
+        const daysInPreviousMonth = new Date(year, month - 1, 0).getDate();
 
         const weekDayOfFirstDay = new Date(year, month, 1).getDay();
         const weekDayOfLastDay = new Date(year, month, daysInMonth).getDay()
