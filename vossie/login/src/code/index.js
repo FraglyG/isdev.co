@@ -18,7 +18,7 @@ function getCookie(name) {
     return null;
 }
 
-document.getElementById('login-form').addEventListener('submit', function (event) {
+document.getElementById('login-form').addEventListener('submit', async function (event) {
     event.preventDefault();
     // const username = document.getElementById('username').value;
     // const password = document.getElementById('password').value;
@@ -26,6 +26,18 @@ document.getElementById('login-form').addEventListener('submit', function (event
     const token = document.getElementById('token').value;
 
     if (token) {
+        // make sure token is real
+        const response = await fetch("https://vossie.isdev.co/realtoken?token=" + userToken)
+        if (response.status != 200) {
+            document.getElementById('error-message').textContent = 'Server error, please try again.';
+            return
+        }
+
+        if (response.data == "false") {
+            document.getElementById('error-message').textContent = 'Invalid token, please try again.';
+            return
+        }
+
         // window.location.href = 'dashboard.html'; // Redirect to dashboard
         setCookie("VOSSIE_TOKEN", token, 7); // Set the cookie to expire in 7 days
         window.location.href = '../'; // Redirect to dashboard
