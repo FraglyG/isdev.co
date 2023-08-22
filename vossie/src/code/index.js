@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const calendarDays = document.querySelector(".calendar-days");
         // calendarDays.innerHTML = "";
 
-        const dayArrayRaw = await fetch("http://localhost:3000/calendar?token=" + userToken)
+        const dayArrayRaw = await fetch("https://vossie.isdev.co/calendar?token=" + userToken)
         const dayArray = await dayArrayRaw.json()
         console.log(dayArray)
 
