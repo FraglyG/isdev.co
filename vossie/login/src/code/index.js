@@ -27,7 +27,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
 
     if (token) {
         // make sure token is real
-        const response = await fetch("https://vossie.isdev.co/realtoken?token=" + userToken)
+        const response = await fetch("https://vossie.isdev.co/realtoken?token=" + token)
         if (response.status != 200) {
             document.getElementById('error-message').textContent = 'Server error, please try again.';
             return
