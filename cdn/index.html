@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/code/index.css">
+    <title>File Upload Dashboard</title>
+</head>
+
+<body>
+    <div id="overlay">
+        <div id="password_container">
+            <h3 style="color: white;">Password</h3>
+            <input type="password" id="passwordInput">
+            <button id="passwordButton">Password</button>
+            <p id="passwordStatusMessage" style="color: white;"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="file_list_container">
+            <h3>File List</h3>
+            <ul id="file_list"></ul>
+        </div>
+
+        <div id="file_upload_container">
+            <h3>File Upload</h3>
+            <input type="file" id="fileInput">
+            <button id="uploadButton">Upload</button>
+            <p id="uploadStatusMessage"></p>
+        </div>
+
+        <div id="file_delete_container">
+            <h3>File Delete</h3>
+            <input type="text" id="fileDeleteInput">
+            <button id="deleteButton">Delete</button>
+            <p id="deleteStatusMessage"></p>
+        </div>
+
+    </div>
+    <script src="./src/code/index.js"></script>
+</body>
+
+</html>
