@@ -12,7 +12,7 @@ const passwordStatus = document.getElementById('passwordStatusMessage');
 
 const overlay = document.getElementById('overlay');
 
-const serverUrl = `http://localhost:3000`
+const serverUrl = `https://cdn.isdev.co`
 let userPassword = ""
 
 // Function to set a cookie
