@@ -98,7 +98,7 @@ uploadButton.addEventListener('click', async () => {
 
         const data = await response.json();
         if (response.ok) {
-            uploadStatus.textContent = `File uploaded. Link: ${data.link}`;
+            uploadStatus.textContent = `File uploaded.<br>Link: ${data.link}<br>Download: ${data.download_link}`;
         } else {
             uploadStatus.textContent = 'Error uploading file.';
         }
