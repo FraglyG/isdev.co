@@ -169,7 +169,7 @@
 //     })()
 // }
 
-const serverUrl = "https://cdn.isdev.co"
+const serverUrl = "http://localhost:3000"
 let userPassword = ""
 let currentFileLocation = ""
 let fileList = []

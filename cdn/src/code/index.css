@@ -594,7 +594,7 @@ body {
     border-radius: inherit;
 
     /* transition width and opacity */
-    transition: width 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+    transition: width 0.5s ease, opacity 0.5s ease, background-color 0.1s ease;
 }
 
 #overlay {
