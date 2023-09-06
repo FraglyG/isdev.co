@@ -448,88 +448,73 @@ body {
     width: 30px;
     height: 30px;
     margin: 5px;
+
+    background-size: 30px;
+
 }
 
 .file-button:hover {
     cursor: pointer;
 }
 
-.file-button>img {
-    width: 30px;
-    height: 30px;
-}
-
 /*    BUTTONS  */
 
+
 .copy-download-link {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/linked-file.png");
 }
 
 .file-download {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/file-download.png");
 }
 
 .file-delete {
     margin-left: 20px;
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/delete-file.png");
 }
 
 .open-folder {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/opened-folder.png")
 }
 
 .file-open {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/share-arrow-squared.png")
 }
 
 /*   FILE TYPES */
 .file-type-image {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/image-document.png");
 }
 
 .file-type-video {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/video-file.png");
 }
 
 .file-type-audio {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/audio-file.png");
 }
 
 .file-type-folder {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/folder-invoices.png");
 }
 
 .file-type-archive {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/archive-folder.png");
 }
 
 .file-type-code {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/code-file.png");
 }
 
 .file-type-exe {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/exe.png");
 }
 
 .file-type-document {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/document--v1.png");
 }
 
 .file-type-other {
-    background-size: 30px;
     background-image: url("https://img.icons8.com/windows/32/file.png");
 }
 
@@ -631,5 +616,25 @@ body {
         max-width: 75px;
         width: 75px;
         min-width: 75px;
+    }
+}
+
+/* smaller than 400px */
+@media only screen and (max-width: 400px) {
+    .file-button {
+        width: 26px;
+        height: 26px;
+        margin: 5px;
+
+        background-size: 26px;
+        background-repeat: no-repeat;
+    }
+
+    .file-icon {
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+
+        background-size: 20px;
     }
 }
