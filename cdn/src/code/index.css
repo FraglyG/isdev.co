@@ -482,6 +482,11 @@ body {
     background-image: url("https://img.icons8.com/windows/32/opened-folder.png")
 }
 
+.file-open {
+    background-size: 30px;
+    background-image: url("https://img.icons8.com/windows/32/share-arrow-squared.png")
+}
+
 /*   FILE TYPES */
 .file-type-image {
     background-size: 30px;

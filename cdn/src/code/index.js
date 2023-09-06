@@ -296,6 +296,13 @@ function connectDownloadFileFunction(element, fileName) {
     })
 }
 
+function connectOpenFileFunction(element, fileName) {
+    const downloadLinkAppend = serverUrl + "/files/" + fileName.replace(/\\/g, "/")
+    element.addEventListener('click', () => {
+        window.open(downloadLinkAppend)
+    })
+}
+
 const fileBackButton = document.getElementById('file-location-back')
 fileBackButton.addEventListener('click', () => {
     if (currentFileLocation == "") return
@@ -443,6 +450,11 @@ async function refreshList() {
             fileDownloadElement.classList.add('file-button', 'file-download')
             connectDownloadFileFunction(fileDownloadElement, file.name)
 
+            const fileOpenElement = document.createElement('div')
+            fileOpenElement.classList.add('file-button', 'file-open')
+            connectOpenFileFunction(fileOpenElement, file.name)
+
+            fileActionsElement.appendChild(fileOpenElement)
             fileActionsElement.appendChild(fileDownloadElement)
             fileActionsElement.appendChild(fileCopyDownloadLinkElement)
         }
