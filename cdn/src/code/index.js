@@ -566,7 +566,7 @@ if (pass) {
     })()
 }
 
-function handleProgressbar(formData, fileName) {
+function handleProgressbar(formData, filePath) {
     // {
     //     "name": "Part-13.pptx",
     //     "created": "2023-09-06T22:09:31.227Z",
@@ -576,11 +576,19 @@ function handleProgressbar(formData, fileName) {
     //     "extension": ".pptx"
     // }
 
+    filePath = filePath.replace(/\:/g, "\\")
+    console.log(filePath)
+
+    const cleanFilePath = filePath.split("\\")
+    const fileName = cleanFilePath.pop()
+
+    console.log(cleanFilePath, fileName)
+
     fileList.push({
-        name: fileName,
+        name: cleanFilePath.length == 0 ? fileName : cleanFilePath.join("\\") + "\\" + fileName,
         created: new Date().toISOString(),
         size: 0,
-        path: currentFileLocation + fileName,
+        path: filePath,
         isFolder: false,
         extension: fileName.split(".").pop()
     })
@@ -595,7 +603,45 @@ function handleProgressbar(formData, fileName) {
                 targetElement = element.parentElement.parentElement;
             }
         });
-        if (!targetElement) { console.error("idk bruh"); return }
+        if (!targetElement) {
+            // console.log(`idk bruh, I tried finding ${fileName} but couldn't`);
+            // const folderContainingFileName = cleanFilePath[0]
+
+            // // find the folder it should be in
+            // elements = document.querySelectorAll('.file-name');
+            // elements.forEach((element) => {
+            //     if (element.querySelector('p').innerText == folderContainingFileName) {
+            //         targetElement = element.parentElement.parentElement;
+            //     }
+            // });
+            // if (!targetElement) {
+            //     console.log(`idk bruh, I tried finding ${folderContainingFileName} but couldn't, gonna just make the folder`);
+
+            //     // add the folder to the list and try again
+            //     fileList.push({
+            //         name: folderContainingFileName,
+            //         created: new Date().toISOString(),
+            //         size: 0,
+            //         path: filePath,
+            //         isFolder: true,
+            //         extension: ""
+            //     })
+            //     refreshList().then(handleProgressbar(formData, filePath))
+
+            //     return
+            // }
+
+            // console.log("found the folder")
+
+            uploadFile(formData, (percentage) => {
+                console.log("percentage: ", percentage)
+            }, () => {
+                console.log("done")
+                refreshFiles()
+            })
+
+            return
+        }
 
         const fileProgressElement = targetElement.querySelector('.file-progress')
         const fileMetaElement = targetElement.querySelector('.file-metadata')
@@ -652,7 +698,7 @@ fileContainer.addEventListener('drop', async (e) => {
             const formData = new FormData();
             formData.append('file', file, fileNameWithPath);
 
-            handleProgressbar(formData, file.name);
+            handleProgressbar(formData, fileNameWithPath);
         } else if (item.isDirectory) {
             // If it's a directory, update the current directory path
             currentDirectory = currentDirectory + (currentDirectory ? ':' : '') + item.name;
@@ -687,7 +733,7 @@ async function handleDirectoryUpload(directory, currentDirectory) {
             const formData = new FormData();
             formData.append('file', file, fileNameWithPath);
 
-            handleProgressbar(formData, file.name);
+            handleProgressbar(formData, fileNameWithPath);
         } else if (entry.isDirectory) {
             // If it's another directory, handle it recursively with the updated directory path
             console.log(entry.name);
