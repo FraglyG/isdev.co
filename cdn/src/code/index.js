@@ -169,7 +169,7 @@
 //     })()
 // }
 
-const serverUrl = "http://localhost:3000" //"https://cdn.isdev.co"
+const serverUrl = "https://cdn.isdev.co" //"http://localhost:3000"
 let userPassword = ""
 let currentFileLocation = ""
 let fileList = []
@@ -611,7 +611,7 @@ function handleProgressbar(formData, fileName) {
 const fileContainer = document.body
 fileContainer.addEventListener('dragover', (e) => {
     e.preventDefault();
-})
+}) 
 
 fileContainer.addEventListener('drop', async (e) => {
     e.preventDefault();
