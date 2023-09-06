@@ -169,7 +169,7 @@
 //     })()
 // }
 
-const serverUrl = "https://cdn.isdev.co" //"http://localhost:3000"
+const serverUrl = "http://localhost:3000"
 let userPassword = ""
 let currentFileLocation = ""
 let fileList = []
@@ -200,7 +200,7 @@ function updateFileLocation() {
     fileLocationElement.innerText = "files\\" + currentFileLocation
 }
 
-function uploadFile(formData, callbackFunction = (percentage) => { }) {
+function uploadFile(formData, callbackFunction = (percentage) => { }, completedFunction = refreshFiles) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
@@ -216,7 +216,7 @@ function uploadFile(formData, callbackFunction = (percentage) => { }) {
         xhr.addEventListener('load', () => {
             if (xhr.status === 200) {
                 console.log('File uploaded.');
-                refreshFiles();
+                completedFunction()
                 resolve(xhr.responseText);
             } else {
                 console.error('Error uploading file.');
@@ -598,11 +598,20 @@ function handleProgressbar(formData, fileName) {
         if (!targetElement) { console.error("idk bruh"); return }
 
         const fileProgressElement = targetElement.querySelector('.file-progress')
+        const fileMetaElement = targetElement.querySelector('.file-metadata')
+        const fileSizeElement = fileMetaElement.querySelector('p')
+
+        const fileSize = formData.get('file').size
 
         // animate progress bar
         fileProgressElement.style.opacity = 1
         uploadFile(formData, (percentage) => {
+            fileSizeElement.innerText = convertFileSize(percentage / 100 * fileSize) //+ " / " + convertFileSize(fileSize)
             fileProgressElement.style.width = percentage + "%" // set progress bar width
+        }, () => {
+            fileProgressElement.style.opacity = 0 // hide progress bar
+            fileProgressElement.style.backgroundColor = "#76ff5a" // set progress bar color to green
+            setTimeout(refreshFiles, 500)
         })
     })
 }
@@ -611,7 +620,7 @@ function handleProgressbar(formData, fileName) {
 const fileContainer = document.body
 fileContainer.addEventListener('dragover', (e) => {
     e.preventDefault();
-}) 
+})
 
 fileContainer.addEventListener('drop', async (e) => {
     e.preventDefault();
