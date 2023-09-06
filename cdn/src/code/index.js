@@ -169,7 +169,7 @@
 //     })()
 // }
 
-const serverUrl = "https://cdn.isdev.co"
+const serverUrl = "http://localhost:3000" //"https://cdn.isdev.co"
 let userPassword = ""
 let currentFileLocation = ""
 let fileList = []
@@ -200,7 +200,7 @@ function updateFileLocation() {
     fileLocationElement.innerText = "files\\" + currentFileLocation
 }
 
-function uploadFile(formData) {
+function uploadFile(formData, callbackFunction = (percentage) => { }) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
@@ -208,6 +208,8 @@ function uploadFile(formData) {
             if (event.lengthComputable) {
                 const percentage = (event.loaded / event.total) * 100;
                 console.log(`Upload Progress: ${percentage.toFixed(2)}%`);
+
+                callbackFunction(percentage)
             }
         });
 
@@ -437,6 +439,12 @@ async function refreshList() {
         fileInfoElement.appendChild(fileNameElement)
         fileInfoElement.appendChild(fileMetadataElement)
 
+        const fileProgressContainerElement = document.createElement('div')
+        fileProgressContainerElement.classList.add('file-progress-container')
+
+        const fileProgressElement = document.createElement('div')
+        fileProgressElement.classList.add('file-progress')
+
         //  FILE ACTIONS
         const fileActionsElement = document.createElement('div')
         fileActionsElement.classList.add('file-actions')
@@ -474,6 +482,9 @@ async function refreshList() {
         fileActionsElement.appendChild(fileDeleteElement)
 
         // APPEND TO FILE ELEMENT
+        fileProgressContainerElement.appendChild(fileProgressElement)
+        fileElement.appendChild(fileProgressContainerElement)
+
         fileElement.appendChild(fileInfoElement)
         fileElement.appendChild(fileActionsElement)
 
@@ -555,6 +566,47 @@ if (pass) {
     })()
 }
 
+function handleProgressbar(formData, fileName) {
+    // {
+    //     "name": "Part-13.pptx",
+    //     "created": "2023-09-06T22:09:31.227Z",
+    //     "size": 85909,
+    //     "path": "F:\\A_ProgrammingShit\\cdn.isdev.co\\files\\Part-13.pptx",
+    //     "isFolder": false,
+    //     "extension": ".pptx"
+    // }
+
+    fileList.push({
+        name: fileName,
+        created: new Date().toISOString(),
+        size: 0,
+        path: currentFileLocation + fileName,
+        isFolder: false,
+        extension: fileName.split(".").pop()
+    })
+
+    refreshList().then(() => {
+        // find the file it just uploaded
+        console.log(fileName)
+        let elements = document.querySelectorAll('.file-name');
+        let targetElement;
+        elements.forEach((element) => {
+            if (element.querySelector('p').innerText == fileName) {
+                targetElement = element.parentElement.parentElement;
+            }
+        });
+        if (!targetElement) { console.error("idk bruh"); return }
+
+        const fileProgressElement = targetElement.querySelector('.file-progress')
+
+        // animate progress bar
+        fileProgressElement.style.opacity = 1
+        uploadFile(formData, (percentage) => {
+            fileProgressElement.style.width = percentage + "%" // set progress bar width
+        })
+    })
+}
+
 // upload file when user puts file over file container
 const fileContainer = document.body
 fileContainer.addEventListener('dragover', (e) => {
@@ -591,7 +643,7 @@ fileContainer.addEventListener('drop', async (e) => {
             const formData = new FormData();
             formData.append('file', file, fileNameWithPath);
 
-            uploadFile(formData);
+            handleProgressbar(formData, file.name);
         } else if (item.isDirectory) {
             // If it's a directory, update the current directory path
             currentDirectory = currentDirectory + (currentDirectory ? ':' : '') + item.name;
@@ -626,7 +678,7 @@ async function handleDirectoryUpload(directory, currentDirectory) {
             const formData = new FormData();
             formData.append('file', file, fileNameWithPath);
 
-            uploadFile(formData);
+            handleProgressbar(formData, file.name);
         } else if (entry.isDirectory) {
             // If it's another directory, handle it recursively with the updated directory path
             console.log(entry.name);
@@ -635,3 +687,27 @@ async function handleDirectoryUpload(directory, currentDirectory) {
     }
 }
 
+const deleteallbutton = document.getElementById('top-ribbon-deleteall')
+deleteallbutton.addEventListener('click', async () => {
+    try {
+        // prompt user first
+        if (!confirm("Are you sure you want to delete all files?")) return
+
+        const response = await fetch(serverUrl + '/delete-all', {
+            method: 'POST',
+            headers: {
+                'password': userPassword
+            },
+        });
+
+        // const data = await response.json();
+        if (response.ok) {
+            console.log("All files deleted.")
+            refreshFiles()
+        } else {
+            console.error('Error deleting files.');
+        }
+    } catch (error) {
+        console.error('Error deleting files:', error);
+    }
+})

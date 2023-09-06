@@ -290,6 +290,38 @@ body {
     margin: auto;
 }
 
+#top-ribbon-deleteall {
+    width: 150px;
+    height: 30px;
+
+    margin: 5px;
+
+    background-color: #EEEEEE;
+    padding: 5px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #121212;
+
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+#top-ribbon-deleteall:hover {
+    color: #ff5a5f;
+    cursor: pointer;
+}
+
+#top-ribbon-deleteall>p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+}
+
 #top-ribbon-location {
     width: 400px;
     height: 30px;
@@ -369,6 +401,7 @@ body {
 }
 
 .file {
+    position: relative;
     margin: 0;
     margin-bottom: 10px;
 
@@ -397,6 +430,8 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
+    z-index: 2;
 }
 
 .file-name {
@@ -442,6 +477,8 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    
+    z-index: 2;
 }
 
 .file-button {
@@ -535,6 +572,29 @@ body {
     text-transform: uppercase;
 
     transition: color 0.3s ease;
+}
+
+.file-progress-container {
+    position: absolute;
+    width: calc(100% - 5px);
+    height: inherit;
+    border-radius: inherit;
+}
+
+.file-progress {
+    /* progress bar */
+    position: absolute;
+    width: 0%;
+    opacity: 0;
+
+    height: inherit;
+
+    /* background: linear-gradient(to right, #ff5a5f 75%, #EEEEEE 100%); */
+    background-color: #ff5a5f;
+    border-radius: inherit;
+
+    /* transition width and opacity */
+    transition: width 0.5s ease, opacity 0.5s ease;
 }
 
 #overlay {
