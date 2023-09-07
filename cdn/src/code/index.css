@@ -348,7 +348,7 @@ body {
 #file-explorer-container {
     width: calc(100vw - 20px);
     height: max-content;
-    min-height: calc(100vh - 50px);
+    min-height: calc(100% - 50px);
 
     display: flex;
     flex-direction: row;
