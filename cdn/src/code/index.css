@@ -659,6 +659,30 @@ body {
     .file-name>p {
         font-size: 10px;
     }
+
+    #top-ribbon {
+        height: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #top-ribbon-container {
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    #top-ribbon-logo {
+        width: 200px;
+        height: 50px;
+
+        margin: auto;
+        margin-left: 40px;
+        margin-right: 20px;
+
+        padding: 5px;
+        border-radius: 5px;
+    }
 }
 
 /* smaller than 500px */
