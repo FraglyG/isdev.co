@@ -1,115 +1,157 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<link rel="stylesheet" href="source/code/main.css">
+<html lang="en">
 
 <head>
-    <!-- META DATA -->
-    <META charset="utf-8">
-    <META name="viewport" content="width=device-width, initial-scale=1.0">
-    <META NAME="Keywords"
-        CONTENT="isdev.co, isdev, development, developer, dev, scripting, programming, coding, code, script, developing">
-    <META NAME="Description"
-        CONTENT="Explore a showcase of my work and expertise in software development. From web applications to mobile apps, I bring creativity and technical proficiency to every project. Browse through my portfolio to see examples of my coding skills, problem-solving ability, and attention to detail. Let's collaborate and bring your ideas to life. Contact me today to discuss how I can contribute to your next digital venture.">
-    <META NAME="Subject" CONTENT="Development">
-    <META NAME="Language" CONTENT="English">
-    <META NAME="Robots" CONTENT="INDEX">
-    <!-- LINKS AND STUFF -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="./source/images/flower_icon.png">
-    <!-- MAIN  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISDev</title>
+
+    <link rel="stylesheet" href="./source/code/main.css">
+    <link rel="stylesheet" href="./source/code/flowers.css">
+    <!-- icon -->
+    <link rel="icon" href="https://isdev.co/logo.png">
+    <!-- Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <section>
-        <img id="background_img" src="/source/images/bg/flower1.png">
-
-        <div id="header_ribbon">
-            <div id="header_ribbon_effects">
-                <!-- <h1 id="header_title">{IsDev}</h1> -->
-                <h1 id="header_title">
-                    <span id="leftSemicolon" class="dark">{</span>
-                    <div id="TITLE_INNER_TEXT_WRAP"><span id="TITLE_INNER_TEXT"><span class="light">IS</span><span
-                                class="dark">Dev</span></span></div>
-                    <span class="light">}</span>
-                </h1>
-            </div>
-        </div>
-
-        <div id="header_div">
-            <div style="display:flex; flex-direction: column; width: fit-content; max-width: 100%; position: relative;">
-                <h3 style="color: rgb(122, 122, 122); margin: 0; width: fit-content;">Hello, I'm</h3>
-                <h1
-                    style="position: relative; top: -15px; left: 50px; color: rgb(236, 236, 236); margin: 0; margin-bottom: 15px; width: fit-content;">
-                    Hendrik</h1>
-            </div>
-
-            <div style="display:flex; margin-bottom:0px;" class="paragraph1">
-                <p id="beforeImAText" style="margin: 0; margin-right: 8px; margin-bottom: inherit">I'm a</p>
-                <p id="ImAText" style="margin: 0; margin-bottom: inherit">Bsc IT student</p>
-                <p style="margin: 0; margin-bottom: inherit;">18 year old software engineer.</p>
-            </div>
-
-            <p style="margin-top: 0px;" id="mainDescriptiveParagraph" class="paragraph1 faded-out">
-                I've been programming since the summer of 2018 and have learned many things through my time as a
-                developer.
-            </p>
-            <p class="paragraph1 faded-out">
-                One of the things I enjoy most about programming is that it's always changing and evolving. There is
-                always
-                something new to learn, which makes it a perfect fit for my curious personality. I also enjoy the
-                creative
-                aspects of programming, such as coming up with new ways to solve problems.
-            </p>
-            <p class="paragraph1 faded-out">
-                Althought my focus up until now has been mostly centered around game development, I'm also interested in
-                web-development, deeplearning AI and computer engineering.
-                If you have any questions or comments, feel free to contact me. I'll be happy to help in any way I can.
-            </p>
-        </div>
-    </section>
-
-    <div id="lineWrapper" style="top: -50px">
-        <div id="line1"></div>
+    <div id="scroll-indicator">
+        <p>Scroll</p>
+        <div id="scroll-line"></div>
+        <div id="scroll-break"></div>
+        <div id="scroll-line"></div>
     </div>
 
-    <section id="section2">
-        <div style="position:relative; margin: auto; width: fit-content;">
-            <h1>Hello</h1>
-            <p>Still working on this site</p>
+    <div id="scroll-indicator-2">
+        <p>Scroll</p>
+        <div id="scroll-line-2"></div>
+    </div>
+
+    <section>
+        <div class="section-div" id="first-section">
+            <div id="ribbon">
+                <iframe src="./source/logos/logo-small.html" id="logo-container"></iframe>
+                <div class="ribbon-div border-corner" style="margin-left: 100px;">
+                    <a href="./soon/">About</a>
+                </div>
+
+                <div class="ribbon-div border-corner">
+                    <a href="./soon/">Qualifications</a>
+                </div>
+
+                <div class="ribbon-div border-corner">
+                    <a href="./soon/">Projects</a>
+                </div>
+
+                <div class="ribbon-div border-corner">
+                    <a href="./soon/">Blog</a>
+                </div>
+
+                <div class="ribbon-burger" id="ribbon-burger">
+                    <div class="ribbon-burger-line"></div>
+                    <div class="ribbon-burger-line"></div>
+                    <div class="ribbon-burger-line"></div>
+
+                    <!-- dropdown -->
+                    <div class="ribbon-burger-dropdown" id="ribbon-burger-dropdown">
+                        <div class="ribbon-burger-dropdown-div">
+                            <a href="./soon/">About</a>
+                        </div>
+                        <div class="ribbon-burger-dropdown-div">
+                            <a href="./soon/">Qualifications</a>
+                        </div>
+                        <div class="ribbon-burger-dropdown-div">
+                            <a href="./soon/">Projects</a>
+                        </div>
+                        <div class="ribbon-burger-dropdown-div">
+                            <a href="./soon/">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div style="position:relative; margin: auto; width: fit-content;">
-            <h1>How</h1>
-            <p>Still working on this site</p>
+        <div class="section-div" id="second-section">
+            <div class="title-h1h2">
+                <h1>Hello, I'm</h1>
+                <h2>Hendrik</h2>
+            </div>
+
+            <div style="margin-left: 20px;">
+                <div id="what-am-i">
+                    <h3>I'm a</h3>
+                    <h3 id="imaX">Bsc IT student</h3>
+                </div>
+                <p id="quick-intro">
+                    I write code so efficient that even my energy drinks can't
+                    keep up! When I'm not crafting software magic, you can find me chasing down bugs or sipping on the
+                    elixir of code creation - energy drinks, of course. So, if you're in need of a tech-savvy wizard who
+                    can turn energy drinks into code, you're in the right place
+                </p>
+            </div>
         </div>
 
-        <div style="position:relative; margin: auto; width: fit-content;">
-            <h1>Are</h1>
-            <p>Still working on this site</p>
+        <div class="section-div" id="third-section">
+            <div class="title-h1h2">
+                <h1>I really love</h1>
+                <h2>coding!</h2>
+            </div>
+
+            <div style="margin-left: 20px; z-index: 3;">
+                <p id="love-coding">
+                    It's been my digital love affair for the past YEAR_TIME years, and I must say, it's been quite the
+                    adventure. You can catch some of my recent creations <a href="./soon/" class="link"
+                        style="margin-left: 7px">here.</a>
+
+                    <br><br>
+
+                    One of the things I enjoy most about programming is that it's always changing and evolving. There is
+                    always something new to learn, which makes it a perfect fit for my curious personality. I also enjoy
+                    the creative aspects of programming, such as coming up with new ways to solve problems.
+                </p>
+            </div>
+
+            <script>
+                const startedEpochS = 1531736160
+                const startedEpoch = new Date(startedEpochS * 1000)
+                const nowEpoch = new Date()
+                const year = nowEpoch.getFullYear() - startedEpoch.getFullYear()
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.getElementById("love-coding").innerHTML = document.getElementById("love-coding").innerHTML.replace("YEAR_TIME", year)
+                })
+            </script>
         </div>
 
-        <div style="position:relative; margin: auto; width: fit-content;">
-            <h1>You?</h1>
-            <p>Still working on this site</p>
+
+        <div class="section-div" id="fourth-section">
+            <div class="title-h1h2">
+                <h1>Let's have</h1>
+                <h2>a chat</h2>
+            </div>
+
+            <div style="margin-left: 20px; z-index: 3;">
+                <p id="contact-info">
+                    I'm not just fluent in programming languages; I'm fluent in the art of turning ideas into digital
+                    reality. Have a question, an idea, or just want to
+                    say hello? I'm just an email away at <a href="mailto:hendrik@isdev.co" class="link"
+                        style="margin-left: 7px">hendrik@isdev.co</a>
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- <div id="discord-info">
-        <img style="margin: 0; width: 36px; height: 36px; object-fit: fill; border-radius: 100px; margin-right: 8px;"
-            src="source/images/pfp.png">
-        <div style="height: 36px; margin: 0">
-            <p style="margin: 0; font-size: 14px;">@Fragly</p>
-            <p style="margin: 0; font-size: 12px;">Discord</p>
-        </div>
-    </div> -->
-
+    <div id="side-flowers">
+        <img id="side-flowers-img" class="long-flower" src="./source/media/flowers.webp">
+        <img id="side-flowers-img-bg" class="long-flower" src="./source/media/flowers.webp">
+    </div>
 </body>
 
-<script src="source/code/main.js"></script>
+<script src="./source/code/main.js"></script>
+<script src="./source/code/ima.js"></script>
 
 </html>

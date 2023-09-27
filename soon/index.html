@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISDev - Soon</title>
+    <link rel="icon" href="https://isdev.co/logo.png">
+
+    <style>
+        body {
+            background-color: #0A0A0A;
+            /* Black */
+            color: #F16629;
+            /* Orange */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #1E1E1E;
+            /* Dark Gray */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Coming Soon!</h1>
+        <p>I'm working tirelessly to bring you something awesome. Stay tuned, and in the meantime, enjoy a joke:</p>
+        <p id="joke"></p>
+    </div>
+
+    <script>
+        // Array of jokes
+        const jokes = [
+            "Why don't programmers like nature? It has too many bugs.",
+            "How many programmers does it take to change a light bulb? None, it's a hardware problem.",
+            "Why did the programmer quit his job? Because he didn't get arrays.",
+            "Why do Java programmers wear glasses? Because they don't C#.",
+            "Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25.",
+            "What do you call 8 hobbits? A hobbyte.",
+        ];
+
+        // Function to display a random joke
+        function displayRandomJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const jokeElement = document.getElementById("joke");
+            jokeElement.textContent = jokes[randomIndex];
+        }
+
+        // Display a random joke when the page loads
+        displayRandomJoke();
+    </script>
+</body>
+
+</html>

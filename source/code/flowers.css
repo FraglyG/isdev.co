@@ -1,0 +1,129 @@
+#side-flowers {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    height: fit-content;
+    width: fit-content;
+
+    z-index: 1;
+}
+
+.long-flower {
+    position: absolute;
+    width: auto;
+    height: 2000px;
+
+    top: 0px;
+    right: 0px;
+
+    transform: scaleX(-1);
+
+    /* animation-name: grow;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out; */
+}
+
+@keyframes grow {
+    0% {
+        top: 100vh;
+        height: 1000px;
+    }
+
+    100% {
+        top: 0vh;
+        height: 2000px;
+    }
+}
+
+.long-flower {
+    position: absolute;
+    width: auto;
+    height: 2000px;
+
+    top: 0px;
+    right: 0px;
+
+    transform: scaleX(-1);
+}
+
+#side-flowers {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    height: fit-content;
+    width: fit-content;
+}
+
+.long-flower {
+    position: absolute;
+    width: auto;
+    height: 2000px;
+
+    top: 0px;
+    right: 0px;
+
+    transform: scaleX(-1);
+}
+
+#side-flowers {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    height: fit-content;
+    width: fit-content;
+}
+
+#side-flowers-img {
+    z-index: 1;
+
+}
+
+#side-flowers-img-bg {
+    /* Blur Image */
+    filter: blur(400px);
+    -webkit-filter: blur(400px);
+
+    transform: scaleX(-1);
+    z-index: 1;
+
+}
+
+/* when screen smaller than 1000px */
+@media only screen and (max-width: 1000px) {
+    #side-flowers {
+        z-index: -1;
+    }
+
+    #side-flowers-img-bg {
+        z-index: -1;
+
+    }
+}
+
+/* screen aspect ratio */
+/* @media only screen and (max-aspect-ratio: 1/1) {
+    #side-flowers {
+        z-index: -1;
+    }
+
+    #side-flowers-img-bg {
+        z-index: -1;
+
+    }
+} */
