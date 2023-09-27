@@ -36,7 +36,7 @@
 }
 
 /* when screen smaller than 1000px */
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     #side-flowers {
         z-index: -1;
     }
@@ -45,7 +45,7 @@
         z-index: -1;
 
     }
-} */
+}
 
 /* screen aspect ratio */
 @media only screen and (max-aspect-ratio: 1/1) {

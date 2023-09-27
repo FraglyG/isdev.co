@@ -328,11 +328,6 @@ a {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1601px) {
-    #contact-info {
-        max-width: 700px;
-    }
-}
 
 @media only screen and (max-width: 1400px) {
     #quick-intro {
@@ -343,24 +338,23 @@ a {
         max-width: 600px;
     }
 
-    #contact-info {
-        max-width: 500px;
-    }
 }
 
 @media only screen and (max-width: 1200px) {
     #quick-intro {
-        max-width: 400px;
+        width: 100%;
+        max-width: 100%;
     }
 
     #love-coding {
-        max-width: 400px;
+        width: 100%;
+        max-width: 100%;
     }
 
     #contact-info {
-        max-width: 300px;
+        width: 100%;
+        max-width: 100%;
     }
-
 }
 
 @media only screen and (max-aspect-ratio: 1/1) {
@@ -416,6 +410,24 @@ a {
 
     #scroll-indicator-2 {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .ribbon-div {
+        display: none;
+    }
+
+    .ribbon-burger {
+        display: block;
+    }
+
+    #ribbon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 }
 
