@@ -22,6 +22,8 @@ p {
     width: 170px;
     height: 63px;
     border: 0px;
+
+    overflow: hidden;
 }
 
 section {
@@ -57,7 +59,7 @@ section {
 }
 
 #third-section {
-    margin-top: 300px;
+    margin-top: 250px;
 
     color: white;
     background-color: rgba(20, 20, 20, 1);
@@ -326,6 +328,12 @@ a {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 1601px) {
+    #contact-info {
+        max-width: 700px;
+    }
+}
+
 @media only screen and (max-width: 1400px) {
     #quick-intro {
         max-width: 600px;
@@ -336,7 +344,7 @@ a {
     }
 
     #contact-info {
-        max-width: 600px;
+        max-width: 500px;
     }
 }
 
@@ -350,7 +358,7 @@ a {
     }
 
     #contact-info {
-        max-width: 400px;
+        max-width: 300px;
     }
 
 }
@@ -417,6 +425,13 @@ a {
     }
 
     #scroll-indicator {
+        display: none;
+    }
+}
+
+/* if height is more than 1000px then */
+@media only screen and (min-height: 1000px) {
+    #scroll-indicator-2 {
         display: none;
     }
 }
