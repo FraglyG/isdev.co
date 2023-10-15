@@ -8,7 +8,7 @@
 
     transform: scaleX(-1);
     user-select: none;
-
+    pointer-events: none;
 }
 
 #side-flowers {
@@ -17,17 +17,17 @@
     top: 0;
     right: 0;
 
-    
+
     width: 100%;
     height: 2000px;
     user-select: none;
-
+    pointer-events: none;
 }
 
 #side-flowers-img {
     z-index: 1;
     user-select: none;
-
+    pointer-events: none;
 }
 
 #side-flowers-img-bg {
@@ -38,7 +38,7 @@
     transform: scaleX(-1);
     z-index: 1;
     user-select: none;
-
+    pointer-events: none;
 }
 
 /* when screen smaller than 1000px */

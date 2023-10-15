@@ -310,9 +310,6 @@ section {
 .link {
     color: #F16629;
     text-decoration: none;
-
-    position: absolute;
-
     z-index: 3;
 }
 
