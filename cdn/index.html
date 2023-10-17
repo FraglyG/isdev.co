@@ -2,31 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/code/index.css">
-    <link rel="icon" href="../logo.png" type="image/x-icon">
-    <title>ISDev CDN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/code/index.css">
+  <link rel="icon" href="../logo.png" type="image/x-icon">
+  <title>ISDev CDN</title>
 
-    <!-- LINKS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
-        rel="stylesheet">
+  <!-- LINKS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
 </head>
 
 <body>
-    <div id="overlay">
-        <div id="password_container">
-            <h3 style="color: white;">Password</h3>
-            <input type="password" id="passwordInput">
-            <button id="passwordButton">Password</button>
-            <p id="passwordStatusMessage" style="color: white;"></p>
-        </div>
+  <div id="overlay">
+    <div id="password_container">
+      <h3 style="color: white;">Password</h3>
+      <input type="password" id="passwordInput">
+      <button id="passwordButton">Password</button>
+      <p id="passwordStatusMessage" style="color: white;"></p>
     </div>
+  </div>
 
-    <!-- <div class="container">
+  <!-- <div class="container">
         <div id="file_upload_container">
             <h3>File Upload</h3>
             <input type="file" id="fileInput">
@@ -36,7 +37,7 @@
     </div> -->
 
 
-    <!-- <div class="container">
+  <!-- <div class="container">
         <div id="file_list_container">
             <h3>File List</h3>
             <ul id="file_list"></ul>
@@ -57,95 +58,93 @@
         </div> -->
 
 
-    <div id="top-ribbon">
-        <div id="top-ribbon-logo">
-            <div id="header_ribbon_effects">
-                <!-- <h1 id="header_title">{IsDev}</h1> -->
-                <h1 id="header_title">
-                    <span id="leftSemicolon" class="dark">{</span>
-                    <div id="TITLE_INNER_TEXT_WRAP"><span id="TITLE_INNER_TEXT"><span class="light">IS</span><span
-                                class="dark">Dev</span></span></div>
-                    <span class="light">}</span>
-                </h1>
-            </div>
-        </div>
-
-        <div id="top-ribbon-container">
-            <div id="top-ribbon-newfile">
-                <p>New</p>
-            </div>
-
-            <div id="top-ribbon-location">
-                <button id="file-location-back">◀</button>
-                <p id="file-location-text">files/</p>
-            </div>
-
-            <div id="top-ribbon-deleteall">
-                <p>Delete All</p>
-            </div>
-        </div>
+  <div id="top-ribbon">
+    <div id="top-ribbon-logo">
+      <div id="header_ribbon_effects">
+        <!-- <h1 id="header_title">{IsDev}</h1> -->
+        <h1 id="header_title">
+          <span id="leftSemicolon" class="dark">{</span>
+          <div id="TITLE_INNER_TEXT_WRAP"><span id="TITLE_INNER_TEXT"><span class="light">IS</span><span class="dark">Dev</span></span></div>
+          <span class="light">}</span>
+        </h1>
+      </div>
     </div>
 
-    <div id="file-explorer-container">
-        <div id="left-nav">
-            <h2 id="navbar-title">navbar</h2>
+    <div id="top-ribbon-container">
+      <div id="top-ribbon-newfile">
+        <p>New</p>
+      </div>
 
-            <div id="tree-view">
-            </div>
+      <div id="top-ribbon-location">
+        <button id="file-location-back">◀</button>
+        <p id="file-location-text">files/</p>
+      </div>
 
-            <p style="position: absolute; bottom: 0px; margin: auto;">Icons by <a href="https://icons8.com"
-                    style="color: rgba(0,0,0,0.5)">Icons8</a></p>
-        </div>
+      <div id="top-ribbon-deleteall">
+        <p>Delete All</p>
+      </div>
+    </div>
+  </div>
 
-        <div id="file-container">
-            <div class="file">
-                <div class="file-info">
-                    <div class="file-icon file-type-folder"></div>
-                    <div class="file-name">
-                        <p>some_folder</p>
-                    </div>
-                    <div class="file-metadata">
-                        <p>1.2MB</p>
-                        <p>12/12/2021</p>
-                    </div>
-                </div>
+  <div id="file-explorer-container">
+    <div id="left-nav">
+      <h2 id="navbar-title">navbar</h2>
 
-                <div class="file-actions">
-                    <div class="file-button open-folder"></div>
-                    <div class="file-button file-delete"></div>
-                </div>
+      <div id="tree-view">
+      </div>
 
-                <div class="file-progress-container">
-                    <div class="file-progress">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="file">
-                <div class="file-info">
-                    <div class="file-icon file-type-image"></div>
-                    <div class="file-name">
-                        <p>some_image.png</p>
-                    </div>
-                    <div class="file-metadata">
-                        <p>1.2MB</p>
-                        <p>12/12/2021</p>
-                    </div>
-                </div>
-
-                <div class="file-actions">
-                    <div class="file-button copy-download-link"></div>
-                    <div class="file-button file-download"></div>
-                    <div class="file-button file-delete"></div>
-                </div>
-            </div>
-
-        </div>
+      <p style="position: absolute; bottom: 0px; margin: auto;">Icons by <a href="https://icons8.com" style="color: rgba(0,0,0,0.5)">Icons8</a></p>
     </div>
 
+    <div id="file-container">
+      <div class="file">
+        <div class="file-info">
+          <div class="file-icon file-type-folder"></div>
+          <div class="file-name">
+            <p>some_folder</p>
+          </div>
+          <div class="file-metadata">
+            <p>1.2MB</p>
+            <p>12/12/2021</p>
+          </div>
+        </div>
+
+        <div class="file-actions">
+          <div class="file-button open-folder"></div>
+          <div class="file-button file-delete"></div>
+        </div>
+
+        <div class="file-progress-container">
+          <div class="file-progress">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="file">
+        <div class="file-info">
+          <div class="file-icon file-type-image"></div>
+          <div class="file-name">
+            <p>some_image.png</p>
+          </div>
+          <div class="file-metadata">
+            <p>1.2MB</p>
+            <p>12/12/2021</p>
+          </div>
+        </div>
+
+        <div class="file-actions">
+          <div class="file-button copy-download-link"></div>
+          <div class="file-button file-download"></div>
+          <div class="file-button file-delete"></div>
+        </div>
+      </div>
+
     </div>
-    <script src="./src/code/index.js"></script>
+  </div>
+
+  </div>
+  <script src="./src/code/index.js"></script>
 </body>
 
 </html>
