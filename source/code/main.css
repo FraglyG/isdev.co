@@ -5,6 +5,12 @@ body {
     color: white;
 }
 
+@font-face {
+    font-family: 'Prompt';
+    font-style: normal;
+    src: url('../media/Prompt-Regular.ttf') format('truetype');
+}
+
 h1,
 h2,
 h3,
