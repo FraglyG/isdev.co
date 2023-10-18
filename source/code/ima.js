@@ -1,72 +1,59 @@
-let currentTypeSpeed = 100
+let currentTypeSpeed = 100;
 
-String.prototype.replaceAt = function (index, replacement) {
-    if (index >= this.length) {
-        return this.valueOf();
+const stringReplaceAt = (str, index, replacement) => {
+    if (index >= str.length) {
+        return str.valueOf();
     }
-
-    var chars = this.split('');
+    const chars = str.split('');
     chars[index] = replacement;
     return chars.join('');
 }
 
-function transition(setup, defaultString, elements) {
-    let characters = ['!', '"', '#', '$', '%', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '=', '?', '@', '[', '[', '\\', ']', ']', '^', '_', '`', '│', '┤', '╡', '╢', '╖', '╕', '╣', '║', '╗', '╝', '╜', '╛', '┐', '└', '┴', '┬', '├', '─', '┼', '╞', '╟', '╚', '╔', '╩', '╦', '╠', '═', '╬', '╧', '╨', '╤', '╥', '╙', '╘', '╒', '╓', '╫', '╪', '┘', '┌', '█', '▄', '▌', '▐', '▀', 'α', 'ß', 'Γ', 'π', 'Σ', 'σ', 'µ', 'Φ', 'Θ', 'Ω', 'δ', '∞', 'φ', 'ε', '∩', '≡', '±', '≥', '≤', '⌠', '⌡', '≈', '°', '·', '·', '√', 'ⁿ', '■'];
-
-    function changeElements(newText) {
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].innerHTML = newText;
-        }
-    }
-
-    function set(at) {
-        if (setup == true) {
-            var char = characters[Math.floor(characters.length * Math.random())];
-            var nStr = elements[0].innerHTML.replaceAt(at, char);
-            changeElements(nStr);
-        } else {
-            var nStr = elements[0].innerHTML.replaceAt(at, defaultString[at]);
-            changeElements(nStr);
-        }
-    }
-
-    var i = 0;
-    function myLoop() {
-        setTimeout(function () {
-            set(i);
-            i++;
-            if (i < defaultString.length) {
-                myLoop();
-            }
-        }, 50)
-    }
-    myLoop();
-    if (setup == false) { setTimeout(function () { changeElements(defaultString); }, defaultString.length * 50); };
+const changeElements = (newText, elements) => {
+    elements.forEach(element => element.innerHTML = newText);
 }
 
-const imAArray = [
-    "game developer",
-    "web developer ",
-    "game designer ",
-    "programmer    ",
-    "web designer  ",
-]
+const set = (setup, at, defaultString, characters, elements) => {
+    let nStr;
+    if (setup) {
+        const char = characters[Math.floor(characters.length * Math.random())];
+        nStr = stringReplaceAt(elements[0].innerHTML, at, char);
+    } else {
+        nStr = stringReplaceAt(elements[0].innerHTML, at, defaultString[at]);
+    }
+    changeElements(nStr, elements);
+}
 
-function imA(element, index = 0) {
+const transition = (setup, defaultString, elements) => {
+    const characters = ['!', '"', '#', '$', '%', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '=', '?', '@', '[', '[', '\\', ']', ']', '^', '_', '`', '│', '┤', '╡', '╢', '╖', '╕', '╣', '║', '╗', '╝', '╜', '╛', '┐', '└', '┴', '┬', '├', '─', '┼', '╞', '╟', '╚', '╔', '╩', '╦', '╠', '═', '╬', '╧', '╨', '╤', '╥', '╙', '╘', '╒', '╓', '╫', '╪', '┘', '┌', '█', '▄', '▌', '▐', '▀', 'α', 'ß', 'Γ', 'π', 'Σ', 'σ', 'µ', 'Φ', 'Θ', 'Ω', 'δ', '∞', 'φ', 'ε', '∩', '≡', '±', '≥', '≤', '⌠', '⌡', '≈', '°', '·', '·', '√', 'ⁿ', '■'];;
+    const loopThroughChars = async (i = 0) => {
+        if (i < defaultString.length) {
+            set(setup, i, defaultString, characters, elements);
+            setTimeout(() => loopThroughChars(i + 1), 50);
+        }
+    }
+    loopThroughChars();
+    if (!setup) {
+        setTimeout(() => { changeElements(defaultString, elements); }, defaultString.length * 50);
+    };
+}
+
+const imAArray = ["game developer", "web developer ", "game designer ", "programmer    ", "web designer  "];
+
+const imA = (element, index = 0) => {
     const text = imAArray[index]
 
-    // transition(true, text, [element]);
-    // setTimeout(function () { transition(false, imAArray[index + 1], [element]) }, 500)
-
     transition(true, text, [element]);
-    setTimeout(function () { transition(true, text, [element]) }, 200)
-    setTimeout(function () { transition(false, text, [element]) }, 400)
+    setTimeout(() => transition(true, text, [element]), 200);
+    setTimeout(() => transition(false, text, [element]), 400);
 
-    if (imAArray[index + 1]) {
-        setTimeout(() => { imA(element, index + 1) }, 2000)
-    } else {
-        setTimeout(() => { imA(element, 0) }, 2000)
-    }
+    setTimeout(() => {
+        if (imAArray[index + 1]) {
+            imA(element, index + 1)
+        } else {
+            imA(element, 0)
+        }
+    }, 2000);
 }
 
-imA(document.getElementById('imaX'))
+imA(document.getElementById('imaX'));
