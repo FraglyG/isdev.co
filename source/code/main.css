@@ -9,6 +9,7 @@ body {
     font-family: 'Prompt';
     font-style: normal;
     src: url('../media/Prompt-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 h1,
