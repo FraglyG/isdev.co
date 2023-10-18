@@ -43,6 +43,9 @@
 
   <!-- VERIFICATION -->
   <meta name="seobility" content="fa344f56e99c74aacdad0912874985c0">
+
+  <!-- PRELOAD -->
+  <link rel="preload" href="./source/media/flowers_100.webp" as="image">
 </head>
 
 <body>
@@ -62,17 +65,17 @@
   <section>
     <div class="section-div" id="first-section">
       <div id="ribbon">
-        <iframe src="./source/logos/logo-small.html" id="logo-container"></iframe>
+        <iframe title="ISDev Logo" src="./source/logos/logo-small.html" id="logo-container"></iframe>
         <div class="ribbon-div border-corner" style="margin-left: 100px;">
           <a href="/about" style="padding: 25%;">About</a>
         </div>
 
         <div class="ribbon-div border-corner">
-          <a href="./soon/" style="padding: 25%;">Qualifications</a>
+          <a href="/cv" style="padding: 25%;">Qualifications</a>
         </div>
 
         <div class="ribbon-div border-corner">
-          <a href="./soon/" style="padding: 25%;">Projects</a>
+          <a href="/projects" style="padding: 25%;">Projects</a>
         </div>
 
         <div class="ribbon-div border-corner">
@@ -90,10 +93,10 @@
               <a href="/about">About</a>
             </div>
             <div class="ribbon-burger-dropdown-div">
-              <a href="./soon/">Qualifications</a>
+              <a href="/cv">Qualifications</a>
             </div>
             <div class="ribbon-burger-dropdown-div">
-              <a href="./soon/">Projects</a>
+              <a href="/projects">Projects</a>
             </div>
             <div class="ribbon-burger-dropdown-div">
               <a href="https://blog.isdev.co/">Blog</a>
@@ -138,7 +141,7 @@
 
           <br>
 
-          You can catch some of my recent creations <a href="./soon/" class="link">here</a>.
+          You can catch some of my recent creations <a href="/projects" class="link">here</a>.
 
           <!-- <br><br>
 
@@ -178,10 +181,46 @@
     </div>
   </section>
 
-  <div id="side-flowers">
-    <img id="side-flowers-img" class="long-flower" src="./source/media/flowers.webp" alt="orange flowers">
+  <div id="side-flowers" class="flowers_100 flowers_quality">
+    <img id="side-flowers-img" class="long-flower flower_100" src="./source/media/flowers_500.webp" alt="orange flowers">
+    <img id="side-flowers-img-bg" class="long-flower" src="./source/media/flowers_500.webp" alt="orange flowers glow">
+  </div>
+
+  <div id="side-flowers" class="flowers_500 flowers_quality">
+    <img id="side-flowers-img" class="long-flower flower_500" src="./source/media/flowers_500.webp" alt="orange flowers">
+    <img id="side-flowers-img-bg" class="long-flower" src="./source/media/flowers_500.webp" alt="orange flowers glow">
+  </div>
+
+  <div id="side-flowers" class="flowers_1000 flowers_quality">
+    <img id="side-flowers-img" class="long-flower flower_1000" src="./source/media/flowers_1000.webp" alt="orange flowers">
+    <img id="side-flowers-img-bg" class="long-flower" src="./source/media/flowers_1000.webp" alt="orange flowers glow">
+  </div>
+
+  <div id="side-flowers" class="flowers_normal flowers_quality">
+    <img id="side-flowers-img" class="long-flower flower_normal" src="./source/media/flowers.webp" alt="orange flowers">
     <img id="side-flowers-img-bg" class="long-flower" src="./source/media/flowers.webp" alt="orange flowers glow">
   </div>
+
+  <script>
+    const started = Date.now()
+    const flowers = document.getElementsByClassName("flowers_quality")
+
+    for (let i = 0; i < flowers.length; i++) {
+      const flower = flowers[i]
+      const flowerImg = flower.getElementsByClassName("long-flower")[0]
+      const flowerQuality = flower.classList[0] // first class name
+
+      const previousFlowers = flowers[i - 1]
+
+      flowerImg.onload = () => {
+        const time = Date.now() - started
+        console.log(flowerQuality + " loaded in " + time + "ms")
+
+        if (previousFlowers) previousFlowers.remove()
+
+      }
+    }
+  </script>
 </body>
 
 <script src="./source/code/main.js"></script>
