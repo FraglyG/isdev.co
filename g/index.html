@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    window.onload = function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var query = urlParams.get("q");
+      var redirectTo = "https://letmegooglethat.com/?q=" + query;
+      window.location.href = redirectTo;
+    };
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
