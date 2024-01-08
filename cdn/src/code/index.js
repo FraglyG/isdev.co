@@ -169,7 +169,7 @@
 //     })()
 // }
 
-const serverUrl = "https://cdn.isdev.co"
+const serverUrl = "https://cdn.scripter.me" // cdn.isdev.co
 let userPassword = ""
 let currentFileLocation = ""
 let fileList = []
