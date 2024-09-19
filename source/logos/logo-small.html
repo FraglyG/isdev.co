@@ -3,162 +3,152 @@
 <html style="width: fit-content; height: fit-content; margin: 0; overflow: hidden;">
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Prompt&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&amp;display=swap" rel="stylesheet">
 </head>
 
 <body style="width: fit-content; height: fit-content; display: flex; justify-content: center; align-content: center; margin: 0">
-  <div class="isdev-logo">
-    <p class="isdev-logo-left isdev-text">{</p>
-    <div class="isdev-logo-mid">
-      <div class="isdev-logo-mid-wrap-between">
-        <div class="isdev-logo-mid-wrap-end">
-          <p class="isdev-logo-is isdev-text">IS</p>
-          <p class="isdev-logo-dev isdev-text">Dev</p>
+    <div class="isdev-logo">
+        <p class="isdev-logo-left isdev-text">{</p>
+        <div class="isdev-logo-mid">
+            <div class="isdev-logo-mid-wrap-between">
+                <div class="isdev-logo-mid-wrap-end">
+                    <p class="isdev-logo-is isdev-text">IS</p>
+                    <p class="isdev-logo-dev isdev-text">Dev</p>
+                </div>
+            </div>
         </div>
-      </div>
+        <p class="isdev-logo-right isdev-text">}</p>
+
+        <style>
+            .isdev-logo {
+                display: flex;
+                flex-direction: row;
+                width: fit-content;
+                height: fit-content;
+            }
+
+            .isdev-logo-mid {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .isdev-logo-mid-wrap-between {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+
+                width: 100%;
+
+                animation: mid-between 1s ease-in-out;
+
+            }
+
+            .isdev-logo-mid-wrap-end {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+
+                left: 0%;
+
+                animation: mid-end 1s ease-in-out;
+            }
+
+            .isdev-text {
+                font-family: "Prompt", sans-serif;
+                font-weight: 600;
+
+                font-size: 2.5rem;
+                margin: 1px;
+                letter-spacing: 2px;
+                color: #fff;
+            }
+
+            .isdev-logo-left {
+                margin-right: 0.5rem;
+                color: #F16629;
+                animation: left 1s ease-in-out;
+            }
+
+            .isdev-logo-right {
+                margin-left: 0.5rem;
+                color: #B64600;
+                animation: right 1s ease-in-out;
+            }
+
+            /* Animate left */
+            @keyframes left {
+                0% {
+                    transform: translateX(400%);
+                }
+
+                50% {
+                    transform: translateX(400%);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes right {
+                0% {
+                    transform: translateX(-400%);
+                }
+
+                50% {
+                    transform: translateX(-400%);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes mid-between {
+
+                /* animate width */
+                0% {
+                    width: 0%;
+                }
+
+                50% {
+                    width: 0%;
+                }
+
+                100% {
+                    width: 100%;
+                }
+            }
+
+            @keyframes mid-end {
+                0% {
+                    left: -50%;
+                }
+
+                50% {
+                    left: -50%;
+                }
+
+                100% {
+                    left: 0%;
+                }
+            }
+
+            .isdev-logo-is {
+                color: #B64600;
+            }
+
+            .isdev-logo-dev {
+                color: #F16629;
+            }
+        </style>
     </div>
-    <p class="isdev-logo-right isdev-text">}</p>
-
-    <style>
-      .isdev-logo {
-        display: flex;
-        flex-direction: row;
-        width: fit-content;
-        height: fit-content;
-      }
-
-      .isdev-logo:hover {
-        cursor: pointer;
-      }
-
-      .isdev-logo-mid {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .isdev-logo-mid-wrap-between {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-
-        width: 100%;
-
-        animation: mid-between 1s ease-in-out;
-
-      }
-
-      .isdev-logo-mid-wrap-end {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-
-        left: 0%;
-
-        animation: mid-end 1s ease-in-out;
-      }
-
-      .isdev-text {
-        font-family: "Prompt", sans-serif;
-        font-weight: 600;
-
-        font-size: 2.5rem;
-        margin: 1px;
-        letter-spacing: 2px;
-        color: #fff;
-
-        user-select: none;
-      }
-
-      .isdev-logo-left {
-        margin-right: 0.5rem;
-        color: #F16629;
-        animation: left 1s ease-in-out;
-      }
-
-      .isdev-logo-right {
-        margin-left: 0.5rem;
-        color: #B64600;
-        animation: right 1s ease-in-out;
-      }
-
-      /* Animate left */
-      @keyframes left {
-        0% {
-          transform: translateX(400%);
-        }
-
-        50% {
-          transform: translateX(400%);
-        }
-
-        100% {
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes right {
-        0% {
-          transform: translateX(-400%);
-        }
-
-        50% {
-          transform: translateX(-400%);
-        }
-
-        100% {
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes mid-between {
-
-        /* animate width */
-        0% {
-          width: 0%;
-        }
-
-        50% {
-          width: 0%;
-        }
-
-        100% {
-          width: 100%;
-        }
-      }
-
-      @keyframes mid-end {
-        0% {
-          left: -50%;
-        }
-
-        50% {
-          left: -50%;
-        }
-
-        100% {
-          left: 0%;
-        }
-      }
-
-      .isdev-logo-is {
-        color: #B64600;
-      }
-
-      .isdev-logo-dev {
-        color: #F16629;
-      }
-    </style>
-  </div>
 </body>
-
-<script>
-  document.querySelector('.isdev-logo').addEventListener('click', () => window.location.href = 'https://isdev.co');
-</script>
 
 </html>
