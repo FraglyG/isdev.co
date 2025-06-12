@@ -1,0 +1,157 @@
+# Iteca Multi-Repo Setup Script for Windows
+# Usage: iex (iwr -useb isdev.co/gigtree.ps1).Content
+
+Write-Host "🌴 Starting GigTree Multi-Repo Setup..." -ForegroundColor Green
+Write-Host "======================================" -ForegroundColor Green
+
+# Check if required tools are installed
+function Check-Requirements {
+    Write-Host "📋 Checking requirements..." -ForegroundColor Yellow
+    
+    $requirements = @(
+        @{Name="git"; Command="git --version"},
+        @{Name="Node.js"; Command="node --version"},
+        @{Name="npm"; Command="npm --version"},
+        @{Name="PHP"; Command="php --version"}
+    )
+    
+    foreach ($req in $requirements) {
+        try {
+            $null = Invoke-Expression $req.Command 2>$null
+            Write-Host "✅ $($req.Name) is installed" -ForegroundColor Green
+        }
+        catch {
+            Write-Host "❌ $($req.Name) is not installed. Please install $($req.Name) first." -ForegroundColor Red
+            Write-Host "   Download from: https://git-scm.com, https://nodejs.org, https://php.net" -ForegroundColor Gray
+            exit 1
+        }
+    }
+    
+    Write-Host "✅ All requirements met!" -ForegroundColor Green
+}
+
+# Function to setup a repository
+function Setup-Repo {
+    param(
+        [string]$RepoUrl,
+        [string]$RepoName,
+        [bool]$SetupEnv,
+        [string]$InstallCmd
+    )
+    
+    Write-Host ""
+    Write-Host "📦 Setting up $RepoName..." -ForegroundColor Cyan
+    Write-Host "----------------------------" -ForegroundColor Cyan
+    
+    if (Test-Path $RepoName) {
+        Write-Host "⚠️  Directory $RepoName already exists. Skipping clone..." -ForegroundColor Yellow
+        Set-Location $RepoName
+    } else {
+        Write-Host "📥 Cloning repository..." -ForegroundColor Gray
+        git clone $RepoUrl
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Failed to clone $RepoName" -ForegroundColor Red
+            exit 1
+        }
+        Set-Location $RepoName
+    }
+    
+    # Setup .env if needed (skip backend as it handles it automatically)
+    if ($SetupEnv -and (Test-Path ".env.example") -and (-not (Test-Path ".env"))) {
+        Write-Host "📝 Setting up .env file..." -ForegroundColor Gray
+        Copy-Item ".env.example" ".env"
+        Write-Host "✅ .env file created from .env.example" -ForegroundColor Green
+        Write-Host "⚠️  Please edit .env file with your configuration before running!" -ForegroundColor Yellow
+    }
+    
+    # Install dependencies
+    if ($InstallCmd) {
+        Write-Host "📥 Installing dependencies..." -ForegroundColor Gray
+        Invoke-Expression $InstallCmd
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Failed to install dependencies for $RepoName" -ForegroundColor Red
+            exit 1
+        }
+    }
+    
+    Write-Host "✅ $RepoName setup complete!" -ForegroundColor Green
+    Set-Location ..
+}
+
+# Function to create run commands batch file
+function Create-RunCommands {
+    Write-Host ""
+    Write-Host "📜 Creating run commands..." -ForegroundColor Yellow
+    
+    $batchContent = @"
+@echo off
+echo Starting all Iteca services...
+echo.
+
+echo Starting Backend...
+start "Iteca Backend" cmd /k "cd iteca_backend && npm run dev"
+
+timeout /t 2 /nobreak >nul
+
+echo Starting Frontend...
+start "Gigtree Frontend" cmd /k "cd gigtree_frontend && npm run dev"
+
+timeout /t 2 /nobreak >nul
+
+echo Starting CDN...
+start "Iteca CDN" cmd /k "cd iteca_cdn && php -S localhost:8000"
+
+echo.
+echo All services should be starting in separate windows!
+echo Backend: Usually runs on port 3000 or 5000
+echo Frontend: Usually runs on port 3000 or 5173
+echo CDN: Running on http://localhost:8000
+echo.
+pause
+"@
+
+    $batchContent | Out-File -FilePath "run_all.bat" -Encoding ASCII
+    Write-Host "✅ Created run_all.bat script" -ForegroundColor Green
+}
+
+# Main setup process
+function Main {
+    try {
+        Check-Requirements
+        
+        Write-Host ""
+        Write-Host "🏗️  Setting up repositories..." -ForegroundColor Magenta
+        
+        # Setup backend (no .env setup as it handles it automatically)
+        Setup-Repo -RepoUrl "https://github.com/FraglyG/iteca_backend.git" -RepoName "iteca_backend" -SetupEnv $false -InstallCmd "npm install"
+        
+        # Setup frontend (with .env setup)
+        Setup-Repo -RepoUrl "https://github.com/FraglyG/gigtree_frontend.git" -RepoName "gigtree_frontend" -SetupEnv $true -InstallCmd "npm install"
+        
+        # Setup CDN (with .env setup, no npm install)
+        Setup-Repo -RepoUrl "https://github.com/FraglyG/iteca_cdn.git" -RepoName "iteca_cdn" -SetupEnv $true -InstallCmd ""
+        
+        Create-RunCommands
+        
+        Write-Host ""
+        Write-Host "🎉 Setup Complete!" -ForegroundColor Green
+        Write-Host "==================" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "Next steps:" -ForegroundColor Yellow
+        Write-Host "1. Configure .env files in gigtree_frontend and iteca_cdn if needed" -ForegroundColor White
+        Write-Host "2. Run 'run_all.bat' to start all services, or run manually:" -ForegroundColor White
+        Write-Host ""
+        Write-Host "   Terminal 1: cd iteca_backend && npm run dev" -ForegroundColor Gray
+        Write-Host "   Terminal 2: cd gigtree_frontend && npm run dev" -ForegroundColor Gray
+        Write-Host "   Terminal 3: cd iteca_cdn && php -S localhost:8000" -ForegroundColor Gray
+        Write-Host ""
+        Write-Host "Happy coding! 🌴" -ForegroundColor Green
+        
+    } catch {
+        Write-Host "❌ An error occurred: $($_.Exception.Message)" -ForegroundColor Red
+        exit 1
+    }
+}
+
+# Run the main function
+Main
