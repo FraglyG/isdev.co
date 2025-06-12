@@ -5,6 +5,14 @@ $Host.UI.RawUI.WindowTitle = "GigTree Multi-Repo Setup"
 Write-Host "🌴 Starting GigTree Multi-Repo Setup..." -ForegroundColor Green
 Write-Host "======================================" -ForegroundColor Green
 
+# Ensure we are in a dedicated folder for the multi-repo setup
+$multiRepoFolder = "GigTree"
+if (-not (Test-Path $multiRepoFolder)) {
+    Write-Host "📁 Creating folder: $multiRepoFolder" -ForegroundColor Yellow
+    New-Item -ItemType Directory -Path $multiRepoFolder | Out-Null
+}
+Set-Location $multiRepoFolder
+
 function Check-Requirements {
     Write-Host "📋 Checking requirements..." -ForegroundColor Yellow
     
@@ -135,14 +143,22 @@ function Main {
         Write-Host "==================" -ForegroundColor Green
         Write-Host ""
         Write-Host "Next steps:" -ForegroundColor Yellow
-        Write-Host "1. Configure .env files in gigtree_frontend and iteca_cdn" -ForegroundColor White
+        Write-Host "1. Wait for services to finish launching" -ForegroundColor White
         Write-Host "2. Start all services with run_all.bat or manually:" -ForegroundColor White
         Write-Host ""
         Write-Host "   Backend: cd iteca_backend && npm run dev" -ForegroundColor Gray
         Write-Host "   Frontend: cd gigtree_frontend && npm run dev" -ForegroundColor Gray
         Write-Host "   CDN: cd iteca_cdn && php -S localhost:8000" -ForegroundColor Gray
         Write-Host ""
-        Write-Host "Happy coding! 🌴" -ForegroundColor Green
+        Write-Host "Good luck! 🌴" -ForegroundColor Green
+
+        Write-Host ""
+        $choice = Read-Host "Would you like to run all services now? (Y/N)"
+        if ($choice -match '^(Y|y)') {
+            Start-Process "run_all.bat"
+        } else {
+            Write-Host "Exiting. You can run 'run_all.bat' later to start all services." -ForegroundColor Yellow
+        }
         
     } catch {
         Write-Host "❌ Error: $($_.Exception.Message)" -ForegroundColor Red
