@@ -99,7 +99,7 @@ start "Gigtree Frontend" cmd /k "cd gigtree_frontend && npm run dev"
 timeout /t 2 /nobreak >nul
 
 echo Starting CDN...
-start "Iteca CDN" cmd /k "cd iteca_cdn && php -S localhost:8000"
+start "Iteca CDN" cmd /k "cd iteca_cdn && php -S localhost:8000 router.php"
 
 echo.
 echo All services should be starting in separate windows!
@@ -143,7 +143,7 @@ function Main {
         Write-Host ""
         Write-Host "   Terminal 1: cd iteca_backend && npm run dev" -ForegroundColor Gray
         Write-Host "   Terminal 2: cd gigtree_frontend && npm run dev" -ForegroundColor Gray
-        Write-Host "   Terminal 3: cd iteca_cdn && php -S localhost:8000" -ForegroundColor Gray
+        Write-Host "   Terminal 3: cd iteca_cdn && php -S localhost:8000 router.php" -ForegroundColor Gray
         Write-Host ""
         Write-Host "Happy coding! 🌴" -ForegroundColor Green
         
